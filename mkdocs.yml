@@ -4,6 +4,7 @@ nav:
 # EXAMPLES:START
 - Examples:
   - Get Credits: examples/get-credits.md
+  - Image Generation: examples/image-generation.md
 # EXAMPLES:END
         
 theme:
