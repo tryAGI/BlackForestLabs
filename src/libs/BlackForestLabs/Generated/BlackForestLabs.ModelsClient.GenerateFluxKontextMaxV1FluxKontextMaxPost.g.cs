@@ -217,7 +217,6 @@ namespace BlackForestLabs
                 }
             }
         }
-
         /// <summary>
         /// Edit or create an image with Flux Kontext Max
         /// </summary>

@@ -218,7 +218,6 @@ namespace BlackForestLabs
                 }
             }
         }
-
         /// <summary>
         /// Generate an image with FLUX 1.1 [pro] with ultra mode and optional raw mode.<br/>
         /// Submits an image generation task with FLUX 1.1 [pro] with ultra mode and optional raw mode.

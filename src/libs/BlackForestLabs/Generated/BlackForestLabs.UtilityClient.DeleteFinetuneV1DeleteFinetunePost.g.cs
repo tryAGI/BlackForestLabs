@@ -218,7 +218,6 @@ namespace BlackForestLabs
                 }
             }
         }
-
         /// <summary>
         /// Delete Finetune<br/>
         /// Delete a finetune_id that was created by the user

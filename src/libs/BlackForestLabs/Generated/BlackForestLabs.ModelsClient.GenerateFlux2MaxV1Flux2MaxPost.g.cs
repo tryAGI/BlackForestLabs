@@ -218,7 +218,6 @@ namespace BlackForestLabs
                 }
             }
         }
-
         /// <summary>
         /// Generate an image with FLUX 2 MAX<br/>
         /// Submits an image generation task with FLUX 2 MAX.

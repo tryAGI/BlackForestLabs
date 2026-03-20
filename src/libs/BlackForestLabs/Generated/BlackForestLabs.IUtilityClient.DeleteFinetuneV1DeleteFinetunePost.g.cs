@@ -15,7 +15,6 @@ namespace BlackForestLabs
 
             global::BlackForestLabs.DeleteFinetuneInputs request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Delete Finetune<br/>
         /// Delete a finetune_id that was created by the user
