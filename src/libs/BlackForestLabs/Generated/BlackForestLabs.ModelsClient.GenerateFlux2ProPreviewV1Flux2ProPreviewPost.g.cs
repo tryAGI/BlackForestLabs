@@ -218,7 +218,6 @@ namespace BlackForestLabs
                 }
             }
         }
-
         /// <summary>
         /// Generate or edit an image with FLUX.2 [PRO] Preview<br/>
         /// Submits an image generation or edit task with FLUX.2 [PRO] Preview.

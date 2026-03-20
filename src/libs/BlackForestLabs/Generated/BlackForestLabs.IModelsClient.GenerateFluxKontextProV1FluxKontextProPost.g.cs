@@ -14,7 +14,6 @@ namespace BlackForestLabs
 
             global::BlackForestLabs.FluxKontextProInputs request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Edit or create an image with Flux Kontext Pro
         /// </summary>

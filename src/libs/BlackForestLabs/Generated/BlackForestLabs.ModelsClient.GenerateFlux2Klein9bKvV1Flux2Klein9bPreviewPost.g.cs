@@ -218,7 +218,6 @@ namespace BlackForestLabs
                 }
             }
         }
-
         /// <summary>
         /// Generate or edit an image with FLUX.2 [Klein 9B KV]<br/>
         /// Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching.

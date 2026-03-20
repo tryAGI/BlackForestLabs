@@ -15,7 +15,6 @@ namespace BlackForestLabs
 
             global::BlackForestLabs.FluxDevInputs request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generate an image with FLUX.1 [dev].<br/>
         /// Submits an image generation task with FLUX.1 [dev].

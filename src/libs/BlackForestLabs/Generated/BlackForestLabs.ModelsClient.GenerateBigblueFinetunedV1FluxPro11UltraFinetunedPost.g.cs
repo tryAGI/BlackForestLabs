@@ -218,7 +218,6 @@ namespace BlackForestLabs
                 }
             }
         }
-
         /// <summary>
         /// Generate an image with FLUX 1.1 [pro] finetune with ultra mode.<br/>
         /// Submits an image generation task with FLUX 1.1 [pro] finetune with ultra mode.

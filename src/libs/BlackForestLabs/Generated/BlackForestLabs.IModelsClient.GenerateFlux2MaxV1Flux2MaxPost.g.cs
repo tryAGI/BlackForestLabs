@@ -15,7 +15,6 @@ namespace BlackForestLabs
 
             global::BlackForestLabs.Flux2Inputs request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generate an image with FLUX 2 MAX<br/>
         /// Submits an image generation task with FLUX 2 MAX.

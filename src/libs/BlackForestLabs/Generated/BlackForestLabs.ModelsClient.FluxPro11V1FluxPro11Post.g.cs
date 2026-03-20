@@ -218,7 +218,6 @@ namespace BlackForestLabs
                 }
             }
         }
-
         /// <summary>
         /// Generate an image with FLUX 1.1 [pro].<br/>
         /// Submits an image generation task with FLUX 1.1 [pro].

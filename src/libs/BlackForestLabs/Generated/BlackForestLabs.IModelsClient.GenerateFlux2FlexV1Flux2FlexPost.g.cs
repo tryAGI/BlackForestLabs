@@ -15,7 +15,6 @@ namespace BlackForestLabs
 
             global::BlackForestLabs.Flux2FlexInputs request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Generate or edit an image with FLUX.2 [FLEX]<br/>
         /// Submits an image generation or editing task with FLUX.2 [FLEX].
