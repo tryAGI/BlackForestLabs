@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Nuget">
+    <Description>Generated C# SDK for Black Forest Labs — FLUX image generation models (Pro, Dev, Ultra, Kontext, Klein, Fill, Expand).</Description>
+    <PackageTags>blackforestlabs;bfl;flux;image-generation;ai;diffusion;text-to-image;inpainting;api;sdk;dotnet;openapi;generated</PackageTags>
+  </PropertyGroup>
+
+</Project>
