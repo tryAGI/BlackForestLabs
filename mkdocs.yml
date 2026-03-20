@@ -2,6 +2,8 @@ site_name: BlackForestLabs .NET Documentation
 nav:
 - Overview: index.md
 # EXAMPLES:START
+- Examples:
+  - Get Credits: examples/get-credits.md
 # EXAMPLES:END
         
 theme:
