@@ -11,7 +11,11 @@ namespace BlackForestLabs
         /// <summary>
         /// 
         /// </summary>
-        TaskNotFound,
+        ContentModerated,
+        /// <summary>
+        /// 
+        /// </summary>
+        Error,
         /// <summary>
         /// 
         /// </summary>
@@ -19,19 +23,15 @@ namespace BlackForestLabs
         /// <summary>
         /// 
         /// </summary>
-        RequestModerated,
-        /// <summary>
-        /// 
-        /// </summary>
-        ContentModerated,
-        /// <summary>
-        /// 
-        /// </summary>
         Ready,
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        RequestModerated,
+        /// <summary>
+        /// 
+        /// </summary>
+        TaskNotFound,
     }
 
     /// <summary>
@@ -46,12 +46,12 @@ namespace BlackForestLabs
         {
             return value switch
             {
-                StatusResponse.TaskNotFound => "Task not found",
-                StatusResponse.Pending => "Pending",
-                StatusResponse.RequestModerated => "Request Moderated",
                 StatusResponse.ContentModerated => "Content Moderated",
-                StatusResponse.Ready => "Ready",
                 StatusResponse.Error => "Error",
+                StatusResponse.Pending => "Pending",
+                StatusResponse.Ready => "Ready",
+                StatusResponse.RequestModerated => "Request Moderated",
+                StatusResponse.TaskNotFound => "Task not found",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,12 +62,12 @@ namespace BlackForestLabs
         {
             return value switch
             {
-                "Task not found" => StatusResponse.TaskNotFound,
-                "Pending" => StatusResponse.Pending,
-                "Request Moderated" => StatusResponse.RequestModerated,
                 "Content Moderated" => StatusResponse.ContentModerated,
-                "Ready" => StatusResponse.Ready,
                 "Error" => StatusResponse.Error,
+                "Pending" => StatusResponse.Pending,
+                "Ready" => StatusResponse.Ready,
+                "Request Moderated" => StatusResponse.RequestModerated,
+                "Task not found" => StatusResponse.TaskNotFound,
                 _ => null,
             };
         }
