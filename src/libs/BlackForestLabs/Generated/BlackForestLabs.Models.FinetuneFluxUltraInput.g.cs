@@ -57,7 +57,7 @@ namespace BlackForestLabs
         public int? SafetyTolerance { get; set; }
 
         /// <summary>
-        /// Output format for the generated image. Can be 'jpeg' or 'png'.<br/>
+        /// Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.<br/>
         /// Default Value: jpeg
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
@@ -130,7 +130,7 @@ namespace BlackForestLabs
         /// Example: 2
         /// </param>
         /// <param name="outputFormat">
-        /// Output format for the generated image. Can be 'jpeg' or 'png'.<br/>
+        /// Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.<br/>
         /// Default Value: jpeg
         /// </param>
         /// <param name="imagePrompt">

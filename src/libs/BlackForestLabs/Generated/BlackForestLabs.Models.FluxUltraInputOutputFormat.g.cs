@@ -4,7 +4,7 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// Output format for the generated image. Can be 'jpeg' or 'png'.<br/>
+    /// Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.<br/>
     /// Default Value: jpeg
     /// </summary>
     public sealed partial class FluxUltraInputOutputFormat

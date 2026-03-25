@@ -16,6 +16,10 @@ namespace BlackForestLabs
         /// 
         /// </summary>
         Png,
+        /// <summary>
+        /// 
+        /// </summary>
+        Webp,
     }
 
     /// <summary>
@@ -32,6 +36,7 @@ namespace BlackForestLabs
             {
                 OutputFormat.Jpeg => "jpeg",
                 OutputFormat.Png => "png",
+                OutputFormat.Webp => "webp",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +49,7 @@ namespace BlackForestLabs
             {
                 "jpeg" => OutputFormat.Jpeg,
                 "png" => OutputFormat.Png,
+                "webp" => OutputFormat.Webp,
                 _ => null,
             };
         }

@@ -244,7 +244,7 @@ namespace BlackForestLabs
         /// Example: 2
         /// </param>
         /// <param name="outputFormat">
-        /// Output format for the generated image. Can be 'jpeg' or 'png'.<br/>
+        /// Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.<br/>
         /// Default Value: jpeg
         /// </param>
         /// <param name="raw">

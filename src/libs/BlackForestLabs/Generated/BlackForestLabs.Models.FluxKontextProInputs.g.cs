@@ -56,7 +56,7 @@ namespace BlackForestLabs
         public string? AspectRatio { get; set; }
 
         /// <summary>
-        /// Output format for the generated image. Can be 'jpeg' or 'png'.<br/>
+        /// Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.<br/>
         /// Default Value: png
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
@@ -123,7 +123,7 @@ namespace BlackForestLabs
         /// Aspect ratio of the image between 21:9 and 9:21
         /// </param>
         /// <param name="outputFormat">
-        /// Output format for the generated image. Can be 'jpeg' or 'png'.<br/>
+        /// Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.<br/>
         /// Default Value: png
         /// </param>
         /// <param name="webhookUrl">
