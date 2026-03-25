@@ -1385,7 +1385,7 @@
                 "type": "null"
               }
             ],
-            "description": "Output format for the generated image. Can be 'jpeg' or 'png'.",
+            "description": "Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.",
             "default": "jpeg"
           },
           "safety_tolerance": {
@@ -1499,7 +1499,7 @@
                 "type": "null"
               }
             ],
-            "description": "Output format for the generated image. Can be 'jpeg' or 'png'.",
+            "description": "Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.",
             "default": "jpeg"
           },
           "image_prompt": {
@@ -2292,7 +2292,7 @@
                 "type": "null"
               }
             ],
-            "description": "Output format for the generated image. Can be 'jpeg' or 'png'.",
+            "description": "Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.",
             "default": "jpeg"
           },
           "webhook_url": {
@@ -2416,7 +2416,7 @@
                 "type": "null"
               }
             ],
-            "description": "Output format for the generated image. Can be 'jpeg' or 'png'.",
+            "description": "Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.",
             "default": "png"
           },
           "webhook_url": {
@@ -2551,7 +2551,7 @@
                 "type": "null"
               }
             ],
-            "description": "Output format for the generated image. Can be 'jpeg' or 'png'.",
+            "description": "Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.",
             "default": "jpeg"
           },
           "webhook_url": {
@@ -2731,7 +2731,7 @@
                 "type": "null"
               }
             ],
-            "description": "Output format for the generated image. Can be 'jpeg' or 'png'.",
+            "description": "Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.",
             "default": "jpeg"
           },
           "safety_tolerance": {
@@ -2875,7 +2875,7 @@
                 "type": "null"
               }
             ],
-            "description": "Output format for the generated image. Can be 'jpeg' or 'png'.",
+            "description": "Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.",
             "default": "jpeg"
           },
           "safety_tolerance": {
@@ -2980,7 +2980,7 @@
                 "type": "null"
               }
             ],
-            "description": "Output format for the generated image. Can be 'jpeg' or 'png'.",
+            "description": "Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.",
             "default": "jpeg"
           },
           "raw": {
@@ -3073,7 +3073,8 @@
         "type": "string",
         "enum": [
           "jpeg",
-          "png"
+          "png",
+          "webp"
         ],
         "title": "OutputFormat"
       },

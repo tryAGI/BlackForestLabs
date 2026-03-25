@@ -41,7 +41,7 @@ namespace BlackForestLabs
         /// Aspect ratio of the image between 21:9 and 9:21
         /// </param>
         /// <param name="outputFormat">
-        /// Output format for the generated image. Can be 'jpeg' or 'png'.<br/>
+        /// Output format for the generated image. Can be 'jpeg', 'png', or 'webp'.<br/>
         /// Default Value: png
         /// </param>
         /// <param name="webhookUrl">
