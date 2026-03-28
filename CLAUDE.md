@@ -22,7 +22,7 @@ var client = new BlackForestLabsClient(apiKey); // BFL_API_KEY env var
 
 ## Key Files
 
-- `src/libs/BlackForestLabs/generate.sh` — Regeneration script (downloads spec, converts apiKey→bearer, runs autosdk)
+- `src/libs/BlackForestLabs/generate.sh` — Regeneration script (downloads spec, runs autosdk with `--security-scheme Http:Header:Bearer`)
 - `src/libs/BlackForestLabs/Generated/` — **Never edit** — auto-generated code
 - `src/tests/IntegrationTests/Tests.cs` — Test helper with bearer auth
 - `src/tests/IntegrationTests/Examples/` — Example tests (also generate docs)
@@ -30,5 +30,5 @@ var client = new BlackForestLabsClient(apiKey); // BFL_API_KEY env var
 ## Spec Notes
 
 - OpenAPI spec: `https://api.bfl.ai/openapi.json` (3.1.0)
-- Spec uses `apiKey` type auth in `x-key` header; `generate.sh` converts to `http/bearer` via `jq`
+- Spec uses `apiKey` type auth in `x-key` header; `--security-scheme Http:Header:Bearer` overrides at generation time
 - API uses async pattern: POST to generate → poll `GET /v1/get_result` with task ID
