@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
+
+# OpenAPI spec: https://api.bfl.ai/openapi.json
+
 readonly openapi_url="https://api.bfl.ai/openapi.json"
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
