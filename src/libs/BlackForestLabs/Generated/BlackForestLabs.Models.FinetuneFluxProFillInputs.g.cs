@@ -115,12 +115,12 @@ namespace BlackForestLabs
         /// ID of the fine-tuned model you want to use.<br/>
         /// Example: my-finetune
         /// </param>
+        /// <param name="image">
+        /// A Base64-encoded string representing the image you wish to modify. Can contain alpha mask if desired.
+        /// </param>
         /// <param name="finetuneStrength">
         /// Strength of the fine-tuned model. 0.0 means no influence, 1.0 means full influence. Allowed values up to 2.0<br/>
         /// Default Value: 1.1F
-        /// </param>
-        /// <param name="image">
-        /// A Base64-encoded string representing the image you wish to modify. Can contain alpha mask if desired.
         /// </param>
         /// <param name="mask">
         /// A Base64-encoded string representing a mask for the areas you want to modify in the image. The mask should be the same dimensions as the image and in black and white. Black areas (0%) indicate no modification, while white areas (100%) specify areas for inpainting. Optional if you provide an alpha mask in the original image. Validation: The endpoint verifies that the dimensions of the mask match the original image.
@@ -179,8 +179,8 @@ namespace BlackForestLabs
             string? webhookSecret)
         {
             this.FinetuneId = finetuneId ?? throw new global::System.ArgumentNullException(nameof(finetuneId));
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.FinetuneStrength = finetuneStrength;
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Mask = mask;
             this.Prompt = prompt;
             this.Steps = steps;
