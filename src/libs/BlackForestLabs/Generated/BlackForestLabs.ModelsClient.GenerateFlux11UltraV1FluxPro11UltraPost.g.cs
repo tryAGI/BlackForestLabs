@@ -281,7 +281,6 @@ namespace BlackForestLabs
             string? webhookSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::BlackForestLabs.FluxUltraInput
             {
                 Prompt = prompt,
