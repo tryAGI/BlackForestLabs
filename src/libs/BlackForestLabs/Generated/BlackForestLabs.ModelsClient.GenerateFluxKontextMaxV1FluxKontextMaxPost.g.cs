@@ -279,6 +279,7 @@ namespace BlackForestLabs
             int? safetyTolerance = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::BlackForestLabs.FluxKontextProInputs
             {
                 Prompt = prompt,
