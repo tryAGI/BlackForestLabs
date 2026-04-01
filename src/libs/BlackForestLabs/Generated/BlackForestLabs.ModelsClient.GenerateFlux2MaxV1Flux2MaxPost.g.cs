@@ -306,7 +306,6 @@ namespace BlackForestLabs
             bool? transparentBg = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::BlackForestLabs.Flux2Inputs
             {
                 Prompt = prompt,

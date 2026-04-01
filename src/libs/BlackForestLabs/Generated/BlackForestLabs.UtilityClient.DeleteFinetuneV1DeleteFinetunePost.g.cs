@@ -232,7 +232,6 @@ namespace BlackForestLabs
             string finetuneId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::BlackForestLabs.DeleteFinetuneInputs
             {
                 FinetuneId = finetuneId,
