@@ -9,7 +9,7 @@ namespace BlackForestLabs
     public sealed partial class DeleteFinetuneInputs
     {
         /// <summary>
-        /// ID of the fine-tuned model you want to delete.<br/>
+        /// Name of the LoRA to delete.<br/>
         /// Example: my-finetune
         /// </summary>
         /// <example>my-finetune</example>
@@ -27,7 +27,7 @@ namespace BlackForestLabs
         /// Initializes a new instance of the <see cref="DeleteFinetuneInputs" /> class.
         /// </summary>
         /// <param name="finetuneId">
-        /// ID of the fine-tuned model you want to delete.<br/>
+        /// Name of the LoRA to delete.<br/>
         /// Example: my-finetune
         /// </param>
 #if NET7_0_OR_GREATER
