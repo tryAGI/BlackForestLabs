@@ -223,7 +223,7 @@ namespace BlackForestLabs
         /// Submits an image generation task with FLUX 1.1 [pro] finetune with ultra mode.
         /// </summary>
         /// <param name="finetuneId">
-        /// ID of the fine-tuned model you want to use.<br/>
+        /// Name of the LoRA to use. For LoRAs from other organizations (public or shared), use the format 'org-id/lora-name'.<br/>
         /// Example: my-finetune
         /// </param>
         /// <param name="finetuneStrength">

@@ -20,7 +20,7 @@ namespace BlackForestLabs
         /// Submits an image generation task with the FLUX.1 Fill [pro] finetune model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
         /// </summary>
         /// <param name="finetuneId">
-        /// ID of the fine-tuned model you want to use.<br/>
+        /// Name of the LoRA to use. For LoRAs from other organizations (public or shared), use the format 'org-id/lora-name'.<br/>
         /// Example: my-finetune
         /// </param>
         /// <param name="finetuneStrength">

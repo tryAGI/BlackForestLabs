@@ -20,7 +20,7 @@ namespace BlackForestLabs
         /// Delete a finetune_id that was created by the user
         /// </summary>
         /// <param name="finetuneId">
-        /// ID of the fine-tuned model you want to delete.<br/>
+        /// Name of the LoRA to delete.<br/>
         /// Example: my-finetune
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
