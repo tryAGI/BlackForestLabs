@@ -22,8 +22,8 @@ namespace BlackForestLabs
             ref string content);
 
         /// <summary>
-        /// Generate an image with FLUX 2 MAX<br/>
-        /// Submits an image generation task with FLUX 2 MAX.
+        /// Generate or edit an image with FLUX.2 [MAX] (highest quality)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [MAX]. Highest quality FLUX.2 model for image generation and editing.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -218,8 +218,8 @@ namespace BlackForestLabs
             }
         }
         /// <summary>
-        /// Generate an image with FLUX 2 MAX<br/>
-        /// Submits an image generation task with FLUX 2 MAX.
+        /// Generate or edit an image with FLUX.2 [MAX] (highest quality)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [MAX]. Highest quality FLUX.2 model for image generation and editing.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>

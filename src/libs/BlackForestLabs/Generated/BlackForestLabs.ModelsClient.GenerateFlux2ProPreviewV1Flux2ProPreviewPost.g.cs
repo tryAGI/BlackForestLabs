@@ -22,8 +22,8 @@ namespace BlackForestLabs
             ref string content);
 
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [PRO] Preview<br/>
-        /// Submits an image generation or edit task with FLUX.2 [PRO] Preview.
+        /// Generate or edit an image with FLUX.2 [PRO] Preview (recommended for editing)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [PRO] Preview. This is a recommended model for image editing and generation.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -218,8 +218,8 @@ namespace BlackForestLabs
             }
         }
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [PRO] Preview<br/>
-        /// Submits an image generation or edit task with FLUX.2 [PRO] Preview.
+        /// Generate or edit an image with FLUX.2 [PRO] Preview (recommended for editing)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [PRO] Preview. This is a recommended model for image editing and generation.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
