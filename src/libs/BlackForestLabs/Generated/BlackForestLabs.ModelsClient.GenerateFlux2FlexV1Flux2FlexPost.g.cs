@@ -22,8 +22,8 @@ namespace BlackForestLabs
             ref string content);
 
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [FLEX]<br/>
-        /// Submits an image generation or editing task with FLUX.2 [FLEX].
+        /// Generate or edit an image with FLUX.2 [FLEX] (recommended for editing)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [FLEX]. This is a recommended model for image editing and generation. Supports flexible text-to-image and image-to-image editing workflows.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -218,8 +218,8 @@ namespace BlackForestLabs
             }
         }
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [FLEX]<br/>
-        /// Submits an image generation or editing task with FLUX.2 [FLEX].
+        /// Generate or edit an image with FLUX.2 [FLEX] (recommended for editing)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [FLEX]. This is a recommended model for image editing and generation. Supports flexible text-to-image and image-to-image editing workflows.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>

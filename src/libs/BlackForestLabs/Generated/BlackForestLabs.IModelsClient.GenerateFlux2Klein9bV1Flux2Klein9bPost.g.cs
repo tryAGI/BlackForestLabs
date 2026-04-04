@@ -5,8 +5,8 @@ namespace BlackForestLabs
     public partial interface IModelsClient
     {
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [Klein 9B]<br/>
-        /// Submits an image generation or editing task with FLUX.2 [Klein 9B].
+        /// Generate or edit an image with FLUX.2 [Klein 9B] (fast editing)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [Klein 9B]. Fast, lightweight model for image generation and editing.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -16,8 +16,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.Flux2KleinInputs request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [Klein 9B]<br/>
-        /// Submits an image generation or editing task with FLUX.2 [Klein 9B].
+        /// Generate or edit an image with FLUX.2 [Klein 9B] (fast editing)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [Klein 9B]. Fast, lightweight model for image generation and editing.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>

@@ -22,7 +22,8 @@ namespace BlackForestLabs
             ref string content);
 
         /// <summary>
-        /// Edit or create an image with Flux Kontext Max
+        /// Create an image with FLUX.1 Kontext [max] (legacy, use FLUX.2 [PRO] for editing)<br/>
+        /// Submits an image creation task with FLUX.1 Kontext [max]. For image editing, prefer FLUX.2 [PRO] (/flux-2-pro) or FLUX.2 [FLEX] (/flux-2-flex) which are the recommended default models for editing workflows.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -217,7 +218,8 @@ namespace BlackForestLabs
             }
         }
         /// <summary>
-        /// Edit or create an image with Flux Kontext Max
+        /// Create an image with FLUX.1 Kontext [max] (legacy, use FLUX.2 [PRO] for editing)<br/>
+        /// Submits an image creation task with FLUX.1 Kontext [max]. For image editing, prefer FLUX.2 [PRO] (/flux-2-pro) or FLUX.2 [FLEX] (/flux-2-flex) which are the recommended default models for editing workflows.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>

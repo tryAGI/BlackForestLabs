@@ -5,8 +5,8 @@ namespace BlackForestLabs
     public partial interface IModelsClient
     {
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [PRO]<br/>
-        /// Submits an image generation or edit task with FLUX.2 [PRO].
+        /// Generate or edit an image with FLUX.2 [PRO] (recommended for editing)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [PRO]. This is the recommended default model for image editing and generation. Supports text-to-image and image-to-image editing workflows.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -16,8 +16,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.Flux2Inputs request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [PRO]<br/>
-        /// Submits an image generation or edit task with FLUX.2 [PRO].
+        /// Generate or edit an image with FLUX.2 [PRO] (recommended for editing)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [PRO]. This is the recommended default model for image editing and generation. Supports text-to-image and image-to-image editing workflows.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>

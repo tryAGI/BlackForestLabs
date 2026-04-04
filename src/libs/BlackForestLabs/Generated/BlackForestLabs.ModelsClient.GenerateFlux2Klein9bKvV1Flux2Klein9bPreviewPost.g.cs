@@ -22,8 +22,8 @@ namespace BlackForestLabs
             ref string content);
 
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [Klein 9B KV]<br/>
-        /// Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching.
+        /// Generate or edit an image with FLUX.2 [Klein 9B KV] (fast editing with caching)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching for improved performance.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -218,8 +218,8 @@ namespace BlackForestLabs
             }
         }
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [Klein 9B KV]<br/>
-        /// Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching.
+        /// Generate or edit an image with FLUX.2 [Klein 9B KV] (fast editing with caching)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching for improved performance.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
