@@ -6,6 +6,7 @@ namespace BlackForestLabs
     public sealed partial class BlackForestLabsClient
     {
         /// <inheritdoc cref="BlackForestLabsClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::BlackForestLabs.EndPointAuthorization}?, bool)"/>
+
         public BlackForestLabsClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

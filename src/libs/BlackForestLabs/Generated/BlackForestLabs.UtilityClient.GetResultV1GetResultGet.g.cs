@@ -5,6 +5,25 @@ namespace BlackForestLabs
 {
     public partial class UtilityClient
     {
+
+
+        private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_GetResultV1GetResultGetSecurityRequirement0 =
+            new global::BlackForestLabs.EndPointSecurityRequirement
+            {
+                Authorizations = new global::BlackForestLabs.EndPointAuthorizationRequirement[]
+                {                    new global::BlackForestLabs.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::BlackForestLabs.EndPointSecurityRequirement[] s_GetResultV1GetResultGetSecurityRequirements =
+            new global::BlackForestLabs.EndPointSecurityRequirement[]
+            {                s_GetResultV1GetResultGetSecurityRequirement0,
+            };
         partial void PrepareGetResultV1GetResultGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id);
@@ -38,12 +57,18 @@ namespace BlackForestLabs
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::BlackForestLabs.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetResultV1GetResultGetSecurityRequirements,
+                operationName: "GetResultV1GetResultGetAsync");
+
             var __pathBuilder = new global::BlackForestLabs.PathBuilder(
                 path: "/v1/get_result",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("id", id) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -53,7 +78,7 @@ namespace BlackForestLabs
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

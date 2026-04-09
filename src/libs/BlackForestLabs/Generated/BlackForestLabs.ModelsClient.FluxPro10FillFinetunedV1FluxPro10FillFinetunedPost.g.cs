@@ -5,6 +5,25 @@ namespace BlackForestLabs
 {
     public partial class ModelsClient
     {
+
+
+        private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_FluxPro10FillFinetunedV1FluxPro10FillFinetunedPostSecurityRequirement0 =
+            new global::BlackForestLabs.EndPointSecurityRequirement
+            {
+                Authorizations = new global::BlackForestLabs.EndPointAuthorizationRequirement[]
+                {                    new global::BlackForestLabs.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::BlackForestLabs.EndPointSecurityRequirement[] s_FluxPro10FillFinetunedV1FluxPro10FillFinetunedPostSecurityRequirements =
+            new global::BlackForestLabs.EndPointSecurityRequirement[]
+            {                s_FluxPro10FillFinetunedV1FluxPro10FillFinetunedPostSecurityRequirement0,
+            };
         partial void PrepareFluxPro10FillFinetunedV1FluxPro10FillFinetunedPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::BlackForestLabs.FinetuneFluxProFillInputs request);
@@ -41,9 +60,15 @@ namespace BlackForestLabs
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::BlackForestLabs.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_FluxPro10FillFinetunedV1FluxPro10FillFinetunedPostSecurityRequirements,
+                operationName: "FluxPro10FillFinetunedV1FluxPro10FillFinetunedPostAsync");
+
             var __pathBuilder = new global::BlackForestLabs.PathBuilder(
                 path: "/v1/flux-pro-1.0-fill-finetuned",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -53,7 +78,7 @@ namespace BlackForestLabs
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

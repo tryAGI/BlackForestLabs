@@ -13,7 +13,7 @@ namespace BlackForestLabs
         /// <summary>
         /// BFL API
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.bfl.ai";
+        public const string DefaultBaseUrl = "https://api.bfl.ai/";
 
         private bool _disposeHttpClient = true;
 
