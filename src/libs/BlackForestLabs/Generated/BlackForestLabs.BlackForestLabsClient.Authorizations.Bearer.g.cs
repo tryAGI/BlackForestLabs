@@ -25,6 +25,7 @@ namespace BlackForestLabs
             Authorizations.Add(new global::BlackForestLabs.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,
