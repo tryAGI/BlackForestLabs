@@ -9,11 +9,13 @@ namespace BlackForestLabs
         /// Submits an image generation or editing task with FLUX.2 [Klein 9B]. Fast, lightweight model for image generation and editing.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::BlackForestLabs.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFlux2Klein9bV1Flux2Klein9bPostAsync(
 
             global::BlackForestLabs.Flux2KleinInputs request,
+            global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Generate or edit an image with FLUX.2 [Klein 9B] (fast editing)<br/>
@@ -64,6 +66,7 @@ namespace BlackForestLabs
         /// Remove the background from the generated image, returning a transparent RGBA PNG.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFlux2Klein9bV1Flux2Klein9bPostAsync(
@@ -80,6 +83,7 @@ namespace BlackForestLabs
             string? webhookUrl = default,
             string? webhookSecret = default,
             bool? transparentBg = default,
+            global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

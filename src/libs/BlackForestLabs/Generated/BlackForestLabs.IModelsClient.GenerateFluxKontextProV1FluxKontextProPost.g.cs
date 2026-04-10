@@ -9,11 +9,13 @@ namespace BlackForestLabs
         /// Submits an image creation task with FLUX.1 Kontext [pro]. For image editing, prefer FLUX.2 [PRO] (/flux-2-pro) or FLUX.2 [FLEX] (/flux-2-flex) which are the recommended default models for editing workflows.
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::BlackForestLabs.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxKontextProV1FluxKontextProPostAsync(
 
             global::BlackForestLabs.FluxKontextProInputs request,
+            global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create an image with FLUX.1 Kontext [pro] (legacy, use FLUX.2 [PRO] for editing)<br/>
@@ -61,6 +63,7 @@ namespace BlackForestLabs
         /// Default Value: 2<br/>
         /// Example: 2
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxKontextProV1FluxKontextProPostAsync(
@@ -76,6 +79,7 @@ namespace BlackForestLabs
             string? webhookSecret = default,
             bool? promptUpsampling = default,
             int? safetyTolerance = default,
+            global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
