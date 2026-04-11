@@ -6,6 +6,14 @@ namespace BlackForestLabs
     public partial class ModelsClient
     {
 
+        private static readonly global::BlackForestLabs.AutoSDKServer[] s_FillV1FluxPro10FillPostServers = new global::BlackForestLabs.AutoSDKServer[]
+        {            new global::BlackForestLabs.AutoSDKServer(
+                id: "https-api-bfl-ai",
+                name: "BFL API",
+                url: "https://api.bfl.ai/",
+                description: "BFL API"),
+        };
+
 
         private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_FillV1FluxPro10FillPostSecurityRequirement0 =
             new global::BlackForestLabs.EndPointSecurityRequirement
@@ -87,7 +95,9 @@ namespace BlackForestLabs
             {
                             var __pathBuilder = new global::BlackForestLabs.PathBuilder(
                                 path: "/v1/flux-pro-1.0-fill",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: ResolveBaseUri(
+                                servers: s_FillV1FluxPro10FillPostServers,
+                                defaultBaseUrl: "https://api.bfl.ai/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::BlackForestLabs.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,

@@ -6,6 +6,14 @@ namespace BlackForestLabs
     public partial class UtilityClient
     {
 
+        private static readonly global::BlackForestLabs.AutoSDKServer[] s_FinetuneDetailsV1FinetuneDetailsGetServers = new global::BlackForestLabs.AutoSDKServer[]
+        {            new global::BlackForestLabs.AutoSDKServer(
+                id: "https-api-us1-bfl-ai",
+                name: "BFL Finetune API",
+                url: "https://api.us1.bfl.ai/",
+                description: "BFL Finetune API"),
+        };
+
 
         private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_FinetuneDetailsV1FinetuneDetailsGetSecurityRequirement0 =
             new global::BlackForestLabs.EndPointSecurityRequirement
@@ -84,7 +92,9 @@ namespace BlackForestLabs
             {
                             var __pathBuilder = new global::BlackForestLabs.PathBuilder(
                                 path: "/v1/finetune_details",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_FinetuneDetailsV1FinetuneDetailsGetServers,
+                                defaultBaseUrl: "https://api.us1.bfl.ai/")); 
                             __pathBuilder
                                 .AddRequiredParameter("finetune_id", finetuneId) 
                                 ;
