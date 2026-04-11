@@ -11,9 +11,9 @@ namespace BlackForestLabs
     public sealed partial class UtilityClient : global::BlackForestLabs.IUtilityClient, global::System.IDisposable
     {
         /// <summary>
-        /// BFL API
+        /// BFL Finetune API
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.bfl.ai/";
+        public const string DefaultBaseUrl = "https://api.us1.bfl.ai/";
 
         private bool _disposeHttpClient = true;
 
@@ -21,7 +21,7 @@ namespace BlackForestLabs
         public global::System.Net.Http.HttpClient HttpClient { get; }
 
         /// <inheritdoc/>
-        public System.Uri? BaseUri => HttpClient.BaseAddress;
+        public System.Uri? BaseUri => ResolveDisplayedBaseUri();
 
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::BlackForestLabs.EndPointAuthorization> Authorizations { get; }
@@ -34,11 +34,42 @@ namespace BlackForestLabs
 
         /// <inheritdoc/>
         public global::BlackForestLabs.AutoSDKClientOptions Options { get; }
+
+
+        internal global::BlackForestLabs.AutoSDKServerConfiguration AutoSDKServerConfiguration { get; set; } = new global::BlackForestLabs.AutoSDKServerConfiguration();
         /// <summary>
         /// 
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::BlackForestLabs.SourceGenerationContext.Default;
 
+
+
+        private static readonly global::BlackForestLabs.AutoSDKServer[] s_availableServers = new global::BlackForestLabs.AutoSDKServer[]
+        {            new global::BlackForestLabs.AutoSDKServer(
+                id: "https-api-us1-bfl-ai",
+                name: "BFL Finetune API",
+                url: "https://api.us1.bfl.ai/",
+                description: "BFL Finetune API"),
+            new global::BlackForestLabs.AutoSDKServer(
+                id: "https-api-bfl-ai",
+                name: "BFL API",
+                url: "https://api.bfl.ai/",
+                description: "BFL API"),
+        };
+
+        /// <summary>
+        /// The server options available for this client.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::BlackForestLabs.AutoSDKServer> AvailableServers => s_availableServers;
+
+        /// <summary>
+        /// The currently selected server for this client, if any.
+        /// </summary>
+        public global::BlackForestLabs.AutoSDKServer? SelectedServer
+        {
+            get => ResolveSelectedServer();
+            set => SelectServer(value);
+        }
 
         /// <summary>
         /// Creates a new instance of the UtilityClient.
@@ -86,6 +117,8 @@ namespace BlackForestLabs
             Options = options ?? new global::BlackForestLabs.AutoSDKClientOptions();
             _disposeHttpClient = disposeHttpClient;
 
+            AutoSDKServerConfiguration.ExplicitBaseUri = baseUri ?? httpClient?.BaseAddress;
+
             Initialized(HttpClient);
         }
 
@@ -112,5 +145,117 @@ namespace BlackForestLabs
             global::System.Net.Http.HttpClient client,
             global::System.Net.Http.HttpResponseMessage response,
             ref string content);
+
+
+        /// <summary>
+        /// Selects one of the generated server options by id.
+        /// </summary>
+        public bool TrySelectServer(string serverId)
+        {
+            if (string.IsNullOrWhiteSpace(serverId))
+            {
+                return false;
+            }
+
+            foreach (var server in s_availableServers)
+            {
+                if (string.Equals(server.Id, serverId, global::System.StringComparison.OrdinalIgnoreCase))
+                {
+                    AutoSDKServerConfiguration.SelectedServer = server;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Clears the currently selected server.
+        /// </summary>
+        public void ClearSelectedServer()
+        {
+            AutoSDKServerConfiguration.SelectedServer = null;
+        }
+
+        private global::BlackForestLabs.AutoSDKServer? ResolveSelectedServer()
+        {
+            var selectedServer = AutoSDKServerConfiguration.SelectedServer;
+            if (selectedServer is null)
+            {
+                return null;
+            }
+
+            foreach (var server in s_availableServers)
+            {
+                if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                {
+                    return server;
+                }
+            }
+
+            return null;
+        }
+
+        private void SelectServer(global::BlackForestLabs.AutoSDKServer? server)
+        {
+            if (server is null)
+            {
+                AutoSDKServerConfiguration.SelectedServer = null;
+                return;
+            }
+
+            foreach (var candidate in s_availableServers)
+            {
+                if (string.Equals(candidate.Id, server.Id, global::System.StringComparison.Ordinal))
+                {
+                    AutoSDKServerConfiguration.SelectedServer = candidate;
+                    AutoSDKServerConfiguration.ExplicitBaseUri = null;
+                    return;
+                }
+            }
+
+            throw new global::System.ArgumentException("The provided server is not available for this client.", nameof(server));
+        }
+
+        private global::System.Uri? ResolveDisplayedBaseUri()
+        {
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {
+                return explicitBaseUri;
+            }
+
+            return ResolveSelectedServer()?.Uri ?? HttpClient.BaseAddress;
+        }
+
+        private global::System.Uri? ResolveBaseUri(
+            global::BlackForestLabs.AutoSDKServer[] servers,
+            string defaultBaseUrl)
+        {
+            if (AutoSDKServerConfiguration.ExplicitBaseUri is global::System.Uri explicitBaseUri)
+            {
+                return explicitBaseUri;
+            }
+
+            if (AutoSDKServerConfiguration.SelectedServer is global::BlackForestLabs.AutoSDKServer selectedServer)
+            {
+                foreach (var server in servers)
+                {
+                    if (string.Equals(server.Id, selectedServer.Id, global::System.StringComparison.Ordinal))
+                    {
+                        return server.Uri;
+                    }
+                }
+            }
+
+            if (servers.Length > 0)
+            {
+                return servers[0].Uri;
+            }
+
+            return string.IsNullOrWhiteSpace(defaultBaseUrl)
+                ? HttpClient.BaseAddress
+                : new global::System.Uri(defaultBaseUrl, global::System.UriKind.RelativeOrAbsolute);
+        }
     }
 }

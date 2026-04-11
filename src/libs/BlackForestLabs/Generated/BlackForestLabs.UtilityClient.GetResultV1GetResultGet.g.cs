@@ -6,6 +6,14 @@ namespace BlackForestLabs
     public partial class UtilityClient
     {
 
+        private static readonly global::BlackForestLabs.AutoSDKServer[] s_GetResultV1GetResultGetServers = new global::BlackForestLabs.AutoSDKServer[]
+        {            new global::BlackForestLabs.AutoSDKServer(
+                id: "https-api-bfl-ai",
+                name: "BFL API",
+                url: "https://api.bfl.ai/",
+                description: "BFL API"),
+        };
+
 
         private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_GetResultV1GetResultGetSecurityRequirement0 =
             new global::BlackForestLabs.EndPointSecurityRequirement
@@ -84,7 +92,9 @@ namespace BlackForestLabs
             {
                             var __pathBuilder = new global::BlackForestLabs.PathBuilder(
                                 path: "/v1/get_result",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: ResolveBaseUri(
+                                servers: s_GetResultV1GetResultGetServers,
+                                defaultBaseUrl: "https://api.bfl.ai/")); 
                             __pathBuilder
                                 .AddRequiredParameter("id", id) 
                                 ;
