@@ -62,10 +62,6 @@ namespace BlackForestLabs
         /// <param name="webhookSecret">
         /// Optional secret for webhook signature verification
         /// </param>
-        /// <param name="transparentBg">
-        /// Remove the background from the generated image, returning a transparent RGBA PNG.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -82,7 +78,6 @@ namespace BlackForestLabs
             global::BlackForestLabs.OutputFormat? outputFormat = default,
             string? webhookUrl = default,
             string? webhookSecret = default,
-            bool? transparentBg = default,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

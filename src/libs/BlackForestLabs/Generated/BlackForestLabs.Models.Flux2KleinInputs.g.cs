@@ -89,13 +89,6 @@ namespace BlackForestLabs
         public string? WebhookSecret { get; set; }
 
         /// <summary>
-        /// Remove the background from the generated image, returning a transparent RGBA PNG.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("transparent_bg")]
-        public bool? TransparentBg { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -145,10 +138,6 @@ namespace BlackForestLabs
         /// <param name="webhookSecret">
         /// Optional secret for webhook signature verification
         /// </param>
-        /// <param name="transparentBg">
-        /// Remove the background from the generated image, returning a transparent RGBA PNG.<br/>
-        /// Default Value: false
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -164,8 +153,7 @@ namespace BlackForestLabs
             int? safetyTolerance,
             global::BlackForestLabs.OutputFormat? outputFormat,
             string? webhookUrl,
-            string? webhookSecret,
-            bool? transparentBg)
+            string? webhookSecret)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.InputImage = inputImage;
@@ -179,7 +167,6 @@ namespace BlackForestLabs
             this.OutputFormat = outputFormat;
             this.WebhookUrl = webhookUrl;
             this.WebhookSecret = webhookSecret;
-            this.TransparentBg = transparentBg;
         }
 
         /// <summary>
