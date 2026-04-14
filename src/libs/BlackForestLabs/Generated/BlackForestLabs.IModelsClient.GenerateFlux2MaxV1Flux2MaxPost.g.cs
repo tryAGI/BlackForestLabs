@@ -25,10 +25,6 @@ namespace BlackForestLabs
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
         /// </param>
-        /// <param name="disablePup">
-        /// Disable prompt upsampling for this request.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="inputImage">
         /// Path to the input image.
         /// </param>
@@ -78,16 +74,11 @@ namespace BlackForestLabs
         /// <param name="webhookSecret">
         /// Optional secret for webhook signature verification
         /// </param>
-        /// <param name="transparentBg">
-        /// Remove the background from the generated image, returning a transparent RGBA PNG.<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFlux2MaxV1Flux2MaxPostAsync(
             string prompt,
-            bool? disablePup = default,
             string? inputImage = default,
             string? inputImage2 = default,
             string? inputImage3 = default,
@@ -103,7 +94,6 @@ namespace BlackForestLabs
             global::BlackForestLabs.OutputFormat? outputFormat = default,
             string? webhookUrl = default,
             string? webhookSecret = default,
-            bool? transparentBg = default,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

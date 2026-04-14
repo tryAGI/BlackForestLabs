@@ -18,13 +18,6 @@ namespace BlackForestLabs
         public required string Prompt { get; set; }
 
         /// <summary>
-        /// Disable prompt upsampling for this request.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("disable_pup")]
-        public bool? DisablePup { get; set; }
-
-        /// <summary>
         /// Path to the input image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_image")]
@@ -120,13 +113,6 @@ namespace BlackForestLabs
         public string? WebhookSecret { get; set; }
 
         /// <summary>
-        /// Remove the background from the generated image, returning a transparent RGBA PNG.<br/>
-        /// Default Value: false
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("transparent_bg")]
-        public bool? TransparentBg { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -138,10 +124,6 @@ namespace BlackForestLabs
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
-        /// </param>
-        /// <param name="disablePup">
-        /// Disable prompt upsampling for this request.<br/>
-        /// Default Value: false
         /// </param>
         /// <param name="inputImage">
         /// Path to the input image.
@@ -192,16 +174,11 @@ namespace BlackForestLabs
         /// <param name="webhookSecret">
         /// Optional secret for webhook signature verification
         /// </param>
-        /// <param name="transparentBg">
-        /// Remove the background from the generated image, returning a transparent RGBA PNG.<br/>
-        /// Default Value: false
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Flux2Inputs(
             string prompt,
-            bool? disablePup,
             string? inputImage,
             string? inputImage2,
             string? inputImage3,
@@ -216,11 +193,9 @@ namespace BlackForestLabs
             int? safetyTolerance,
             global::BlackForestLabs.OutputFormat? outputFormat,
             string? webhookUrl,
-            string? webhookSecret,
-            bool? transparentBg)
+            string? webhookSecret)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
-            this.DisablePup = disablePup;
             this.InputImage = inputImage;
             this.InputImage2 = inputImage2;
             this.InputImage3 = inputImage3;
@@ -236,7 +211,6 @@ namespace BlackForestLabs
             this.OutputFormat = outputFormat;
             this.WebhookUrl = webhookUrl;
             this.WebhookSecret = webhookSecret;
-            this.TransparentBg = transparentBg;
         }
 
         /// <summary>
