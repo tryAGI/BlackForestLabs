@@ -55,8 +55,6 @@ namespace BlackForestLabs
 
             typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>),
 
-            typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>),
-
             typeof(global::BlackForestLabs.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.JsonSerializerContextTypes))]
@@ -88,7 +86,6 @@ namespace BlackForestLabs
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.ValidationError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.MyFinetunesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.OutpaintingInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.ResultResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.StatusResponse), TypeInfoPropertyName = "StatusResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<string, int?>>))]
