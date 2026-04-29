@@ -138,7 +138,7 @@ namespace BlackForestLabs
                 PrepareFinetuneDetailsV1FinetuneDetailsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    finetuneId: finetuneId);
+                    finetuneId: finetuneId!);
 
                 return __httpRequest;
             }
