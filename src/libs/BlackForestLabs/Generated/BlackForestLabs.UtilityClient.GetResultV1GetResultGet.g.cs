@@ -138,7 +138,7 @@ namespace BlackForestLabs
                 PrepareGetResultV1GetResultGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id);
+                    id: id!);
 
                 return __httpRequest;
             }
