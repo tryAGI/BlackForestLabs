@@ -46,7 +46,7 @@ namespace BlackForestLabs
         /// <summary>
         /// Generation task endpoints. These endpoints allow you to submit generation tasks.
         /// </summary>
-        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ModelsClient Models => new ModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -56,7 +56,7 @@ namespace BlackForestLabs
         /// <summary>
         /// These utility endpoints allow you to check the results of submitted tasks and to manage your finetunes.
         /// </summary>
-        public UtilityClient Utility => new UtilityClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UtilityClient Utility => new UtilityClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -124,10 +124,10 @@ namespace BlackForestLabs
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public BlackForestLabsClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::BlackForestLabs.EndPointAuthorization>? authorizations = null,
-            global::BlackForestLabs.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::BlackForestLabs.EndPointAuthorization>? authorizations,
+            global::BlackForestLabs.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
