@@ -21,6 +21,19 @@ namespace BlackForestLabs
         /// Generate or edit an image with FLUX.2 [Klein 9B KV] (fast editing with caching)<br/>
         /// Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching for improved performance.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::BlackForestLabs.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>>> GenerateFlux2Klein9bKvV1Flux2Klein9bPreviewPostAsResponseAsync(
+
+            global::BlackForestLabs.Flux2KleinInputs request,
+            global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate or edit an image with FLUX.2 [Klein 9B KV] (fast editing with caching)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching for improved performance.
+        /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild

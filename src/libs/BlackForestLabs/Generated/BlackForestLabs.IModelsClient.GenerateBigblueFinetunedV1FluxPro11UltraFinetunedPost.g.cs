@@ -21,6 +21,19 @@ namespace BlackForestLabs
         /// Generate an image with FLUX 1.1 [pro] finetune with ultra mode.<br/>
         /// Submits an image generation task with FLUX 1.1 [pro] finetune with ultra mode.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::BlackForestLabs.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>>> GenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostAsResponseAsync(
+
+            global::BlackForestLabs.FinetuneFluxUltraInput request,
+            global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate an image with FLUX 1.1 [pro] finetune with ultra mode.<br/>
+        /// Submits an image generation task with FLUX 1.1 [pro] finetune with ultra mode.
+        /// </summary>
         /// <param name="finetuneId">
         /// Name of the LoRA to use. For LoRAs from other organizations (public or shared), use the format 'org-id/lora-name'.<br/>
         /// Example: my-finetune
