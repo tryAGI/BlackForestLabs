@@ -159,5 +159,6 @@ namespace BlackForestLabs
         public FluxPro11Inputs()
         {
         }
+
     }
 }

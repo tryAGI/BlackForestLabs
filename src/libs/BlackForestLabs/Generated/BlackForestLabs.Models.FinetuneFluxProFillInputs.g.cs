@@ -199,5 +199,6 @@ namespace BlackForestLabs
         public FinetuneFluxProFillInputs()
         {
         }
+
     }
 }

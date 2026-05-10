@@ -212,5 +212,6 @@ namespace BlackForestLabs
         public FluxProExpandInputs()
         {
         }
+
     }
 }

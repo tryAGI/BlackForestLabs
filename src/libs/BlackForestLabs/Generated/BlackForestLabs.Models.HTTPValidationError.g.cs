@@ -39,5 +39,6 @@ namespace BlackForestLabs
         public HTTPValidationError()
         {
         }
+
     }
 }
