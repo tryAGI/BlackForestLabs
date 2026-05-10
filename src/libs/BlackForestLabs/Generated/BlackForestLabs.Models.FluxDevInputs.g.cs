@@ -191,5 +191,6 @@ namespace BlackForestLabs
         public FluxDevInputs()
         {
         }
+
     }
 }

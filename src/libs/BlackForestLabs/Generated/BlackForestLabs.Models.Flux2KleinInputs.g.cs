@@ -175,5 +175,6 @@ namespace BlackForestLabs
         public Flux2KleinInputs()
         {
         }
+
     }
 }
