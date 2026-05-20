@@ -171,5 +171,6 @@ namespace BlackForestLabs
         public FluxProFillInputs()
         {
         }
+
     }
 }

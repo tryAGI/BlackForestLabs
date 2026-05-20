@@ -21,6 +21,19 @@ namespace BlackForestLabs
         /// Generate or edit an image with FLUX.2 [FLEX] (recommended for editing)<br/>
         /// Submits an image generation or editing task with FLUX.2 [FLEX]. This is a recommended model for image editing and generation. Supports flexible text-to-image and image-to-image editing workflows.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::BlackForestLabs.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>>> GenerateFlux2FlexV1Flux2FlexPostAsResponseAsync(
+
+            global::BlackForestLabs.Flux2FlexInputs request,
+            global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate or edit an image with FLUX.2 [FLEX] (recommended for editing)<br/>
+        /// Submits an image generation or editing task with FLUX.2 [FLEX]. This is a recommended model for image editing and generation. Supports flexible text-to-image and image-to-image editing workflows.
+        /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild

@@ -219,5 +219,6 @@ namespace BlackForestLabs
         public Flux2Inputs()
         {
         }
+
     }
 }

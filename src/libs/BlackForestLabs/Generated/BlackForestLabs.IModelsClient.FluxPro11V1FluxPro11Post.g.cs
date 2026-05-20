@@ -21,6 +21,19 @@ namespace BlackForestLabs
         /// Generate an image with FLUX 1.1 [pro].<br/>
         /// Submits an image generation task with FLUX 1.1 [pro].
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::BlackForestLabs.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>>> FluxPro11V1FluxPro11PostAsResponseAsync(
+
+            global::BlackForestLabs.FluxPro11Inputs request,
+            global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Generate an image with FLUX 1.1 [pro].<br/>
+        /// Submits an image generation task with FLUX 1.1 [pro].
+        /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild

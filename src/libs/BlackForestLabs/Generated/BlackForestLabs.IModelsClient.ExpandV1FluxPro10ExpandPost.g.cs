@@ -21,6 +21,19 @@ namespace BlackForestLabs
         /// Expand an image by adding pixels on any side.<br/>
         /// Submits an image expansion task that adds the specified number of pixels to any combination of sides (top, bottom, left, right) while maintaining context.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::BlackForestLabs.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>>> ExpandV1FluxPro10ExpandPostAsResponseAsync(
+
+            global::BlackForestLabs.FluxProExpandInputs request,
+            global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Expand an image by adding pixels on any side.<br/>
+        /// Submits an image expansion task that adds the specified number of pixels to any combination of sides (top, bottom, left, right) while maintaining context.
+        /// </summary>
         /// <param name="image">
         /// A Base64-encoded string representing the image you wish to expand.
         /// </param>

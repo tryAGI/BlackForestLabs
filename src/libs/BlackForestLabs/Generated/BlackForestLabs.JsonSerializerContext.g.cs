@@ -55,6 +55,8 @@ namespace BlackForestLabs
 
             typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>),
 
+            typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>),
+
             typeof(global::BlackForestLabs.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.JsonSerializerContextTypes))]
@@ -77,6 +79,7 @@ namespace BlackForestLabs
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux2KleinInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxDevInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxKontextProInputs))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxOutpaintingInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxPro11Inputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxProExpandInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxProFillInputs))]

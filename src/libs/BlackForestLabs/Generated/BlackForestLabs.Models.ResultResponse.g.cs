@@ -89,5 +89,6 @@ namespace BlackForestLabs
         public ResultResponse()
         {
         }
+
     }
 }

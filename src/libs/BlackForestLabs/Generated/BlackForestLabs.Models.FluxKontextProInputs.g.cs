@@ -178,5 +178,6 @@ namespace BlackForestLabs
         public FluxKontextProInputs()
         {
         }
+
     }
 }
