@@ -4,13 +4,7 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// Public contract for ``/v1/flux-tools/outpainting-v1``.<br/>
-    /// ``reference_offset_x`` / ``reference_offset_y`` set the top-left corner<br/>
-    /// of the reference image on the output canvas in pixels (may be<br/>
-    /// negative). When both are ``None`` the image is centered.<br/>
-    /// The block-caching residual-diff threshold is hard-pinned to the<br/>
-    /// highest-quality value; effort/mode tuning is intentionally not exposed<br/>
-    /// on the public route.
+    /// Public contract for ``/v1/flux-tools/outpainting-v1``.
     /// </summary>
     public sealed partial class FluxOutpaintingInputs
     {
