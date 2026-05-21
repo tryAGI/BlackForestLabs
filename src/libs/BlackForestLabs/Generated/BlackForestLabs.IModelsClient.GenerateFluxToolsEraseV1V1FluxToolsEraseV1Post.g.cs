@@ -41,7 +41,7 @@ namespace BlackForestLabs
         /// Base64-encoded black/white mask. White pixels indicate the object to remove; black pixels are preserved. Must have the same dimensions as the input image.
         /// </param>
         /// <param name="dilatePixels">
-        /// Number of pixels to dilate the mask by before removal. Dilation helps cover object edges.<br/>
+        /// Number of pixels to dilate the mask by before removal. Dilation helps cover object edges. Maximum is 25 pixels.<br/>
         /// Default Value: 10
         /// </param>
         /// <param name="seed">
