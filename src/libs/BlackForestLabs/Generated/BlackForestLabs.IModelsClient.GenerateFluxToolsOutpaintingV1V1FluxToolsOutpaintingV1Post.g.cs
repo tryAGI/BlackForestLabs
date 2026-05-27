@@ -47,6 +47,10 @@ namespace BlackForestLabs
         /// If True, crop the input image to the canvas bounds when it extends beyond the edges. If False, an error is raised instead.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="safetyTolerance">
+        /// Tolerance level for input and output moderation. Between 0 and 5, 0 being most strict, 5 being least strict. If you wish to increase the safety_tolerance beyond these levels please reach out to the team.<br/>
+        /// Default Value: 2
+        /// </param>
         /// <param name="outputFormat">
         /// Default Value: png
         /// </param>
@@ -67,6 +71,7 @@ namespace BlackForestLabs
             int width,
             int height,
             bool? autoCrop = default,
+            int? safetyTolerance = default,
             global::BlackForestLabs.OutputFormat? outputFormat = default,
             string? prompt = default,
             int? referenceOffsetX = default,
