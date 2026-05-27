@@ -37,6 +37,13 @@ namespace BlackForestLabs
         public bool? AutoCrop { get; set; }
 
         /// <summary>
+        /// Tolerance level for input and output moderation. Between 0 and 5, 0 being most strict, 5 being least strict. If you wish to increase the safety_tolerance beyond these levels please reach out to the team.<br/>
+        /// Default Value: 2
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_tolerance")]
+        public int? SafetyTolerance { get; set; }
+
+        /// <summary>
         /// Default Value: png
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
@@ -82,6 +89,10 @@ namespace BlackForestLabs
         /// If True, crop the input image to the canvas bounds when it extends beyond the edges. If False, an error is raised instead.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="safetyTolerance">
+        /// Tolerance level for input and output moderation. Between 0 and 5, 0 being most strict, 5 being least strict. If you wish to increase the safety_tolerance beyond these levels please reach out to the team.<br/>
+        /// Default Value: 2
+        /// </param>
         /// <param name="outputFormat">
         /// Default Value: png
         /// </param>
@@ -102,6 +113,7 @@ namespace BlackForestLabs
             int width,
             int height,
             bool? autoCrop,
+            int? safetyTolerance,
             global::BlackForestLabs.OutputFormat? outputFormat,
             string? prompt,
             int? referenceOffsetX,
@@ -111,6 +123,7 @@ namespace BlackForestLabs
             this.Width = width;
             this.Height = height;
             this.AutoCrop = autoCrop;
+            this.SafetyTolerance = safetyTolerance;
             this.OutputFormat = outputFormat;
             this.Prompt = prompt;
             this.ReferenceOffsetX = referenceOffsetX;
