@@ -4,30 +4,33 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// Input model for public FLUX.2 erase.
+    /// Input model for FLUX.2 Klein VTO endpoint.<br/>
+    /// Exposes only person/garment image fields for cleaner API ergonomics.
     /// </summary>
-    public sealed partial class Flux2EraseInputs
+    public sealed partial class Flux2KleinTryonInputs
     {
         /// <summary>
-        /// Base64-encoded input image or HTTP(S) image URL.
+        /// Text prompt for VTO generation.<br/>
+        /// Example: TRY-ON: The person of image 1 wearing the garments of image 2.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        /// <example>TRY-ON: The person of image 1 wearing the garments of image 2.</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Image { get; set; }
+        public required string Prompt { get; set; }
 
         /// <summary>
-        /// Base64-encoded black/white mask or HTTP(S) image URL. White pixels indicate the object to remove; black pixels are preserved. Must have the same dimensions as the input image.
+        /// Person image (maps internally to input_image).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("mask")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("person")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Mask { get; set; }
+        public required string Person { get; set; }
 
         /// <summary>
-        /// Number of pixels to dilate the mask by before removal. Dilation helps cover object edges. Maximum is 25 pixels.<br/>
-        /// Default Value: 10
+        /// Image of one more garments (maps internally to input_image_2).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("dilate_pixels")]
-        public int? DilatePixels { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("garment")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Garment { get; set; }
 
         /// <summary>
         /// Optional seed for reproducibility.<br/>
@@ -38,16 +41,14 @@ namespace BlackForestLabs
         public int? Seed { get; set; }
 
         /// <summary>
-        /// Tolerance level for input and output moderation. Between 0 and 5, 0 being most strict, 5 being least strict.<br/>
-        /// Default Value: 2<br/>
-        /// Example: 2
+        /// Tolerance level for input and output moderation. Between 0 and 5 for public use.<br/>
+        /// Default Value: 2
         /// </summary>
-        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("safety_tolerance")]
         public int? SafetyTolerance { get; set; }
 
         /// <summary>
-        /// Default Value: png
+        /// Default Value: jpeg
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
         public global::BlackForestLabs.OutputFormat? OutputFormat { get; set; }
@@ -71,29 +72,28 @@ namespace BlackForestLabs
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Flux2EraseInputs" /> class.
+        /// Initializes a new instance of the <see cref="Flux2KleinTryonInputs" /> class.
         /// </summary>
-        /// <param name="image">
-        /// Base64-encoded input image or HTTP(S) image URL.
+        /// <param name="prompt">
+        /// Text prompt for VTO generation.<br/>
+        /// Example: TRY-ON: The person of image 1 wearing the garments of image 2.
         /// </param>
-        /// <param name="mask">
-        /// Base64-encoded black/white mask or HTTP(S) image URL. White pixels indicate the object to remove; black pixels are preserved. Must have the same dimensions as the input image.
+        /// <param name="person">
+        /// Person image (maps internally to input_image).
         /// </param>
-        /// <param name="dilatePixels">
-        /// Number of pixels to dilate the mask by before removal. Dilation helps cover object edges. Maximum is 25 pixels.<br/>
-        /// Default Value: 10
+        /// <param name="garment">
+        /// Image of one more garments (maps internally to input_image_2).
         /// </param>
         /// <param name="seed">
         /// Optional seed for reproducibility.<br/>
         /// Example: 42
         /// </param>
         /// <param name="safetyTolerance">
-        /// Tolerance level for input and output moderation. Between 0 and 5, 0 being most strict, 5 being least strict.<br/>
-        /// Default Value: 2<br/>
-        /// Example: 2
+        /// Tolerance level for input and output moderation. Between 0 and 5 for public use.<br/>
+        /// Default Value: 2
         /// </param>
         /// <param name="outputFormat">
-        /// Default Value: png
+        /// Default Value: jpeg
         /// </param>
         /// <param name="webhookUrl">
         /// URL to receive webhook notifications
@@ -104,19 +104,19 @@ namespace BlackForestLabs
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public Flux2EraseInputs(
-            string image,
-            string mask,
-            int? dilatePixels,
+        public Flux2KleinTryonInputs(
+            string prompt,
+            string person,
+            string garment,
             int? seed,
             int? safetyTolerance,
             global::BlackForestLabs.OutputFormat? outputFormat,
             string? webhookUrl,
             string? webhookSecret)
         {
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
-            this.Mask = mask ?? throw new global::System.ArgumentNullException(nameof(mask));
-            this.DilatePixels = dilatePixels;
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Person = person ?? throw new global::System.ArgumentNullException(nameof(person));
+            this.Garment = garment ?? throw new global::System.ArgumentNullException(nameof(garment));
             this.Seed = seed;
             this.SafetyTolerance = safetyTolerance;
             this.OutputFormat = outputFormat;
@@ -125,9 +125,9 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Flux2EraseInputs" /> class.
+        /// Initializes a new instance of the <see cref="Flux2KleinTryonInputs" /> class.
         /// </summary>
-        public Flux2EraseInputs()
+        public Flux2KleinTryonInputs()
         {
         }
 

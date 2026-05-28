@@ -6,7 +6,7 @@ namespace BlackForestLabs
     public partial class ModelsClient
     {
 
-        private static readonly global::BlackForestLabs.AutoSDKServer[] s_GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostServers = new global::BlackForestLabs.AutoSDKServer[]
+        private static readonly global::BlackForestLabs.AutoSDKServer[] s_GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostServers = new global::BlackForestLabs.AutoSDKServer[]
         {            new global::BlackForestLabs.AutoSDKServer(
                 id: "https-api-bfl-ai",
                 name: "BFL API",
@@ -15,7 +15,7 @@ namespace BlackForestLabs
         };
 
 
-        private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostSecurityRequirement0 =
+        private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostSecurityRequirement0 =
             new global::BlackForestLabs.EndPointSecurityRequirement
             {
                 Authorizations = new global::BlackForestLabs.EndPointAuthorizationRequirement[]
@@ -29,41 +29,41 @@ namespace BlackForestLabs
                     },
                 },
             };
-        private static readonly global::BlackForestLabs.EndPointSecurityRequirement[] s_GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostSecurityRequirements =
+        private static readonly global::BlackForestLabs.EndPointSecurityRequirement[] s_GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostSecurityRequirements =
             new global::BlackForestLabs.EndPointSecurityRequirement[]
-            {                s_GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostSecurityRequirement0,
+            {                s_GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostSecurityRequirement0,
             };
-        partial void PrepareGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostArguments(
+        partial void PrepareGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::BlackForestLabs.Flux2EraseInputs request);
-        partial void PrepareGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostRequest(
+            global::BlackForestLabs.Flux2KleinTryonInputs request);
+        partial void PrepareGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::BlackForestLabs.Flux2EraseInputs request);
-        partial void ProcessGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostResponse(
+            global::BlackForestLabs.Flux2KleinTryonInputs request);
+        partial void ProcessGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostResponseContent(
+        partial void ProcessGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Erase an object from an image<br/>
-        /// Submits an erase task using an input image and a mask identifying the object or region to remove.
+        /// Virtual try-on<br/>
+        /// Submits a virtual try-on task. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::BlackForestLabs.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync(
+        public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync(
 
-            global::BlackForestLabs.Flux2EraseInputs request,
+            global::BlackForestLabs.Flux2KleinTryonInputs request,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsResponseAsync(
+            var __response = await GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsResponseAsync(
 
                 request: request,
                 requestOptions: requestOptions,
@@ -73,16 +73,16 @@ namespace BlackForestLabs
             return __response.Body;
         }
         /// <summary>
-        /// Erase an object from an image<br/>
-        /// Submits an erase task using an input image and a mask identifying the object or region to remove.
+        /// Virtual try-on<br/>
+        /// Submits a virtual try-on task. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::BlackForestLabs.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>>> GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>>> GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsResponseAsync(
 
-            global::BlackForestLabs.Flux2EraseInputs request,
+            global::BlackForestLabs.Flux2KleinTryonInputs request,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -90,15 +90,15 @@ namespace BlackForestLabs
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostArguments(
+            PrepareGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostArguments(
                 httpClient: HttpClient,
                 request: request);
 
 
             var __authorizations = global::BlackForestLabs.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostSecurityRequirements,
-                operationName: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync");
+                securityRequirements: s_GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostSecurityRequirements,
+                operationName: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync");
 
             using var __timeoutCancellationTokenSource = global::BlackForestLabs.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -118,9 +118,9 @@ namespace BlackForestLabs
             {
 
                             var __pathBuilder = new global::BlackForestLabs.PathBuilder(
-                                path: "/v1/flux-tools/erase-v1",
+                                path: "/v1/flux-tools/vto-v1",
                                 baseUri: ResolveBaseUri(
-                                servers: s_GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostServers,
+                                servers: s_GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostServers,
                                 defaultBaseUrl: "https://api.bfl.ai/"));
                             var __path = __pathBuilder.ToString();
                 __path = global::BlackForestLabs.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -165,7 +165,7 @@ namespace BlackForestLabs
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostRequest(
+                PrepareGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
@@ -185,9 +185,9 @@ namespace BlackForestLabs
                     await global::BlackForestLabs.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::BlackForestLabs.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1Post",
-                                methodName: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync",
-                                pathTemplate: "\"/v1/flux-tools/erase-v1\"",
+                                operationId: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1Post",
+                                methodName: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync",
+                                pathTemplate: "\"/v1/flux-tools/vto-v1\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -219,9 +219,9 @@ namespace BlackForestLabs
                         await global::BlackForestLabs.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::BlackForestLabs.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1Post",
-                                methodName: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync",
-                                pathTemplate: "\"/v1/flux-tools/erase-v1\"",
+                                operationId: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1Post",
+                                methodName: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync",
+                                pathTemplate: "\"/v1/flux-tools/vto-v1\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -260,9 +260,9 @@ namespace BlackForestLabs
                         await global::BlackForestLabs.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::BlackForestLabs.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1Post",
-                                methodName: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync",
-                                pathTemplate: "\"/v1/flux-tools/erase-v1\"",
+                                operationId: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1Post",
+                                methodName: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync",
+                                pathTemplate: "\"/v1/flux-tools/vto-v1\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -300,7 +300,7 @@ namespace BlackForestLabs
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostResponse(
+                ProcessGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -308,9 +308,9 @@ namespace BlackForestLabs
                     await global::BlackForestLabs.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::BlackForestLabs.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1Post",
-                                methodName: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync",
-                                pathTemplate: "\"/v1/flux-tools/erase-v1\"",
+                                operationId: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1Post",
+                                methodName: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync",
+                                pathTemplate: "\"/v1/flux-tools/vto-v1\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -330,9 +330,9 @@ namespace BlackForestLabs
                     await global::BlackForestLabs.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::BlackForestLabs.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1Post",
-                                methodName: "GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync",
-                                pathTemplate: "\"/v1/flux-tools/erase-v1\"",
+                                operationId: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1Post",
+                                methodName: "GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync",
+                                pathTemplate: "\"/v1/flux-tools/vto-v1\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -397,7 +397,7 @@ namespace BlackForestLabs
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostResponseContent(
+                                ProcessGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -481,30 +481,29 @@ namespace BlackForestLabs
             }
         }
         /// <summary>
-        /// Erase an object from an image<br/>
-        /// Submits an erase task using an input image and a mask identifying the object or region to remove.
+        /// Virtual try-on<br/>
+        /// Submits a virtual try-on task. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.
         /// </summary>
-        /// <param name="image">
-        /// Base64-encoded input image or HTTP(S) image URL.
+        /// <param name="prompt">
+        /// Text prompt for VTO generation.<br/>
+        /// Example: TRY-ON: The person of image 1 wearing the garments of image 2.
         /// </param>
-        /// <param name="mask">
-        /// Base64-encoded black/white mask or HTTP(S) image URL. White pixels indicate the object to remove; black pixels are preserved. Must have the same dimensions as the input image.
+        /// <param name="person">
+        /// Person image (maps internally to input_image).
         /// </param>
-        /// <param name="dilatePixels">
-        /// Number of pixels to dilate the mask by before removal. Dilation helps cover object edges. Maximum is 25 pixels.<br/>
-        /// Default Value: 10
+        /// <param name="garment">
+        /// Image of one more garments (maps internally to input_image_2).
         /// </param>
         /// <param name="seed">
         /// Optional seed for reproducibility.<br/>
         /// Example: 42
         /// </param>
         /// <param name="safetyTolerance">
-        /// Tolerance level for input and output moderation. Between 0 and 5, 0 being most strict, 5 being least strict.<br/>
-        /// Default Value: 2<br/>
-        /// Example: 2
+        /// Tolerance level for input and output moderation. Between 0 and 5 for public use.<br/>
+        /// Default Value: 2
         /// </param>
         /// <param name="outputFormat">
-        /// Default Value: png
+        /// Default Value: jpeg
         /// </param>
         /// <param name="webhookUrl">
         /// URL to receive webhook notifications
@@ -515,10 +514,10 @@ namespace BlackForestLabs
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync(
-            string image,
-            string mask,
-            int? dilatePixels = default,
+        public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync(
+            string prompt,
+            string person,
+            string garment,
             int? seed = default,
             int? safetyTolerance = default,
             global::BlackForestLabs.OutputFormat? outputFormat = default,
@@ -527,11 +526,11 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::BlackForestLabs.Flux2EraseInputs
+            var __request = new global::BlackForestLabs.Flux2KleinTryonInputs
             {
-                Image = image,
-                Mask = mask,
-                DilatePixels = dilatePixels,
+                Prompt = prompt,
+                Person = person,
+                Garment = garment,
                 Seed = seed,
                 SafetyTolerance = safetyTolerance,
                 OutputFormat = outputFormat,
@@ -539,7 +538,7 @@ namespace BlackForestLabs
                 WebhookSecret = webhookSecret,
             };
 
-            return await GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync(
+            return await GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync(
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

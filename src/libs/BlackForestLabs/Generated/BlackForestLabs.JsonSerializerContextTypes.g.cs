@@ -100,71 +100,75 @@ namespace BlackForestLabs
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.FluxDevInputs? Type18 { get; set; }
+        public global::BlackForestLabs.Flux2KleinTryonInputs? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.FluxKontextProInputs? Type19 { get; set; }
+        public global::BlackForestLabs.FluxDevInputs? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.FluxOutpaintingInputs? Type20 { get; set; }
+        public global::BlackForestLabs.FluxKontextProInputs? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.FluxPro11Inputs? Type21 { get; set; }
+        public global::BlackForestLabs.FluxOutpaintingInputs? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.FluxProExpandInputs? Type22 { get; set; }
+        public global::BlackForestLabs.FluxPro11Inputs? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.FluxProFillInputs? Type23 { get; set; }
+        public global::BlackForestLabs.FluxProExpandInputs? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.FluxUltraInput? Type24 { get; set; }
+        public global::BlackForestLabs.FluxProFillInputs? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.HTTPValidationError? Type25 { get; set; }
+        public global::BlackForestLabs.FluxUltraInput? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::BlackForestLabs.ValidationError>? Type26 { get; set; }
+        public global::BlackForestLabs.HTTPValidationError? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.ValidationError? Type27 { get; set; }
+        public global::System.Collections.Generic.IList<global::BlackForestLabs.ValidationError>? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.MyFinetunesResponse? Type28 { get; set; }
+        public global::BlackForestLabs.ValidationError? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type29 { get; set; }
+        public global::BlackForestLabs.MyFinetunesResponse? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.ResultResponse? Type30 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.StatusResponse? Type31 { get; set; }
+        public global::BlackForestLabs.ResultResponse? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<string, int?>>? Type32 { get; set; }
+        public global::BlackForestLabs.StatusResponse? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.AnyOf<string, int?>? Type33 { get; set; }
+        public global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<string, int?>>? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>? Type34 { get; set; }
+        public global::BlackForestLabs.AnyOf<string, int?>? Type34 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>? Type35 { get; set; }
 
         /// <summary>
         /// 
