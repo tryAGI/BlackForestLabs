@@ -9,7 +9,7 @@ namespace BlackForestLabs
     public sealed partial class FluxOutpaintingInputs
     {
         /// <summary>
-        /// Base64-encoded input (reference) image.
+        /// Base64-encoded input (reference) image or HTTP(S) image URL.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_image")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -77,7 +77,7 @@ namespace BlackForestLabs
         /// Initializes a new instance of the <see cref="FluxOutpaintingInputs" /> class.
         /// </summary>
         /// <param name="inputImage">
-        /// Base64-encoded input (reference) image.
+        /// Base64-encoded input (reference) image or HTTP(S) image URL.
         /// </param>
         /// <param name="width">
         /// Target output width.

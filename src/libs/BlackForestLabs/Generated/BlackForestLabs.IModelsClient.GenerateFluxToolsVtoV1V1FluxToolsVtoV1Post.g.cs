@@ -5,56 +5,55 @@ namespace BlackForestLabs
     public partial interface IModelsClient
     {
         /// <summary>
-        /// Erase an object from an image<br/>
-        /// Submits an erase task using an input image and a mask identifying the object or region to remove.
+        /// Virtual try-on<br/>
+        /// Submits a virtual try-on task. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::BlackForestLabs.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync(
+        global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync(
 
-            global::BlackForestLabs.Flux2EraseInputs request,
+            global::BlackForestLabs.Flux2KleinTryonInputs request,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Erase an object from an image<br/>
-        /// Submits an erase task using an input image and a mask identifying the object or region to remove.
+        /// Virtual try-on<br/>
+        /// Submits a virtual try-on task. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::BlackForestLabs.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>>> GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>>> GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsResponseAsync(
 
-            global::BlackForestLabs.Flux2EraseInputs request,
+            global::BlackForestLabs.Flux2KleinTryonInputs request,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Erase an object from an image<br/>
-        /// Submits an erase task using an input image and a mask identifying the object or region to remove.
+        /// Virtual try-on<br/>
+        /// Submits a virtual try-on task. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.
         /// </summary>
-        /// <param name="image">
-        /// Base64-encoded input image or HTTP(S) image URL.
+        /// <param name="prompt">
+        /// Text prompt for VTO generation.<br/>
+        /// Example: TRY-ON: The person of image 1 wearing the garments of image 2.
         /// </param>
-        /// <param name="mask">
-        /// Base64-encoded black/white mask or HTTP(S) image URL. White pixels indicate the object to remove; black pixels are preserved. Must have the same dimensions as the input image.
+        /// <param name="person">
+        /// Person image (maps internally to input_image).
         /// </param>
-        /// <param name="dilatePixels">
-        /// Number of pixels to dilate the mask by before removal. Dilation helps cover object edges. Maximum is 25 pixels.<br/>
-        /// Default Value: 10
+        /// <param name="garment">
+        /// Image of one more garments (maps internally to input_image_2).
         /// </param>
         /// <param name="seed">
         /// Optional seed for reproducibility.<br/>
         /// Example: 42
         /// </param>
         /// <param name="safetyTolerance">
-        /// Tolerance level for input and output moderation. Between 0 and 5, 0 being most strict, 5 being least strict.<br/>
-        /// Default Value: 2<br/>
-        /// Example: 2
+        /// Tolerance level for input and output moderation. Between 0 and 5 for public use.<br/>
+        /// Default Value: 2
         /// </param>
         /// <param name="outputFormat">
-        /// Default Value: png
+        /// Default Value: jpeg
         /// </param>
         /// <param name="webhookUrl">
         /// URL to receive webhook notifications
@@ -65,10 +64,10 @@ namespace BlackForestLabs
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync(
-            string image,
-            string mask,
-            int? dilatePixels = default,
+        global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync(
+            string prompt,
+            string person,
+            string garment,
             int? seed = default,
             int? safetyTolerance = default,
             global::BlackForestLabs.OutputFormat? outputFormat = default,
