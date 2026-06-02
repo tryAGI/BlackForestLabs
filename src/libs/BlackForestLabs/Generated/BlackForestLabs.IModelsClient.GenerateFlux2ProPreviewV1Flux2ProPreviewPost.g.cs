@@ -5,8 +5,8 @@ namespace BlackForestLabs
     public partial interface IModelsClient
     {
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [PRO] Preview (recommended for editing)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [PRO] Preview. This is a recommended model for image editing and generation.
+        /// Generate or edit an image with FLUX.2 [pro] (preview)<br/>
+        /// Submits an image generation or editing task with the FLUX.2 [pro] preview endpoint, where our latest quality and speed improvements land first. For stable production use, prefer FLUX.2 [pro] (/flux-2-pro).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +18,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [PRO] Preview (recommended for editing)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [PRO] Preview. This is a recommended model for image editing and generation.
+        /// Generate or edit an image with FLUX.2 [pro] (preview)<br/>
+        /// Submits an image generation or editing task with the FLUX.2 [pro] preview endpoint, where our latest quality and speed improvements land first. For stable production use, prefer FLUX.2 [pro] (/flux-2-pro).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,8 +31,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [PRO] Preview (recommended for editing)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [PRO] Preview. This is a recommended model for image editing and generation.
+        /// Generate or edit an image with FLUX.2 [pro] (preview)<br/>
+        /// Submits an image generation or editing task with the FLUX.2 [pro] preview endpoint, where our latest quality and speed improvements land first. For stable production use, prefer FLUX.2 [pro] (/flux-2-pro).
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>

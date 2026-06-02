@@ -5,8 +5,8 @@ namespace BlackForestLabs
     public partial interface IModelsClient
     {
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [Klein 9B KV] (fast editing with caching)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching for improved performance.
+        /// Generate or edit an image with FLUX.2 [klein] 9B (preview)<br/>
+        /// Submits an image generation or editing task with the FLUX.2 [klein] 9B preview endpoint, where our latest quality and speed improvements land first. For stable production use, prefer FLUX.2 [klein] 9B (/flux-2-klein-9b).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +18,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [Klein 9B KV] (fast editing with caching)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching for improved performance.
+        /// Generate or edit an image with FLUX.2 [klein] 9B (preview)<br/>
+        /// Submits an image generation or editing task with the FLUX.2 [klein] 9B preview endpoint, where our latest quality and speed improvements land first. For stable production use, prefer FLUX.2 [klein] 9B (/flux-2-klein-9b).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,8 +31,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [Klein 9B KV] (fast editing with caching)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching for improved performance.
+        /// Generate or edit an image with FLUX.2 [klein] 9B (preview)<br/>
+        /// Submits an image generation or editing task with the FLUX.2 [klein] 9B preview endpoint, where our latest quality and speed improvements land first. For stable production use, prefer FLUX.2 [klein] 9B (/flux-2-klein-9b).
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>

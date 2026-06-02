@@ -5,8 +5,8 @@ namespace BlackForestLabs
     public partial interface IModelsClient
     {
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [FLEX] (recommended for editing)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [FLEX]. This is a recommended model for image editing and generation. Supports flexible text-to-image and image-to-image editing workflows.
+        /// Generate or edit an image with FLUX.2 [flex]<br/>
+        /// Submits an image generation or editing task with FLUX.2 [flex]. Specialized for typography and text rendering, and for preserving small details. Supports text-to-image and image-to-image editing workflows.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +18,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [FLEX] (recommended for editing)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [FLEX]. This is a recommended model for image editing and generation. Supports flexible text-to-image and image-to-image editing workflows.
+        /// Generate or edit an image with FLUX.2 [flex]<br/>
+        /// Submits an image generation or editing task with FLUX.2 [flex]. Specialized for typography and text rendering, and for preserving small details. Supports text-to-image and image-to-image editing workflows.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,8 +31,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [FLEX] (recommended for editing)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [FLEX]. This is a recommended model for image editing and generation. Supports flexible text-to-image and image-to-image editing workflows.
+        /// Generate or edit an image with FLUX.2 [flex]<br/>
+        /// Submits an image generation or editing task with FLUX.2 [flex]. Specialized for typography and text rendering, and for preserving small details. Supports text-to-image and image-to-image editing workflows.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>

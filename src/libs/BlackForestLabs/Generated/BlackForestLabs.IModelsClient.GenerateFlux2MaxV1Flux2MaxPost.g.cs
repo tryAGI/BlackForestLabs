@@ -5,8 +5,8 @@ namespace BlackForestLabs
     public partial interface IModelsClient
     {
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [MAX] (highest quality)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [MAX]. Highest quality FLUX.2 model for image generation and editing.
+        /// Generate or edit an image with FLUX.2 [max]<br/>
+        /// Submits an image generation or editing task with FLUX.2 [max]. Highest quality FLUX.2 model for image generation and editing, with the strongest editing consistency and prompt following.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +18,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [MAX] (highest quality)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [MAX]. Highest quality FLUX.2 model for image generation and editing.
+        /// Generate or edit an image with FLUX.2 [max]<br/>
+        /// Submits an image generation or editing task with FLUX.2 [max]. Highest quality FLUX.2 model for image generation and editing, with the strongest editing consistency and prompt following.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,8 +31,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [MAX] (highest quality)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [MAX]. Highest quality FLUX.2 model for image generation and editing.
+        /// Generate or edit an image with FLUX.2 [max]<br/>
+        /// Submits an image generation or editing task with FLUX.2 [max]. Highest quality FLUX.2 model for image generation and editing, with the strongest editing consistency and prompt following.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
