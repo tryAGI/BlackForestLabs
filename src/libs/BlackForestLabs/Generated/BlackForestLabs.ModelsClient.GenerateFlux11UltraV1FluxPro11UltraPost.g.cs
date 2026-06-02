@@ -50,8 +50,8 @@ namespace BlackForestLabs
             ref string content);
 
         /// <summary>
-        /// Generate an image with FLUX 1.1 [pro] with ultra mode and optional raw mode.<br/>
-        /// Submits an image generation task with FLUX 1.1 [pro] with ultra mode and optional raw mode.
+        /// Generate an image with FLUX1.1 [pro] ultra mode<br/>
+        /// Submits an image generation task with FLUX1.1 [pro] with ultra mode and optional raw mode.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -73,8 +73,8 @@ namespace BlackForestLabs
             return __response.Body;
         }
         /// <summary>
-        /// Generate an image with FLUX 1.1 [pro] with ultra mode and optional raw mode.<br/>
-        /// Submits an image generation task with FLUX 1.1 [pro] with ultra mode and optional raw mode.
+        /// Generate an image with FLUX1.1 [pro] ultra mode<br/>
+        /// Submits an image generation task with FLUX1.1 [pro] with ultra mode and optional raw mode.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -481,8 +481,8 @@ namespace BlackForestLabs
             }
         }
         /// <summary>
-        /// Generate an image with FLUX 1.1 [pro] with ultra mode and optional raw mode.<br/>
-        /// Submits an image generation task with FLUX 1.1 [pro] with ultra mode and optional raw mode.
+        /// Generate an image with FLUX1.1 [pro] ultra mode<br/>
+        /// Submits an image generation task with FLUX1.1 [pro] with ultra mode and optional raw mode.
         /// </summary>
         /// <param name="prompt">
         /// The prompt to use for image generation.<br/>

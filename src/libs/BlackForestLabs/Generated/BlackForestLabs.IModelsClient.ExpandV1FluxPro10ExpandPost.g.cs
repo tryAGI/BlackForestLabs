@@ -5,7 +5,7 @@ namespace BlackForestLabs
     public partial interface IModelsClient
     {
         /// <summary>
-        /// Expand an image by adding pixels on any side.<br/>
+        /// Expand an image with FLUX.1 Expand [pro] by adding pixels on any side<br/>
         /// Submits an image expansion task that adds the specified number of pixels to any combination of sides (top, bottom, left, right) while maintaining context.
         /// </summary>
         /// <param name="request"></param>
@@ -18,7 +18,7 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Expand an image by adding pixels on any side.<br/>
+        /// Expand an image with FLUX.1 Expand [pro] by adding pixels on any side<br/>
         /// Submits an image expansion task that adds the specified number of pixels to any combination of sides (top, bottom, left, right) while maintaining context.
         /// </summary>
         /// <param name="request"></param>
@@ -31,7 +31,7 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Expand an image by adding pixels on any side.<br/>
+        /// Expand an image with FLUX.1 Expand [pro] by adding pixels on any side<br/>
         /// Submits an image expansion task that adds the specified number of pixels to any combination of sides (top, bottom, left, right) while maintaining context.
         /// </summary>
         /// <param name="image">

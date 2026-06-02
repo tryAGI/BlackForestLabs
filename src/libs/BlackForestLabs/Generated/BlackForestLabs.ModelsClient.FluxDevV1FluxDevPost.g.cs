@@ -50,7 +50,7 @@ namespace BlackForestLabs
             ref string content);
 
         /// <summary>
-        /// Generate an image with FLUX.1 [dev].<br/>
+        /// Generate an image with FLUX.1 [dev]<br/>
         /// Submits an image generation task with FLUX.1 [dev].
         /// </summary>
         /// <param name="request"></param>
@@ -73,7 +73,7 @@ namespace BlackForestLabs
             return __response.Body;
         }
         /// <summary>
-        /// Generate an image with FLUX.1 [dev].<br/>
+        /// Generate an image with FLUX.1 [dev]<br/>
         /// Submits an image generation task with FLUX.1 [dev].
         /// </summary>
         /// <param name="request"></param>
@@ -481,7 +481,7 @@ namespace BlackForestLabs
             }
         }
         /// <summary>
-        /// Generate an image with FLUX.1 [dev].<br/>
+        /// Generate an image with FLUX.1 [dev]<br/>
         /// Submits an image generation task with FLUX.1 [dev].
         /// </summary>
         /// <param name="prompt">

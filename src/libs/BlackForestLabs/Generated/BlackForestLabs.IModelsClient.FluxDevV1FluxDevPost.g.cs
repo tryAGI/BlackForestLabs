@@ -5,7 +5,7 @@ namespace BlackForestLabs
     public partial interface IModelsClient
     {
         /// <summary>
-        /// Generate an image with FLUX.1 [dev].<br/>
+        /// Generate an image with FLUX.1 [dev]<br/>
         /// Submits an image generation task with FLUX.1 [dev].
         /// </summary>
         /// <param name="request"></param>
@@ -18,7 +18,7 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate an image with FLUX.1 [dev].<br/>
+        /// Generate an image with FLUX.1 [dev]<br/>
         /// Submits an image generation task with FLUX.1 [dev].
         /// </summary>
         /// <param name="request"></param>
@@ -31,7 +31,7 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate an image with FLUX.1 [dev].<br/>
+        /// Generate an image with FLUX.1 [dev]<br/>
         /// Submits an image generation task with FLUX.1 [dev].
         /// </summary>
         /// <param name="prompt">

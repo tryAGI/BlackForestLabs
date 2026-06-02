@@ -5,8 +5,8 @@ namespace BlackForestLabs
     public partial interface IModelsClient
     {
         /// <summary>
-        /// Generate an image with FLUX 1.1 [pro].<br/>
-        /// Submits an image generation task with FLUX 1.1 [pro].
+        /// Generate an image with FLUX1.1 [pro]<br/>
+        /// Submits an image generation task with FLUX1.1 [pro].
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +18,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate an image with FLUX 1.1 [pro].<br/>
-        /// Submits an image generation task with FLUX 1.1 [pro].
+        /// Generate an image with FLUX1.1 [pro]<br/>
+        /// Submits an image generation task with FLUX1.1 [pro].
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,8 +31,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Generate an image with FLUX 1.1 [pro].<br/>
-        /// Submits an image generation task with FLUX 1.1 [pro].
+        /// Generate an image with FLUX1.1 [pro]<br/>
+        /// Submits an image generation task with FLUX1.1 [pro].
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>

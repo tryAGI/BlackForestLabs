@@ -50,8 +50,8 @@ namespace BlackForestLabs
             ref string content);
 
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [Klein 4B] (fastest editing)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [Klein 4B]. Fastest, most lightweight model for image generation and editing.
+        /// Generate or edit an image with FLUX.2 [klein] 4B<br/>
+        /// Submits an image generation or editing task with FLUX.2 [klein] 4B. The fastest, most lightweight FLUX.2 model, with open weights that run on consumer GPUs.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -73,8 +73,8 @@ namespace BlackForestLabs
             return __response.Body;
         }
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [Klein 4B] (fastest editing)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [Klein 4B]. Fastest, most lightweight model for image generation and editing.
+        /// Generate or edit an image with FLUX.2 [klein] 4B<br/>
+        /// Submits an image generation or editing task with FLUX.2 [klein] 4B. The fastest, most lightweight FLUX.2 model, with open weights that run on consumer GPUs.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -481,8 +481,8 @@ namespace BlackForestLabs
             }
         }
         /// <summary>
-        /// Generate or edit an image with FLUX.2 [Klein 4B] (fastest editing)<br/>
-        /// Submits an image generation or editing task with FLUX.2 [Klein 4B]. Fastest, most lightweight model for image generation and editing.
+        /// Generate or edit an image with FLUX.2 [klein] 4B<br/>
+        /// Submits an image generation or editing task with FLUX.2 [klein] 4B. The fastest, most lightweight FLUX.2 model, with open weights that run on consumer GPUs.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>

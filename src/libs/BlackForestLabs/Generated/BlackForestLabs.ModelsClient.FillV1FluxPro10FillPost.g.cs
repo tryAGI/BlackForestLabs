@@ -50,7 +50,7 @@ namespace BlackForestLabs
             ref string content);
 
         /// <summary>
-        /// Generate an image with FLUX.1 Fill [pro] using an input image and mask.<br/>
+        /// Inpaint an image with FLUX.1 Fill [pro] using an input image and mask<br/>
         /// Submits an image generation task with the FLUX.1 Fill [pro] model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
         /// </summary>
         /// <param name="request"></param>
@@ -73,7 +73,7 @@ namespace BlackForestLabs
             return __response.Body;
         }
         /// <summary>
-        /// Generate an image with FLUX.1 Fill [pro] using an input image and mask.<br/>
+        /// Inpaint an image with FLUX.1 Fill [pro] using an input image and mask<br/>
         /// Submits an image generation task with the FLUX.1 Fill [pro] model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
         /// </summary>
         /// <param name="request"></param>
@@ -481,7 +481,7 @@ namespace BlackForestLabs
             }
         }
         /// <summary>
-        /// Generate an image with FLUX.1 Fill [pro] using an input image and mask.<br/>
+        /// Inpaint an image with FLUX.1 Fill [pro] using an input image and mask<br/>
         /// Submits an image generation task with the FLUX.1 Fill [pro] model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
         /// </summary>
         /// <param name="image">
