@@ -63,6 +63,10 @@ namespace BlackForestLabs
         /// <param name="referenceOffsetY">
         /// Top offset (px) of the reference image's top-left corner on the output canvas. Negative values are allowed. None = center vertically.
         /// </param>
+        /// <param name="mode">
+        /// Quality/speed trade-off. 'high' (default): highest-fidelity results, recommended whenever fine detail, prompt adherence, or consistency with complex content in the source image matters; slower. 'fast': significantly faster and well-suited for naturally extending most scenes (landscapes, backgrounds, textures, products); may produce lower fidelity in the extended region than 'high'.<br/>
+        /// Default Value: high
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -76,6 +80,7 @@ namespace BlackForestLabs
             string? prompt = default,
             int? referenceOffsetX = default,
             int? referenceOffsetY = default,
+            global::BlackForestLabs.FluxOutpaintingInputsMode? mode = default,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
