@@ -68,6 +68,14 @@ namespace BlackForestLabs
         public int? ReferenceOffsetY { get; set; }
 
         /// <summary>
+        /// Quality/speed trade-off. 'high' (default): highest-fidelity results, recommended whenever fine detail, prompt adherence, or consistency with complex content in the source image matters; slower. 'fast': significantly faster and well-suited for naturally extending most scenes (landscapes, backgrounds, textures, products); may produce lower fidelity in the extended region than 'high'.<br/>
+        /// Default Value: high
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::BlackForestLabs.JsonConverters.FluxOutpaintingInputsModeJsonConverter))]
+        public global::BlackForestLabs.FluxOutpaintingInputsMode? Mode { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -105,6 +113,10 @@ namespace BlackForestLabs
         /// <param name="referenceOffsetY">
         /// Top offset (px) of the reference image's top-left corner on the output canvas. Negative values are allowed. None = center vertically.
         /// </param>
+        /// <param name="mode">
+        /// Quality/speed trade-off. 'high' (default): highest-fidelity results, recommended whenever fine detail, prompt adherence, or consistency with complex content in the source image matters; slower. 'fast': significantly faster and well-suited for naturally extending most scenes (landscapes, backgrounds, textures, products); may produce lower fidelity in the extended region than 'high'.<br/>
+        /// Default Value: high
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -117,7 +129,8 @@ namespace BlackForestLabs
             global::BlackForestLabs.OutputFormat? outputFormat,
             string? prompt,
             int? referenceOffsetX,
-            int? referenceOffsetY)
+            int? referenceOffsetY,
+            global::BlackForestLabs.FluxOutpaintingInputsMode? mode)
         {
             this.InputImage = inputImage ?? throw new global::System.ArgumentNullException(nameof(inputImage));
             this.Width = width;
@@ -128,6 +141,7 @@ namespace BlackForestLabs
             this.Prompt = prompt;
             this.ReferenceOffsetX = referenceOffsetX;
             this.ReferenceOffsetY = referenceOffsetY;
+            this.Mode = mode;
         }
 
         /// <summary>

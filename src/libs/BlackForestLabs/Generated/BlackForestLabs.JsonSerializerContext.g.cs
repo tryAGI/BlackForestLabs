@@ -13,6 +13,10 @@ namespace BlackForestLabs
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
+            typeof(global::BlackForestLabs.JsonConverters.FluxOutpaintingInputsModeJsonConverter),
+
+            typeof(global::BlackForestLabs.JsonConverters.FluxOutpaintingInputsModeNullableJsonConverter),
+
             typeof(global::BlackForestLabs.JsonConverters.OutputFormatJsonConverter),
 
             typeof(global::BlackForestLabs.JsonConverters.OutputFormatNullableJsonConverter),
@@ -86,6 +90,7 @@ namespace BlackForestLabs
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxDevInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxKontextProInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxOutpaintingInputs))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxOutpaintingInputsMode), TypeInfoPropertyName = "FluxOutpaintingInputsMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxPro11Inputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxProExpandInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FluxProFillInputs))]
