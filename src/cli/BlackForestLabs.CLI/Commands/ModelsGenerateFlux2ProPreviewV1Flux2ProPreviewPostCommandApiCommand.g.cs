@@ -52,8 +52,8 @@ internal static partial class ModelsGenerateFlux2ProPreviewV1Flux2ProPreviewPost
 
     public static Command Create()
     {
-        var command = new Command(@"generate-flux2-pro-preview-v1-flux2-pro-preview-post", @"Generate or edit an image with FLUX.2 [PRO] Preview (recommended for editing)
-Submits an image generation or editing task with FLUX.2 [PRO] Preview. This is a recommended model for image editing and generation.");
+        var command = new Command(@"generate-flux2-pro-preview-v1-flux2-pro-preview-post", @"Generate or edit an image with FLUX.2 [pro] (preview)
+Submits an image generation or editing task with the FLUX.2 [pro] preview endpoint, where our latest quality and speed improvements land first. For stable production use, prefer FLUX.2 [pro] (/flux-2-pro).");
                         command.Options.Add(OutputFormat);                        command.Options.Add(Flux2InputsOptionSetOptions.Prompt);
                         command.Options.Add(Flux2InputsOptionSetOptions.InputImage);
                         command.Options.Add(Flux2InputsOptionSetOptions.InputImage2);
