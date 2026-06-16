@@ -128,7 +128,7 @@ internal static partial class ModelsExpandV1FluxPro10ExpandPostCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"expand-v1-flux-pro10-expand-post", @"Expand an image by adding pixels on any side.
+        var command = new Command(@"expand-v1-flux-pro10-expand-post", @"Expand an image with FLUX.1 Expand [pro] by adding pixels on any side
 Submits an image expansion task that adds the specified number of pixels to any combination of sides (top, bottom, left, right) while maintaining context.");
                         command.Options.Add(Image);
                         command.Options.Add(Top);

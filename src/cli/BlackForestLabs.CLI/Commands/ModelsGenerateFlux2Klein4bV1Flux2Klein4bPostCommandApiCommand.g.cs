@@ -52,8 +52,8 @@ internal static partial class ModelsGenerateFlux2Klein4bV1Flux2Klein4bPostComman
 
     public static Command Create()
     {
-        var command = new Command(@"generate-flux2-klein4b-v1-flux2-klein4b-post", @"Generate or edit an image with FLUX.2 [Klein 4B] (fastest editing)
-Submits an image generation or editing task with FLUX.2 [Klein 4B]. Fastest, most lightweight model for image generation and editing.");
+        var command = new Command(@"generate-flux2-klein4b-v1-flux2-klein4b-post", @"Generate or edit an image with FLUX.2 [klein] 4B
+Submits an image generation or editing task with FLUX.2 [klein] 4B. The fastest, most lightweight FLUX.2 model, with open weights that run on consumer GPUs.");
                         command.Options.Add(OutputFormat);                        command.Options.Add(Flux2KleinInputsOptionSetOptions.Prompt);
                         command.Options.Add(Flux2KleinInputsOptionSetOptions.InputImage);
                         command.Options.Add(Flux2KleinInputsOptionSetOptions.InputImage2);

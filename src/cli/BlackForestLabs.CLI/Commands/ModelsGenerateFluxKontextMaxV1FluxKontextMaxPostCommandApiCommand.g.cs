@@ -52,8 +52,8 @@ internal static partial class ModelsGenerateFluxKontextMaxV1FluxKontextMaxPostCo
 
     public static Command Create()
     {
-        var command = new Command(@"generate-flux-kontext-max-v1-flux-kontext-max-post", @"Create an image with FLUX.1 Kontext [max] (legacy, use FLUX.2 [PRO] for editing)
-Submits an image creation task with FLUX.1 Kontext [max]. For image editing, prefer FLUX.2 [PRO] (/flux-2-pro) or FLUX.2 [FLEX] (/flux-2-flex) which are the recommended default models for editing workflows.");
+        var command = new Command(@"generate-flux-kontext-max-v1-flux-kontext-max-post", @"Edit or create an image with FLUX.1 Kontext [max]
+Submits an image creation task with FLUX.1 Kontext [max]. For image editing, prefer FLUX.2 [pro] (/flux-2-pro) or FLUX.2 [flex] (/flux-2-flex) which are the recommended default models for editing workflows.");
                         command.Options.Add(OutputFormat);                        command.Options.Add(FluxKontextProInputsOptionSetOptions.Prompt);
                         command.Options.Add(FluxKontextProInputsOptionSetOptions.InputImage);
                         command.Options.Add(FluxKontextProInputsOptionSetOptions.InputImage2);

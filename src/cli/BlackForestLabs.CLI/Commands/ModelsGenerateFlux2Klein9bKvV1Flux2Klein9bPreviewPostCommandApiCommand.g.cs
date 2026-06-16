@@ -52,8 +52,8 @@ internal static partial class ModelsGenerateFlux2Klein9bKvV1Flux2Klein9bPreviewP
 
     public static Command Create()
     {
-        var command = new Command(@"generate-flux2-klein9b-kv-v1-flux2-klein9b-preview-post", @"Generate or edit an image with FLUX.2 [Klein 9B KV] (fast editing with caching)
-Submits an image generation or editing task with FLUX.2 [Klein 9B] with KV caching for improved performance.");
+        var command = new Command(@"generate-flux2-klein9b-kv-v1-flux2-klein9b-preview-post", @"Generate or edit an image with FLUX.2 [klein] 9B (preview)
+Submits an image generation or editing task with the FLUX.2 [klein] 9B preview endpoint, where our latest quality and speed improvements land first. For stable production use, prefer FLUX.2 [klein] 9B (/flux-2-klein-9b).");
                         command.Options.Add(OutputFormat);                        command.Options.Add(Flux2KleinInputsOptionSetOptions.Prompt);
                         command.Options.Add(Flux2KleinInputsOptionSetOptions.InputImage);
                         command.Options.Add(Flux2KleinInputsOptionSetOptions.InputImage2);

@@ -52,8 +52,8 @@ internal static partial class ModelsGenerateFluxKontextProV1FluxKontextProPostCo
 
     public static Command Create()
     {
-        var command = new Command(@"generate-flux-kontext-pro-v1-flux-kontext-pro-post", @"Create an image with FLUX.1 Kontext [pro] (legacy, use FLUX.2 [PRO] for editing)
-Submits an image creation task with FLUX.1 Kontext [pro]. For image editing, prefer FLUX.2 [PRO] (/flux-2-pro) or FLUX.2 [FLEX] (/flux-2-flex) which are the recommended default models for editing workflows.");
+        var command = new Command(@"generate-flux-kontext-pro-v1-flux-kontext-pro-post", @"Edit or create an image with FLUX.1 Kontext [pro]
+Submits an image creation task with FLUX.1 Kontext [pro]. For image editing, prefer FLUX.2 [pro] (/flux-2-pro) or FLUX.2 [flex] (/flux-2-flex) which are the recommended default models for editing workflows.");
                         command.Options.Add(OutputFormat);                        command.Options.Add(FluxKontextProInputsOptionSetOptions.Prompt);
                         command.Options.Add(FluxKontextProInputsOptionSetOptions.InputImage);
                         command.Options.Add(FluxKontextProInputsOptionSetOptions.InputImage2);
