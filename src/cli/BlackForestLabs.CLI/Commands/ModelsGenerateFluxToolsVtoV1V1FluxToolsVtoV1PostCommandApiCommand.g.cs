@@ -5,26 +5,27 @@ using System.CommandLine;
 
 namespace BlackForestLabs.CLI.Commands;
 
-internal static partial class ModelsGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostCommandApiCommand
+internal static partial class ModelsGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostCommandApiCommand
 {
-    private static Option<string> Image { get; } = new(
-        name: @"--image")
+    private static Option<string> Prompt { get; } = new(
+        name: @"--prompt")
     {
-        Description = @"Base64-encoded input image or HTTP(S) image URL.",
+        Description = @"Text prompt for VTO generation.",
         Required = true,
     };
 
-    private static Option<string> Mask { get; } = new(
-        name: @"--mask")
+    private static Option<string> Person { get; } = new(
+        name: @"--person")
     {
-        Description = @"Base64-encoded black/white mask or HTTP(S) image URL. White pixels indicate the object to remove; black pixels are preserved. Must have the same dimensions as the input image.",
+        Description = @"Person image (maps internally to input_image).",
         Required = true,
     };
 
-    private static Option<int?> DilatePixels { get; } = new(
-        name: @"--dilate-pixels")
+    private static Option<string> Garment { get; } = new(
+        name: @"--garment")
     {
-        Description = @"Number of pixels to dilate the mask by before removal. Dilation helps cover object edges. Maximum is 25 pixels.",
+        Description = @"Image of one more garments (maps internally to input_image_2).",
+        Required = true,
     };
 
     private static Option<int?> Seed { get; } = new(
@@ -36,7 +37,7 @@ internal static partial class ModelsGenerateFluxToolsEraseV1V1FluxToolsEraseV1Po
     private static Option<int?> SafetyTolerance { get; } = new(
         name: @"--safety-tolerance")
     {
-        Description = @"Tolerance level for input and output moderation. Between 0 and 5, 0 being most strict, 5 being least strict.",
+        Description = @"Tolerance level for input and output moderation. Between 0 and 5 for public use.",
     };
 
     private static Option<global::BlackForestLabs.OutputFormat?> OutputFormat { get; } = new(
@@ -95,11 +96,11 @@ internal static partial class ModelsGenerateFluxToolsEraseV1V1FluxToolsEraseV1Po
 
     public static Command Create()
     {
-        var command = new Command(@"generate-flux-tools-erase-v1-v1-flux-tools-erase-v1-post", @"Erase an object from an image
-Submits an erase task using an input image and a mask identifying the object or region to remove.");
-                        command.Options.Add(Image);
-                        command.Options.Add(Mask);
-                        command.Options.Add(DilatePixels);
+        var command = new Command(@"generate-flux-tools-vto-v1-v1-flux-tools-vto-v1-post", @"Virtual try-on
+Submits a virtual try-on task. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.");
+                        command.Options.Add(Prompt);
+                        command.Options.Add(Person);
+                        command.Options.Add(Garment);
                         command.Options.Add(Seed);
                         command.Options.Add(SafetyTolerance);
                         command.Options.Add(OutputFormat);
@@ -123,16 +124,16 @@ Submits an erase task using an input image and a mask identifying the object or 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::BlackForestLabs.Flux2EraseInputs>(
+                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::BlackForestLabs.Flux2KleinTryonInputs>(
                             parseResult,
                             Input,
                             RequestJson,
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var image = parseResult.GetRequiredValue(Image);
-                        var mask = parseResult.GetRequiredValue(Mask);
-                        var dilatePixels = CliRuntime.WasSpecified(parseResult, DilatePixels) ? parseResult.GetValue(DilatePixels) : (__requestBase is { } __DilatePixelsBaseValue ? __DilatePixelsBaseValue.DilatePixels : default);
+                        var prompt = parseResult.GetRequiredValue(Prompt);
+                        var person = parseResult.GetRequiredValue(Person);
+                        var garment = parseResult.GetRequiredValue(Garment);
                         var seed = CliRuntime.WasSpecified(parseResult, Seed) ? parseResult.GetValue(Seed) : (__requestBase is { } __SeedBaseValue ? __SeedBaseValue.Seed : default);
                         var safetyTolerance = CliRuntime.WasSpecified(parseResult, SafetyTolerance) ? parseResult.GetValue(SafetyTolerance) : (__requestBase is { } __SafetyToleranceBaseValue ? __SafetyToleranceBaseValue.SafetyTolerance : default);
                         var outputFormat = CliRuntime.WasSpecified(parseResult, OutputFormat) ? parseResult.GetValue(OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);
@@ -141,10 +142,10 @@ Submits an erase task using an input image and a mask identifying the object or 
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                var response = await client.Models.GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync(
-                                    image: image,
-                                    mask: mask,
-                                    dilatePixels: dilatePixels,
+                                var response = await client.Models.GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync(
+                                    prompt: prompt,
+                                    person: person,
+                                    garment: garment,
                                     seed: seed,
                                     safetyTolerance: safetyTolerance,
                                     outputFormat: outputFormat,

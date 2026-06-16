@@ -52,8 +52,8 @@ internal static partial class ModelsGenerateFlux2ProV1Flux2ProPostCommandApiComm
 
     public static Command Create()
     {
-        var command = new Command(@"generate-flux2-pro-v1-flux2-pro-post", @"Generate or edit an image with FLUX.2 [PRO] (recommended for editing)
-Submits an image generation or editing task with FLUX.2 [PRO]. This is the recommended default model for image editing and generation. Supports text-to-image and image-to-image editing workflows.");
+        var command = new Command(@"generate-flux2-pro-v1-flux2-pro-post", @"Generate or edit an image with FLUX.2 [pro]
+Submits an image generation or editing task with FLUX.2 [pro]. This is the recommended default model for image editing and generation. Supports text-to-image and image-to-image editing workflows.");
                         command.Options.Add(OutputFormat);                        command.Options.Add(Flux2InputsOptionSetOptions.Prompt);
                         command.Options.Add(Flux2InputsOptionSetOptions.InputImage);
                         command.Options.Add(Flux2InputsOptionSetOptions.InputImage2);

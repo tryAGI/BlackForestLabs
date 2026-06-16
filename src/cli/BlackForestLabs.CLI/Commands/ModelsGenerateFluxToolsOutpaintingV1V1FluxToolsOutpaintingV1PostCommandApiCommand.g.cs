@@ -10,7 +10,7 @@ internal static partial class ModelsGenerateFluxToolsOutpaintingV1V1FluxToolsOut
     private static Option<string> InputImage { get; } = new(
         name: @"--input-image")
     {
-        Description = @"Base64-encoded input (reference) image.",
+        Description = @"Base64-encoded input (reference) image or HTTP(S) image URL.",
         Required = true,
     };
 
@@ -60,6 +60,12 @@ internal static partial class ModelsGenerateFluxToolsOutpaintingV1V1FluxToolsOut
         name: @"--reference-offset-y")
     {
         Description = @"Top offset (px) of the reference image's top-left corner on the output canvas. Negative values are allowed. None = center vertically.",
+    };
+
+    private static Option<global::BlackForestLabs.FluxOutpaintingInputsMode?> Mode { get; } = new(
+        name: @"--mode")
+    {
+        Description = @"Quality/speed trade-off. 'high' (default): highest-fidelity results, recommended whenever fine detail, prompt adherence, or consistency with complex content in the source image matters; slower. 'fast': significantly faster and well-suited for naturally extending most scenes (landscapes, backgrounds, textures, products); may produce lower fidelity in the extended region than 'high'.",
     };
       private static Option<string?> Input { get; } = new(@"--input")
       {
@@ -111,6 +117,7 @@ Submits an outpainting task. The input image is placed on a (width, height) canv
                         command.Options.Add(Prompt);
                         command.Options.Add(ReferenceOffsetX);
                         command.Options.Add(ReferenceOffsetY);
+                        command.Options.Add(Mode);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -145,6 +152,7 @@ Submits an outpainting task. The input image is placed on a (width, height) canv
                         var prompt = CliRuntime.WasSpecified(parseResult, Prompt) ? parseResult.GetValue(Prompt) : (__requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default);
                         var referenceOffsetX = CliRuntime.WasSpecified(parseResult, ReferenceOffsetX) ? parseResult.GetValue(ReferenceOffsetX) : (__requestBase is { } __ReferenceOffsetXBaseValue ? __ReferenceOffsetXBaseValue.ReferenceOffsetX : default);
                         var referenceOffsetY = CliRuntime.WasSpecified(parseResult, ReferenceOffsetY) ? parseResult.GetValue(ReferenceOffsetY) : (__requestBase is { } __ReferenceOffsetYBaseValue ? __ReferenceOffsetYBaseValue.ReferenceOffsetY : default);
+                        var mode = CliRuntime.WasSpecified(parseResult, Mode) ? parseResult.GetValue(Mode) : (__requestBase is { } __ModeBaseValue ? __ModeBaseValue.Mode : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -158,6 +166,7 @@ Submits an outpainting task. The input image is placed on a (width, height) canv
                                     prompt: prompt,
                                     referenceOffsetX: referenceOffsetX,
                                     referenceOffsetY: referenceOffsetY,
+                                    mode: mode,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

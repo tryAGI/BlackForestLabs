@@ -52,8 +52,8 @@ internal static partial class ModelsGenerateFlux2MaxV1Flux2MaxPostCommandApiComm
 
     public static Command Create()
     {
-        var command = new Command(@"generate-flux2-max-v1-flux2-max-post", @"Generate or edit an image with FLUX.2 [MAX] (highest quality)
-Submits an image generation or editing task with FLUX.2 [MAX]. Highest quality FLUX.2 model for image generation and editing.");
+        var command = new Command(@"generate-flux2-max-v1-flux2-max-post", @"Generate or edit an image with FLUX.2 [max]
+Submits an image generation or editing task with FLUX.2 [max]. Highest quality FLUX.2 model for image generation and editing, with the strongest editing consistency and prompt following.");
                         command.Options.Add(OutputFormat);                        command.Options.Add(Flux2InputsOptionSetOptions.Prompt);
                         command.Options.Add(Flux2InputsOptionSetOptions.InputImage);
                         command.Options.Add(Flux2InputsOptionSetOptions.InputImage2);
