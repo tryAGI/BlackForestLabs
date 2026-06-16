@@ -15,3 +15,21 @@ autosdk generate openapi.json \
   --output Generated \
   --exclude-deprecated-operations \
   --security-scheme Http:Header:Bearer
+
+rm -rf ../../cli/BlackForestLabs.CLI
+
+autosdk cli-project openapi.json \
+  --output ../../cli/BlackForestLabs.CLI \
+  --sdk-project ../../libs/BlackForestLabs/BlackForestLabs.csproj \
+  --targetFramework net10.0 \
+  --namespace BlackForestLabs \
+  --clientClassName BlackForestLabsClient \
+  --package-id BlackForestLabs.CLI \
+  --tool-command-name black-forest-labs \
+  --user-secrets-id BlackForestLabs.CLI \
+  --api-key-env-var BLACKFORESTLABS_API_KEY \
+  --base-url-env-var BLACKFORESTLABS_BASE_URL \
+  --cli-credential-file \
+  --cli-keep-api-group \
+  --exclude-deprecated-operations \
+  --security-scheme Http:Header:Bearer

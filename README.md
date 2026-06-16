@@ -19,6 +19,13 @@ using BlackForestLabs;
 using var client = new BlackForestLabsClient(apiKey);
 ```
 
+### CLI
+
+```bash
+dotnet tool install --global BlackForestLabs.CLI --prerelease
+black-forest-labs api --help
+```
+
 <!-- EXAMPLES:START -->
 ### Get Credits
 Basic example showing how to create a client and check your credits balance.
