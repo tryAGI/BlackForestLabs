@@ -488,6 +488,10 @@ namespace BlackForestLabs
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
         /// </param>
+        /// <param name="disablePup">
+        /// Disable automatic prompt upsampling for this request. FLUX.2 [pro] and [max] apply prompt upsampling by default; set this to true to generate from your prompt exactly as written.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="inputImage">
         /// Path to the input image.
         /// </param>
@@ -542,6 +546,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFlux2ProV1Flux2ProPostAsync(
             string prompt,
+            bool? disablePup = default,
             string? inputImage = default,
             string? inputImage2 = default,
             string? inputImage3 = default,
@@ -563,6 +568,7 @@ namespace BlackForestLabs
             var __request = new global::BlackForestLabs.Flux2Inputs
             {
                 Prompt = prompt,
+                DisablePup = disablePup,
                 InputImage = inputImage,
                 InputImage2 = inputImage2,
                 InputImage3 = inputImage3,
