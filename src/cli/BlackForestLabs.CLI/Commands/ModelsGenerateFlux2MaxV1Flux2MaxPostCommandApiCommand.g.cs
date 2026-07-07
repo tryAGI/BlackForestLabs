@@ -55,6 +55,7 @@ internal static partial class ModelsGenerateFlux2MaxV1Flux2MaxPostCommandApiComm
         var command = new Command(@"generate-flux2-max-v1-flux2-max-post", @"Generate or edit an image with FLUX.2 [max]
 Submits an image generation or editing task with FLUX.2 [max]. Highest quality FLUX.2 model for image generation and editing, with the strongest editing consistency and prompt following.");
                         command.Options.Add(OutputFormat);                        command.Options.Add(Flux2InputsOptionSetOptions.Prompt);
+                        command.Options.Add(Flux2InputsOptionSetOptions.DisablePup);
                         command.Options.Add(Flux2InputsOptionSetOptions.InputImage);
                         command.Options.Add(Flux2InputsOptionSetOptions.InputImage2);
                         command.Options.Add(Flux2InputsOptionSetOptions.InputImage3);
@@ -95,6 +96,7 @@ Submits an image generation or editing task with FLUX.2 [max]. Highest quality F
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var outputFormat = CliRuntime.WasSpecified(parseResult, OutputFormat) ? parseResult.GetValue(OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);                        var prompt = parseResult.GetRequiredValue(Flux2InputsOptionSetOptions.Prompt);
+                        var disablePup = CliRuntime.WasSpecified(parseResult, Flux2InputsOptionSetOptions.DisablePup) ? parseResult.GetValue(Flux2InputsOptionSetOptions.DisablePup) : (__requestBase is { } __DisablePupBaseValue ? __DisablePupBaseValue.DisablePup : default);
                         var inputImage = CliRuntime.WasSpecified(parseResult, Flux2InputsOptionSetOptions.InputImage) ? parseResult.GetValue(Flux2InputsOptionSetOptions.InputImage) : (__requestBase is { } __InputImageBaseValue ? __InputImageBaseValue.InputImage : default);
                         var inputImage2 = CliRuntime.WasSpecified(parseResult, Flux2InputsOptionSetOptions.InputImage2) ? parseResult.GetValue(Flux2InputsOptionSetOptions.InputImage2) : (__requestBase is { } __InputImage2BaseValue ? __InputImage2BaseValue.InputImage2 : default);
                         var inputImage3 = CliRuntime.WasSpecified(parseResult, Flux2InputsOptionSetOptions.InputImage3) ? parseResult.GetValue(Flux2InputsOptionSetOptions.InputImage3) : (__requestBase is { } __InputImage3BaseValue ? __InputImage3BaseValue.InputImage3 : default);
@@ -115,6 +117,7 @@ Submits an image generation or editing task with FLUX.2 [max]. Highest quality F
                                 var response = await client.Models.GenerateFlux2MaxV1Flux2MaxPostAsync(
                                     outputFormat: outputFormat,
                                     prompt: prompt,
+                                    disablePup: disablePup,
                                     inputImage: inputImage,
                                     inputImage2: inputImage2,
                                     inputImage3: inputImage3,

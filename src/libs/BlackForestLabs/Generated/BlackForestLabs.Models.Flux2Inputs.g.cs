@@ -18,6 +18,13 @@ namespace BlackForestLabs
         public required string Prompt { get; set; }
 
         /// <summary>
+        /// Disable automatic prompt upsampling for this request. FLUX.2 [pro] and [max] apply prompt upsampling by default; set this to true to generate from your prompt exactly as written.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disable_pup")]
+        public bool? DisablePup { get; set; }
+
+        /// <summary>
         /// Path to the input image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_image")]
@@ -125,6 +132,10 @@ namespace BlackForestLabs
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
         /// </param>
+        /// <param name="disablePup">
+        /// Disable automatic prompt upsampling for this request. FLUX.2 [pro] and [max] apply prompt upsampling by default; set this to true to generate from your prompt exactly as written.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="inputImage">
         /// Path to the input image.
         /// </param>
@@ -179,6 +190,7 @@ namespace BlackForestLabs
 #endif
         public Flux2Inputs(
             string prompt,
+            bool? disablePup,
             string? inputImage,
             string? inputImage2,
             string? inputImage3,
@@ -196,6 +208,7 @@ namespace BlackForestLabs
             string? webhookSecret)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.DisablePup = disablePup;
             this.InputImage = inputImage;
             this.InputImage2 = inputImage2;
             this.InputImage3 = inputImage3;

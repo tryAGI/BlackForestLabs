@@ -6,6 +6,7 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal sealed record Flux2InputsOptionSet(
     Option<string> Prompt,
+                     Option<bool?> DisablePup,
                      Option<string?> InputImage,
                      Option<string?> InputImage2,
                      Option<string?> InputImage3,
@@ -32,6 +33,7 @@ internal sealed record Flux2InputsOptionSet(
                     Description = @"Text prompt for image generation.",
                     Required = true,
                 },
+                DisablePup: CliRuntime.CreateNullableBoolOption(name: $"--{normalizedPrefix}disable-pup", description: @"Disable automatic prompt upsampling for this request. FLUX.2 [pro] and [max] apply prompt upsampling by default; set this to true to generate from your prompt exactly as written."),
                 InputImage: new Option<string?>($"--{normalizedPrefix}input-image")
                 {
                     Description = @"Path to the input image.",
