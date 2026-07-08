@@ -19,11 +19,19 @@ namespace BlackForestLabs
         /// <summary>
         /// 
         /// </summary>
+        Generating,
+        /// <summary>
+        /// 
+        /// </summary>
         Pending,
         /// <summary>
         /// 
         /// </summary>
         Ready,
+        /// <summary>
+        /// 
+        /// </summary>
+        Reasoning,
         /// <summary>
         /// 
         /// </summary>
@@ -48,8 +56,10 @@ namespace BlackForestLabs
             {
                 StatusResponse.ContentModerated => "Content Moderated",
                 StatusResponse.Error => "Error",
+                StatusResponse.Generating => "Generating",
                 StatusResponse.Pending => "Pending",
                 StatusResponse.Ready => "Ready",
+                StatusResponse.Reasoning => "Reasoning",
                 StatusResponse.RequestModerated => "Request Moderated",
                 StatusResponse.TaskNotFound => "Task not found",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -64,8 +74,10 @@ namespace BlackForestLabs
             {
                 "Content Moderated" => StatusResponse.ContentModerated,
                 "Error" => StatusResponse.Error,
+                "Generating" => StatusResponse.Generating,
                 "Pending" => StatusResponse.Pending,
                 "Ready" => StatusResponse.Ready,
+                "Reasoning" => StatusResponse.Reasoning,
                 "Request Moderated" => StatusResponse.RequestModerated,
                 "Task not found" => StatusResponse.TaskNotFound,
                 _ => null,
