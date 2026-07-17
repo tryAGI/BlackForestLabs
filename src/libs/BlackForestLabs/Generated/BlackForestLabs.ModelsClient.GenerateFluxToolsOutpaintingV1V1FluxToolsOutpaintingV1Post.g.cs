@@ -517,6 +517,10 @@ namespace BlackForestLabs
         /// Quality/speed trade-off. 'high' (default): highest-fidelity results, recommended whenever fine detail, prompt adherence, or consistency with complex content in the source image matters; slower. 'fast': significantly faster and well-suited for naturally extending most scenes (landscapes, backgrounds, textures, products); may produce lower fidelity in the extended region than 'high'.<br/>
         /// Default Value: high
         /// </param>
+        /// <param name="disablePup">
+        /// Skip the image-aware prompt upsampler for lower latency. The prompt (or a default extension prompt) is sent directly to the generation model; quality in the extended region may be lower for scenes that benefit from semantic guidance. Applies to both modes.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -531,6 +535,7 @@ namespace BlackForestLabs
             int? referenceOffsetX = default,
             int? referenceOffsetY = default,
             global::BlackForestLabs.FluxOutpaintingInputsMode? mode = default,
+            bool? disablePup = default,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -546,6 +551,7 @@ namespace BlackForestLabs
                 ReferenceOffsetX = referenceOffsetX,
                 ReferenceOffsetY = referenceOffsetY,
                 Mode = mode,
+                DisablePup = disablePup,
             };
 
             return await GenerateFluxToolsOutpaintingV1V1FluxToolsOutpaintingV1PostAsync(

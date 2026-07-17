@@ -67,6 +67,10 @@ internal static partial class ModelsGenerateFluxToolsOutpaintingV1V1FluxToolsOut
     {
         Description = @"Quality/speed trade-off. 'high' (default): highest-fidelity results, recommended whenever fine detail, prompt adherence, or consistency with complex content in the source image matters; slower. 'fast': significantly faster and well-suited for naturally extending most scenes (landscapes, backgrounds, textures, products); may produce lower fidelity in the extended region than 'high'.",
     };
+
+    private static Option<bool?> DisablePup { get; } = CliRuntime.CreateNullableBoolOption(
+        name: @"--disable-pup",
+        description: @"Skip the image-aware prompt upsampler for lower latency. The prompt (or a default extension prompt) is sent directly to the generation model; quality in the extended region may be lower for scenes that benefit from semantic guidance. Applies to both modes.");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -118,6 +122,7 @@ Submits an outpainting task. The input image is placed on a (width, height) canv
                         command.Options.Add(ReferenceOffsetX);
                         command.Options.Add(ReferenceOffsetY);
                         command.Options.Add(Mode);
+                        command.Options.Add(DisablePup);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -153,6 +158,7 @@ Submits an outpainting task. The input image is placed on a (width, height) canv
                         var referenceOffsetX = CliRuntime.WasSpecified(parseResult, ReferenceOffsetX) ? parseResult.GetValue(ReferenceOffsetX) : (__requestBase is { } __ReferenceOffsetXBaseValue ? __ReferenceOffsetXBaseValue.ReferenceOffsetX : default);
                         var referenceOffsetY = CliRuntime.WasSpecified(parseResult, ReferenceOffsetY) ? parseResult.GetValue(ReferenceOffsetY) : (__requestBase is { } __ReferenceOffsetYBaseValue ? __ReferenceOffsetYBaseValue.ReferenceOffsetY : default);
                         var mode = CliRuntime.WasSpecified(parseResult, Mode) ? parseResult.GetValue(Mode) : (__requestBase is { } __ModeBaseValue ? __ModeBaseValue.Mode : default);
+                        var disablePup = CliRuntime.WasSpecified(parseResult, DisablePup) ? parseResult.GetValue(DisablePup) : (__requestBase is { } __DisablePupBaseValue ? __DisablePupBaseValue.DisablePup : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -167,6 +173,7 @@ Submits an outpainting task. The input image is placed on a (width, height) canv
                                     referenceOffsetX: referenceOffsetX,
                                     referenceOffsetY: referenceOffsetY,
                                     mode: mode,
+                                    disablePup: disablePup,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

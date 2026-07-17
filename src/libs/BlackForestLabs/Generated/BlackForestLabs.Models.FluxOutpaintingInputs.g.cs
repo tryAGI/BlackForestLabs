@@ -76,6 +76,13 @@ namespace BlackForestLabs
         public global::BlackForestLabs.FluxOutpaintingInputsMode? Mode { get; set; }
 
         /// <summary>
+        /// Skip the image-aware prompt upsampler for lower latency. The prompt (or a default extension prompt) is sent directly to the generation model; quality in the extended region may be lower for scenes that benefit from semantic guidance. Applies to both modes.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disable_pup")]
+        public bool? DisablePup { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -117,6 +124,10 @@ namespace BlackForestLabs
         /// Quality/speed trade-off. 'high' (default): highest-fidelity results, recommended whenever fine detail, prompt adherence, or consistency with complex content in the source image matters; slower. 'fast': significantly faster and well-suited for naturally extending most scenes (landscapes, backgrounds, textures, products); may produce lower fidelity in the extended region than 'high'.<br/>
         /// Default Value: high
         /// </param>
+        /// <param name="disablePup">
+        /// Skip the image-aware prompt upsampler for lower latency. The prompt (or a default extension prompt) is sent directly to the generation model; quality in the extended region may be lower for scenes that benefit from semantic guidance. Applies to both modes.<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -130,7 +141,8 @@ namespace BlackForestLabs
             string? prompt,
             int? referenceOffsetX,
             int? referenceOffsetY,
-            global::BlackForestLabs.FluxOutpaintingInputsMode? mode)
+            global::BlackForestLabs.FluxOutpaintingInputsMode? mode,
+            bool? disablePup)
         {
             this.InputImage = inputImage ?? throw new global::System.ArgumentNullException(nameof(inputImage));
             this.Width = width;
@@ -142,6 +154,7 @@ namespace BlackForestLabs
             this.ReferenceOffsetX = referenceOffsetX;
             this.ReferenceOffsetY = referenceOffsetY;
             this.Mode = mode;
+            this.DisablePup = disablePup;
         }
 
         /// <summary>
