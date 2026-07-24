@@ -5,7 +5,7 @@ using System.CommandLine;
 
 namespace BlackForestLabs.CLI.Commands;
 
-internal static partial class ModelsGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostCommandApiCommand
+internal static partial class ModelsGenerateFluxToolsVtoV2V1FluxToolsVtoV2PostCommandApiCommand
 {
     private static Option<global::BlackForestLabs.OutputFormat?> OutputFormat { get; } = new(
         name: @"--output-format")
@@ -52,8 +52,8 @@ internal static partial class ModelsGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostCo
 
     public static Command Create()
     {
-        var command = new Command(@"generate-flux-tools-vto-v1-v1-flux-tools-vto-v1-post", @"Virtual try-on
-Submits a virtual try-on task. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.");
+        var command = new Command(@"generate-flux-tools-vto-v2-v1-flux-tools-vto-v2-post", @"Virtual try-on (v2)
+Submits a virtual try-on task against the v2 model. Identical request shape to /vto-v1, with reference and output resolution supported up to 4MP. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.");
                         command.Options.Add(OutputFormat);                        command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Prompt);
                         command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Person);
                         command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Garment);
@@ -96,7 +96,7 @@ Submits a virtual try-on task. Person and garment images are mapped to the under
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                var response = await client.Models.GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync(
+                                var response = await client.Models.GenerateFluxToolsVtoV2V1FluxToolsVtoV2PostAsync(
                                     outputFormat: outputFormat,
                                     prompt: prompt,
                                     person: person,

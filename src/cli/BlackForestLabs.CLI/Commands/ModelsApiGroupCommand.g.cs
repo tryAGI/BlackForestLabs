@@ -29,6 +29,7 @@ internal static class ModelsApiGroupCommand
                          command.Subcommands.Add(ModelsGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsGenerateFluxToolsOutpaintingV1V1FluxToolsOutpaintingV1PostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostCommandApiCommand.Create());
+                         command.Subcommands.Add(ModelsGenerateFluxToolsVtoV2V1FluxToolsVtoV2PostCommandApiCommand.Create());
         return command;
     }
 }
