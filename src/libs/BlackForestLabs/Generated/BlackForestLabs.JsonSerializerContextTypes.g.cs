@@ -260,15 +260,23 @@ namespace BlackForestLabs
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<string, int?>>? Type58 { get; set; }
+        public global::BlackForestLabs.SettledCostResultResponse? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.AnyOf<string, int?>? Type59 { get; set; }
+        public global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<string, int?>>? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>? Type60 { get; set; }
+        public global::BlackForestLabs.AnyOf<string, int?>? Type60 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>? Type61 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>? Type62 { get; set; }
 
         /// <summary>
         /// 
