@@ -11,6 +11,7 @@ internal static class ModelsApiGroupCommand
         var command = new Command(@"models", @"Models endpoint commands.");
                          command.Subcommands.Add(ModelsExpandV1FluxPro10ExpandPostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsFillV1FluxPro10FillPostCommandApiCommand.Create());
+                         command.Subcommands.Add(ModelsFlux3VideoV1Flux3VideoPostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsFluxDevV1FluxDevPostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsFluxPro10FillFinetunedV1FluxPro10FillFinetunedPostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsFluxPro11V1FluxPro11PostCommandApiCommand.Create());
