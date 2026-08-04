@@ -123,6 +123,8 @@ namespace BlackForestLabs
 
             typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>),
 
+            typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>),
+
             typeof(global::BlackForestLabs.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.JsonSerializerContextTypes))]
@@ -184,9 +186,11 @@ namespace BlackForestLabs
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.ResultResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.StatusResponse), TypeInfoPropertyName = "StatusResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.SettledCostResultResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<string, int?>), TypeInfoPropertyName = "AnyOfStringInt322")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>), TypeInfoPropertyName = "AnyOfAsyncResponseAsyncWebhookResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>), TypeInfoPropertyName = "AnyOfSettledCostResultResponseResultResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.List<global::BlackForestLabs.AnyOf<double?, string>>, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::BlackForestLabs.AnyOf<double?, string>>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::BlackForestLabs.AnyOf<double?, string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]

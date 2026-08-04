@@ -57,7 +57,7 @@ namespace BlackForestLabs
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::BlackForestLabs.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::BlackForestLabs.ResultResponse> GetResultV1GetResultGetAsync(
+        public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>> GetResultV1GetResultGetAsync(
             string id,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -78,7 +78,7 @@ namespace BlackForestLabs
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::BlackForestLabs.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.ResultResponse>> GetResultV1GetResultGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>>> GetResultV1GetResultGetAsResponseAsync(
             string id,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -398,9 +398,9 @@ namespace BlackForestLabs
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::BlackForestLabs.ResultResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.ResultResponse>(
+                                    return new global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::BlackForestLabs.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -430,9 +430,9 @@ namespace BlackForestLabs
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::BlackForestLabs.ResultResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.ResultResponse>(
+                                    return new global::BlackForestLabs.AutoSDKHttpResponse<global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::BlackForestLabs.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
