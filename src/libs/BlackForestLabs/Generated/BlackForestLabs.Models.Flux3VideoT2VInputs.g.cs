@@ -54,7 +54,7 @@ namespace BlackForestLabs
         public bool? GenerateAudio { get; set; }
 
         /// <summary>
-        /// Tolerance level for input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance. Contextual safety signals can tighten the requested level. Requests with conditioning media are limited to level 2.<br/>
+        /// Tolerance level for input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance. Contextual safety signals can tighten the requested level.<br/>
         /// Default Value: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("safety_tolerance")]
@@ -107,7 +107,7 @@ namespace BlackForestLabs
         /// Default Value: true
         /// </param>
         /// <param name="safetyTolerance">
-        /// Tolerance level for input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance. Contextual safety signals can tighten the requested level. Requests with conditioning media are limited to level 2.<br/>
+        /// Tolerance level for input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance. Contextual safety signals can tighten the requested level.<br/>
         /// Default Value: 2
         /// </param>
         /// <param name="draft">

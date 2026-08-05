@@ -33,7 +33,7 @@ namespace BlackForestLabs
         public global::BlackForestLabs.Flux3VideoDraftEnhanceInputsResolution? Resolution { get; set; }
 
         /// <summary>
-        /// Tolerance level for replay input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance. Bundles containing user media are limited to level 2.<br/>
+        /// Tolerance level for replay input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance.<br/>
         /// Default Value: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("safety_tolerance")]
@@ -56,7 +56,7 @@ namespace BlackForestLabs
         /// Default Value: fhd
         /// </param>
         /// <param name="safetyTolerance">
-        /// Tolerance level for replay input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance. Bundles containing user media are limited to level 2.<br/>
+        /// Tolerance level for replay input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance.<br/>
         /// Default Value: 2
         /// </param>
         /// <param name="mode"></param>
