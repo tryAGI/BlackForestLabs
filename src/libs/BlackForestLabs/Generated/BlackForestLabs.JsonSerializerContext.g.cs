@@ -123,6 +123,8 @@ namespace BlackForestLabs
 
             typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>),
 
+            typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>),
+
             typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>),
 
             typeof(global::BlackForestLabs.JsonConverters.UnixTimestampJsonConverter),
@@ -168,6 +170,7 @@ namespace BlackForestLabs
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoT2VInputsAspectRatio?, string>), TypeInfoPropertyName = "AnyOfFlux3VideoT2VInputsAspectRatioString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoT2VInputsAspectRatio), TypeInfoPropertyName = "Flux3VideoT2VInputsAspectRatio2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoT2VInputsResolution), TypeInfoPropertyName = "Flux3VideoT2VInputsResolution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoUpscaleInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoV2VInputsAspectRatio?, string>), TypeInfoPropertyName = "AnyOfFlux3VideoV2VInputsAspectRatioString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoV2VInputsAspectRatio), TypeInfoPropertyName = "Flux3VideoV2VInputsAspectRatio2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoV2VInputsResolution), TypeInfoPropertyName = "Flux3VideoV2VInputsResolution2")]
