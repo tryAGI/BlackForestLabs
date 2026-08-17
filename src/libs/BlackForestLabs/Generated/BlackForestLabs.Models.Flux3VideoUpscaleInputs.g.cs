@@ -9,7 +9,7 @@ namespace BlackForestLabs
     public sealed partial class Flux3VideoUpscaleInputs
     {
         /// <summary>
-        /// The clip to upscale: base64-encoded mp4 (max 50MB) or an http(s) URL. At most 20 seconds of source footage.
+        /// The clip to upscale: base64-encoded mp4 (max 50MB) or an http(s) URL. The upscale covers the first 20 seconds; a clip slightly over that is upscaled up to the 20 second mark, and one well over is rejected.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_video")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -64,7 +64,7 @@ namespace BlackForestLabs
         /// Initializes a new instance of the <see cref="Flux3VideoUpscaleInputs" /> class.
         /// </summary>
         /// <param name="inputVideo">
-        /// The clip to upscale: base64-encoded mp4 (max 50MB) or an http(s) URL. At most 20 seconds of source footage.
+        /// The clip to upscale: base64-encoded mp4 (max 50MB) or an http(s) URL. The upscale covers the first 20 seconds; a clip slightly over that is upscaled up to the 20 second mark, and one well over is rejected.
         /// </param>
         /// <param name="prompt">
         /// Optional description of the clip's content, steering the enhanced detail. Leave empty for a neutral upscale.
