@@ -25,7 +25,7 @@ namespace BlackForestLabs
         public global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoV2VInputsAspectRatio?, string>? AspectRatio { get; set; }
 
         /// <summary>
-        /// Video duration in seconds (any whole second from 5 to 20), or `auto` to fit the content.<br/>
+        /// Video duration in seconds (any whole second from 5 to 15), or `auto` to fit the content.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
@@ -102,7 +102,7 @@ namespace BlackForestLabs
         /// Default Value: auto
         /// </param>
         /// <param name="duration">
-        /// Video duration in seconds (any whole second from 5 to 20), or `auto` to fit the content.<br/>
+        /// Video duration in seconds (any whole second from 5 to 15), or `auto` to fit the content.<br/>
         /// Default Value: auto
         /// </param>
         /// <param name="resolution">
