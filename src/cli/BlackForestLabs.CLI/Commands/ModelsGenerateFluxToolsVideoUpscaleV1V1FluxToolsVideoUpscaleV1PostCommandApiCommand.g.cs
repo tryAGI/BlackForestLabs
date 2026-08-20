@@ -10,7 +10,7 @@ internal static partial class ModelsGenerateFluxToolsVideoUpscaleV1V1FluxToolsVi
     private static Option<string> InputVideo { get; } = new(
         name: @"--input-video")
     {
-        Description = @"The clip to upscale: base64-encoded mp4 (max 50MB) or an http(s) URL. The upscale covers the first 20 seconds; a clip slightly over that is upscaled up to the 20 second mark, and one well over is rejected.",
+        Description = @"The clip to upscale: base64-encoded mp4 (max 50MB) or an http(s) URL. The upscale covers the first 20 seconds; a clip slightly over that is upscaled up to the 20 second mark, and one well over is rejected. At most 2560x1440 (3.7 megapixels) per frame: this endpoint upscales toward 4K, so downscale a larger source before submitting it.",
         Required = true,
     };
 
@@ -89,7 +89,7 @@ internal static partial class ModelsGenerateFluxToolsVideoUpscaleV1V1FluxToolsVi
     public static Command Create()
     {
         var command = new Command(@"generate-flux-tools-video-upscale-v1-v1-flux-tools-video-upscale-v1-post", @"Upscale a video with FLUX 3.
-Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (13.75 MP output frames). The upscale covers the first 20 seconds of the source; clips well past that are rejected. `creativity` selects precise source-faithful upscaling (0) or creative detail enhancement (1).");
+Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (up to 2560x1440 in, 13.75 MP output frames). The upscale covers the first 20 seconds of the source; clips well past that are rejected. `creativity` selects precise source-faithful upscaling (0) or creative detail enhancement (1).");
                         command.Options.Add(InputVideo);
                         command.Options.Add(Prompt);
                         command.Options.Add(Creativity);
