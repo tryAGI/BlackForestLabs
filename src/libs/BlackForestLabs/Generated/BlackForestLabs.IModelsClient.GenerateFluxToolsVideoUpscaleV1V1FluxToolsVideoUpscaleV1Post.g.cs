@@ -6,7 +6,7 @@ namespace BlackForestLabs
     {
         /// <summary>
         /// Upscale a video with FLUX 3.<br/>
-        /// Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (13.75 MP output frames). The upscale covers the first 20 seconds of the source; clips well past that are rejected. `creativity` selects precise source-faithful upscaling (0) or creative detail enhancement (1).
+        /// Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (up to 2560x1440 in, 13.75 MP output frames). The upscale covers the first 20 seconds of the source; clips well past that are rejected. `creativity` selects precise source-faithful upscaling (0) or creative detail enhancement (1).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,7 +19,7 @@ namespace BlackForestLabs
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upscale a video with FLUX 3.<br/>
-        /// Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (13.75 MP output frames). The upscale covers the first 20 seconds of the source; clips well past that are rejected. `creativity` selects precise source-faithful upscaling (0) or creative detail enhancement (1).
+        /// Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (up to 2560x1440 in, 13.75 MP output frames). The upscale covers the first 20 seconds of the source; clips well past that are rejected. `creativity` selects precise source-faithful upscaling (0) or creative detail enhancement (1).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -32,10 +32,10 @@ namespace BlackForestLabs
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upscale a video with FLUX 3.<br/>
-        /// Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (13.75 MP output frames). The upscale covers the first 20 seconds of the source; clips well past that are rejected. `creativity` selects precise source-faithful upscaling (0) or creative detail enhancement (1).
+        /// Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (up to 2560x1440 in, 13.75 MP output frames). The upscale covers the first 20 seconds of the source; clips well past that are rejected. `creativity` selects precise source-faithful upscaling (0) or creative detail enhancement (1).
         /// </summary>
         /// <param name="inputVideo">
-        /// The clip to upscale: base64-encoded mp4 (max 50MB) or an http(s) URL. The upscale covers the first 20 seconds; a clip slightly over that is upscaled up to the 20 second mark, and one well over is rejected.
+        /// The clip to upscale: base64-encoded mp4 (max 50MB) or an http(s) URL. The upscale covers the first 20 seconds; a clip slightly over that is upscaled up to the 20 second mark, and one well over is rejected. At most 2560x1440 (3.7 megapixels) per frame: this endpoint upscales toward 4K, so downscale a larger source before submitting it.
         /// </param>
         /// <param name="prompt">
         /// Optional description of the clip's content, steering the enhanced detail. Leave empty for a neutral upscale.
