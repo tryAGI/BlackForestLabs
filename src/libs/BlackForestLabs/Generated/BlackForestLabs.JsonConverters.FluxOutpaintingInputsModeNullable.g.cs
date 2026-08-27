@@ -20,7 +20,7 @@ namespace BlackForestLabs.JsonConverters
                     {
                         return global::BlackForestLabs.FluxOutpaintingInputsModeExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

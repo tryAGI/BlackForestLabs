@@ -72,7 +72,7 @@ namespace BlackForestLabs
         public bool? Draft { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"i2v"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]

@@ -4,7 +4,7 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Flux3VideoT2VInputs
     {
@@ -68,7 +68,7 @@ namespace BlackForestLabs
         public bool? Draft { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"t2v"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]

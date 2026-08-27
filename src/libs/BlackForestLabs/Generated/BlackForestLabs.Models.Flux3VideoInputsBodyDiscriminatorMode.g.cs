@@ -4,24 +4,24 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum Flux3VideoInputsBodyDiscriminatorMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DraftEnhance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         I2v,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         T2v,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V2v,
     }

@@ -147,7 +147,7 @@ namespace BlackForestLabs
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::BlackForestLabs.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

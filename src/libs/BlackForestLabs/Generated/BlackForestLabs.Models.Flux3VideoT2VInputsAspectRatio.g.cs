@@ -4,36 +4,36 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum Flux3VideoT2VInputsAspectRatio
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x16_9,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1_1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x21_9,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2_1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3_4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4_3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x9_16,
     }

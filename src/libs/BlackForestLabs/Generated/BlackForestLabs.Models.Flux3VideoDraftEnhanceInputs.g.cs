@@ -11,7 +11,7 @@ namespace BlackForestLabs
     public sealed partial class Flux3VideoDraftEnhanceInputs
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"draft_enhance"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
