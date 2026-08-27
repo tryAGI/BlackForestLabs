@@ -4,20 +4,20 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }

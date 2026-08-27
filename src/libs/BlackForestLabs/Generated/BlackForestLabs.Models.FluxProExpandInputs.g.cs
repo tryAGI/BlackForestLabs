@@ -4,7 +4,7 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class FluxProExpandInputs
     {

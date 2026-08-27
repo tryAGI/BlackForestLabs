@@ -4,40 +4,40 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum StatusResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentModerated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Generating,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ready,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reasoning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RequestModerated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TaskNotFound,
     }

@@ -13,12 +13,12 @@ namespace BlackForestLabs
     public readonly partial struct Flux3VideoInputsBody : global::System.IEquatable<Flux3VideoInputsBody>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::BlackForestLabs.Flux3VideoInputsBodyDiscriminatorMode? Mode { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::BlackForestLabs.Flux3VideoT2VInputs? T2v { get; init; }
@@ -27,7 +27,7 @@ namespace BlackForestLabs
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(T2v))]
@@ -35,7 +35,7 @@ namespace BlackForestLabs
         public bool IsT2v => T2v != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickT2v(
 #if NET6_0_OR_GREATER
@@ -48,7 +48,7 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::BlackForestLabs.Flux3VideoT2VInputs PickT2v() => IsT2v
             ? T2v!
@@ -68,7 +68,7 @@ namespace BlackForestLabs
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(I2v))]
@@ -76,7 +76,7 @@ namespace BlackForestLabs
         public bool IsI2v => I2v != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickI2v(
 #if NET6_0_OR_GREATER
@@ -89,7 +89,7 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::BlackForestLabs.Flux3VideoI2VInputs PickI2v() => IsI2v
             ? I2v!
@@ -106,7 +106,7 @@ namespace BlackForestLabs
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(V2v))]
@@ -114,7 +114,7 @@ namespace BlackForestLabs
         public bool IsV2v => V2v != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickV2v(
 #if NET6_0_OR_GREATER
@@ -127,7 +127,7 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::BlackForestLabs.Flux3VideoV2VInputs PickV2v() => IsV2v
             ? V2v!
@@ -145,7 +145,7 @@ namespace BlackForestLabs
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DraftEnhance))]
@@ -153,7 +153,7 @@ namespace BlackForestLabs
         public bool IsDraftEnhance => DraftEnhance != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDraftEnhance(
 #if NET6_0_OR_GREATER
@@ -166,23 +166,23 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::BlackForestLabs.Flux3VideoDraftEnhanceInputs PickDraftEnhance() => IsDraftEnhance
             ? DraftEnhance!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DraftEnhance' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Flux3VideoInputsBody(global::BlackForestLabs.Flux3VideoT2VInputs value) => new Flux3VideoInputsBody((global::BlackForestLabs.Flux3VideoT2VInputs?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::BlackForestLabs.Flux3VideoT2VInputs?(Flux3VideoInputsBody @this) => @this.T2v;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Flux3VideoInputsBody(global::BlackForestLabs.Flux3VideoT2VInputs? value)
         {
@@ -190,22 +190,22 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Flux3VideoInputsBody FromT2v(global::BlackForestLabs.Flux3VideoT2VInputs? value) => new Flux3VideoInputsBody(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Flux3VideoInputsBody(global::BlackForestLabs.Flux3VideoI2VInputs value) => new Flux3VideoInputsBody((global::BlackForestLabs.Flux3VideoI2VInputs?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::BlackForestLabs.Flux3VideoI2VInputs?(Flux3VideoInputsBody @this) => @this.I2v;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Flux3VideoInputsBody(global::BlackForestLabs.Flux3VideoI2VInputs? value)
         {
@@ -213,22 +213,22 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Flux3VideoInputsBody FromI2v(global::BlackForestLabs.Flux3VideoI2VInputs? value) => new Flux3VideoInputsBody(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Flux3VideoInputsBody(global::BlackForestLabs.Flux3VideoV2VInputs value) => new Flux3VideoInputsBody((global::BlackForestLabs.Flux3VideoV2VInputs?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::BlackForestLabs.Flux3VideoV2VInputs?(Flux3VideoInputsBody @this) => @this.V2v;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Flux3VideoInputsBody(global::BlackForestLabs.Flux3VideoV2VInputs? value)
         {
@@ -236,22 +236,22 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Flux3VideoInputsBody FromV2v(global::BlackForestLabs.Flux3VideoV2VInputs? value) => new Flux3VideoInputsBody(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Flux3VideoInputsBody(global::BlackForestLabs.Flux3VideoDraftEnhanceInputs value) => new Flux3VideoInputsBody((global::BlackForestLabs.Flux3VideoDraftEnhanceInputs?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::BlackForestLabs.Flux3VideoDraftEnhanceInputs?(Flux3VideoInputsBody @this) => @this.DraftEnhance;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Flux3VideoInputsBody(global::BlackForestLabs.Flux3VideoDraftEnhanceInputs? value)
         {
@@ -259,12 +259,12 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Flux3VideoInputsBody FromDraftEnhance(global::BlackForestLabs.Flux3VideoDraftEnhanceInputs? value) => new Flux3VideoInputsBody(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Flux3VideoInputsBody(
             global::BlackForestLabs.Flux3VideoInputsBodyDiscriminatorMode? mode,
@@ -283,27 +283,27 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DraftEnhance as object ??
             V2v as object ??
             I2v as object ??
-            T2v as object 
+            T2v as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             T2v?.ToString() ??
             I2v?.ToString() ??
             V2v?.ToString() ??
-            DraftEnhance?.ToString() 
+            DraftEnhance?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -311,7 +311,7 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::BlackForestLabs.Flux3VideoT2VInputs, TResult>? t2v = null,
@@ -346,7 +346,7 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::BlackForestLabs.Flux3VideoT2VInputs>? t2v = null,
@@ -382,7 +382,7 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::BlackForestLabs.Flux3VideoT2VInputs>? t2v = null,
@@ -415,7 +415,7 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -440,7 +440,7 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Flux3VideoInputsBody other)
         {
@@ -448,12 +448,12 @@ namespace BlackForestLabs
                 global::System.Collections.Generic.EqualityComparer<global::BlackForestLabs.Flux3VideoT2VInputs?>.Default.Equals(T2v, other.T2v) &&
                 global::System.Collections.Generic.EqualityComparer<global::BlackForestLabs.Flux3VideoI2VInputs?>.Default.Equals(I2v, other.I2v) &&
                 global::System.Collections.Generic.EqualityComparer<global::BlackForestLabs.Flux3VideoV2VInputs?>.Default.Equals(V2v, other.V2v) &&
-                global::System.Collections.Generic.EqualityComparer<global::BlackForestLabs.Flux3VideoDraftEnhanceInputs?>.Default.Equals(DraftEnhance, other.DraftEnhance) 
+                global::System.Collections.Generic.EqualityComparer<global::BlackForestLabs.Flux3VideoDraftEnhanceInputs?>.Default.Equals(DraftEnhance, other.DraftEnhance)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Flux3VideoInputsBody obj1, Flux3VideoInputsBody obj2)
         {
@@ -461,7 +461,7 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Flux3VideoInputsBody obj1, Flux3VideoInputsBody obj2)
         {
@@ -469,7 +469,7 @@ namespace BlackForestLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {
