@@ -6,14 +6,6 @@ namespace BlackForestLabs
     public partial class BlackForestLabsClient
     {
 
-        private static readonly global::BlackForestLabs.AutoSDKServer[] s_GetCreditsV1CreditsGetServers = new global::BlackForestLabs.AutoSDKServer[]
-        {            new global::BlackForestLabs.AutoSDKServer(
-                id: "https-api-bfl-ai",
-                name: "BFL API",
-                url: "https://api.bfl.ai/",
-                description: "BFL API"),
-        };
-
 
         private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_GetCreditsV1CreditsGetSecurityRequirement0 =
             new global::BlackForestLabs.EndPointSecurityRequirement
@@ -106,9 +98,7 @@ namespace BlackForestLabs
 
                             var __pathBuilder = new global::BlackForestLabs.PathBuilder(
                                 path: "/v1/credits",
-                                baseUri: ResolveBaseUri(
-                                servers: s_GetCreditsV1CreditsGetServers,
-                                defaultBaseUrl: "https://api.bfl.ai/"));
+                                baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::BlackForestLabs.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,

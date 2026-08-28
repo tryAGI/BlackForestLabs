@@ -53,7 +53,7 @@ internal static partial class ModelsGenerateFluxToolsVtoV2V1FluxToolsVtoV2PostCo
     public static Command Create()
     {
         var command = new Command(@"generate-flux-tools-vto-v2-v1-flux-tools-vto-v2-post", @"Virtual try-on (v2)
-Submits a virtual try-on task against the v2 model. Identical request shape to /vto-v1, with reference and output resolution supported up to 4MP. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.");
+Submits a virtual try-on task against the v2 model. Identical request shape to /vto-v1, with reference and output resolution supported up to 4MP. Person and garment images are mapped to the underlying input image slots. An edit instruction is generated from the person and garment images, with the supplied prompt used as a fallback.");
                         command.Options.Add(OutputFormat);                        command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Prompt);
                         command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Person);
                         command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Garment);

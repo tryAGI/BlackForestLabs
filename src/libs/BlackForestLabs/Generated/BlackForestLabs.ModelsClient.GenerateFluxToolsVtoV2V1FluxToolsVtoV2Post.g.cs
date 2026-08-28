@@ -6,14 +6,6 @@ namespace BlackForestLabs
     public partial class ModelsClient
     {
 
-        private static readonly global::BlackForestLabs.AutoSDKServer[] s_GenerateFluxToolsVtoV2V1FluxToolsVtoV2PostServers = new global::BlackForestLabs.AutoSDKServer[]
-        {            new global::BlackForestLabs.AutoSDKServer(
-                id: "https-api-bfl-ai",
-                name: "BFL API",
-                url: "https://api.bfl.ai/",
-                description: "BFL API"),
-        };
-
 
         private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_GenerateFluxToolsVtoV2V1FluxToolsVtoV2PostSecurityRequirement0 =
             new global::BlackForestLabs.EndPointSecurityRequirement
@@ -51,7 +43,7 @@ namespace BlackForestLabs
 
         /// <summary>
         /// Virtual try-on (v2)<br/>
-        /// Submits a virtual try-on task against the v2 model. Identical request shape to /vto-v1, with reference and output resolution supported up to 4MP. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.
+        /// Submits a virtual try-on task against the v2 model. Identical request shape to /vto-v1, with reference and output resolution supported up to 4MP. Person and garment images are mapped to the underlying input image slots. An edit instruction is generated from the person and garment images, with the supplied prompt used as a fallback.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -74,7 +66,7 @@ namespace BlackForestLabs
         }
         /// <summary>
         /// Virtual try-on (v2)<br/>
-        /// Submits a virtual try-on task against the v2 model. Identical request shape to /vto-v1, with reference and output resolution supported up to 4MP. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.
+        /// Submits a virtual try-on task against the v2 model. Identical request shape to /vto-v1, with reference and output resolution supported up to 4MP. Person and garment images are mapped to the underlying input image slots. An edit instruction is generated from the person and garment images, with the supplied prompt used as a fallback.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -119,9 +111,7 @@ namespace BlackForestLabs
 
                             var __pathBuilder = new global::BlackForestLabs.PathBuilder(
                                 path: "/v1/flux-tools/vto-v2",
-                                baseUri: ResolveBaseUri(
-                                servers: s_GenerateFluxToolsVtoV2V1FluxToolsVtoV2PostServers,
-                                defaultBaseUrl: "https://api.bfl.ai/"));
+                                baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::BlackForestLabs.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -482,7 +472,7 @@ namespace BlackForestLabs
         }
         /// <summary>
         /// Virtual try-on (v2)<br/>
-        /// Submits a virtual try-on task against the v2 model. Identical request shape to /vto-v1, with reference and output resolution supported up to 4MP. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.
+        /// Submits a virtual try-on task against the v2 model. Identical request shape to /vto-v1, with reference and output resolution supported up to 4MP. Person and garment images are mapped to the underlying input image slots. An edit instruction is generated from the person and garment images, with the supplied prompt used as a fallback.
         /// </summary>
         /// <param name="prompt">
         /// Text prompt for VTO generation.<br/>
