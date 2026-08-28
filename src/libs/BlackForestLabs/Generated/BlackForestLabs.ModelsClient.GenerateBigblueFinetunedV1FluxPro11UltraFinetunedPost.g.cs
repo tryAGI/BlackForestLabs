@@ -6,14 +6,6 @@ namespace BlackForestLabs
     public partial class ModelsClient
     {
 
-        private static readonly global::BlackForestLabs.AutoSDKServer[] s_GenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostServers = new global::BlackForestLabs.AutoSDKServer[]
-        {            new global::BlackForestLabs.AutoSDKServer(
-                id: "https-api-us1-bfl-ai",
-                name: "BFL Finetune API",
-                url: "https://api.us1.bfl.ai/",
-                description: "BFL Finetune API"),
-        };
-
 
         private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_GenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostSecurityRequirement0 =
             new global::BlackForestLabs.EndPointSecurityRequirement
@@ -119,9 +111,7 @@ namespace BlackForestLabs
 
                             var __pathBuilder = new global::BlackForestLabs.PathBuilder(
                                 path: "/v1/flux-pro-1.1-ultra-finetuned",
-                                baseUri: ResolveBaseUri(
-                                servers: s_GenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostServers,
-                                defaultBaseUrl: "https://api.us1.bfl.ai/"));
+                                baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::BlackForestLabs.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,

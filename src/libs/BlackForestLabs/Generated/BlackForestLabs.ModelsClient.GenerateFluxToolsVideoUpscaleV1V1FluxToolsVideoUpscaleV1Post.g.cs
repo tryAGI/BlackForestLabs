@@ -6,14 +6,6 @@ namespace BlackForestLabs
     public partial class ModelsClient
     {
 
-        private static readonly global::BlackForestLabs.AutoSDKServer[] s_GenerateFluxToolsVideoUpscaleV1V1FluxToolsVideoUpscaleV1PostServers = new global::BlackForestLabs.AutoSDKServer[]
-        {            new global::BlackForestLabs.AutoSDKServer(
-                id: "https-api-bfl-ai",
-                name: "BFL API",
-                url: "https://api.bfl.ai/",
-                description: "BFL API"),
-        };
-
 
         private static readonly global::BlackForestLabs.EndPointSecurityRequirement s_GenerateFluxToolsVideoUpscaleV1V1FluxToolsVideoUpscaleV1PostSecurityRequirement0 =
             new global::BlackForestLabs.EndPointSecurityRequirement
@@ -119,9 +111,7 @@ namespace BlackForestLabs
 
                             var __pathBuilder = new global::BlackForestLabs.PathBuilder(
                                 path: "/v1/flux-tools/video-upscale-v1",
-                                baseUri: ResolveBaseUri(
-                                servers: s_GenerateFluxToolsVideoUpscaleV1V1FluxToolsVideoUpscaleV1PostServers,
-                                defaultBaseUrl: "https://api.bfl.ai/"));
+                                baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::BlackForestLabs.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
