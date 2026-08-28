@@ -142,7 +142,7 @@ namespace BlackForestLabs
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FinetuneFluxProFillInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.OutputFormat))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.OutputFormat), TypeInfoPropertyName = "OutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.FinetuneFluxUltraInput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux2DeblurInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux2EraseInputs))]
