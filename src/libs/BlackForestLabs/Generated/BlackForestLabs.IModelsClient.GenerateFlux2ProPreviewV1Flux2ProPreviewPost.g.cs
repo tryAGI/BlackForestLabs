@@ -34,6 +34,9 @@ namespace BlackForestLabs
         /// Generate or edit an image with FLUX.2 [pro] (preview)<br/>
         /// Submits an image generation or editing task with the FLUX.2 [pro] preview endpoint, where our latest quality and speed improvements land first. For stable production use, prefer FLUX.2 [pro] (/flux-2-pro).
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
@@ -96,6 +99,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFlux2ProPreviewV1Flux2ProPreviewPostAsync(
             string prompt,
+            string? user = default,
             bool? disablePup = default,
             string? inputImage = default,
             string? inputImage2 = default,

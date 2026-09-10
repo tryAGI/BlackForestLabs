@@ -12,6 +12,12 @@ namespace BlackForestLabs
     public sealed partial class Flux2DeblurInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Base64-encoded input image or HTTP(S) image URL.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
@@ -65,6 +71,9 @@ namespace BlackForestLabs
         /// <param name="image">
         /// Base64-encoded input image or HTTP(S) image URL.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="seed">
         /// Optional seed for reproducibility.<br/>
         /// Example: 42
@@ -88,12 +97,14 @@ namespace BlackForestLabs
 #endif
         public Flux2DeblurInputs(
             string image,
+            string? user,
             int? seed,
             int? safetyTolerance,
             global::BlackForestLabs.OutputFormat? outputFormat,
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Seed = seed;
             this.SafetyTolerance = safetyTolerance;

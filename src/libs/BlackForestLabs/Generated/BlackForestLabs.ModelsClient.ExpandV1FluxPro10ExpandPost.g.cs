@@ -474,6 +474,9 @@ namespace BlackForestLabs
         /// Expand an image with FLUX.1 Expand [pro] by adding pixels on any side<br/>
         /// Submits an image expansion task that adds the specified number of pixels to any combination of sides (top, bottom, left, right) while maintaining context.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="image">
         /// A Base64-encoded string representing the image you wish to expand.
         /// </param>
@@ -533,6 +536,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> ExpandV1FluxPro10ExpandPostAsync(
             string image,
+            string? user = default,
             int? top = default,
             int? bottom = default,
             int? left = default,
@@ -551,6 +555,7 @@ namespace BlackForestLabs
         {
             var __request = new global::BlackForestLabs.FluxProExpandInputs
             {
+                User = user,
                 Image = image,
                 Top = top,
                 Bottom = bottom,

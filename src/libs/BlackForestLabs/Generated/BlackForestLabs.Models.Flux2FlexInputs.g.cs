@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class Flux2FlexInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
         /// </summary>
@@ -156,6 +162,9 @@ namespace BlackForestLabs
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="promptUpsampling">
         /// Whether to use prompt upsampling.<br/>
         /// Default Value: true
@@ -227,6 +236,7 @@ namespace BlackForestLabs
 #endif
         public Flux2FlexInputs(
             string prompt,
+            string? user,
             bool? promptUpsampling,
             string? inputImage,
             string? inputImage2,
@@ -247,6 +257,7 @@ namespace BlackForestLabs
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.PromptUpsampling = promptUpsampling;
             this.InputImage = inputImage;

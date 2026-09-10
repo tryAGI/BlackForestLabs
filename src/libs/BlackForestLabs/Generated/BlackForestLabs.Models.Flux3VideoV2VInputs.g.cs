@@ -10,6 +10,12 @@ namespace BlackForestLabs
     public sealed partial class Flux3VideoV2VInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Free-form prompt describing the video.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
@@ -97,6 +103,9 @@ namespace BlackForestLabs
         /// <param name="startVideo">
         /// The video to continue, an http(s) URL or base64 mp4; the generated clip carries on from its final frames.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="aspectRatio">
         /// Output aspect ratio. `auto` lets the harness choose from the prompt and any references.<br/>
         /// Default Value: auto
@@ -132,6 +141,7 @@ namespace BlackForestLabs
         public Flux3VideoV2VInputs(
             string prompt,
             string startVideo,
+            string? user,
             global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoV2VInputsAspectRatio?, string>? aspectRatio,
             global::BlackForestLabs.AnyOf<int?, string>? duration,
             global::BlackForestLabs.Flux3VideoV2VInputsResolution? resolution,
@@ -141,6 +151,7 @@ namespace BlackForestLabs
             bool? draft,
             string mode = "v2v")
         {
+            this.User = user;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.AspectRatio = aspectRatio;
             this.Duration = duration;

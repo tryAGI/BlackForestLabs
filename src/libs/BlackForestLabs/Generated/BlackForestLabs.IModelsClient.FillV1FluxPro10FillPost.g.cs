@@ -34,6 +34,9 @@ namespace BlackForestLabs
         /// Inpaint an image with FLUX.1 Fill [pro] using an input image and mask<br/>
         /// Submits an image generation task with the FLUX.1 Fill [pro] model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="image">
         /// A Base64-encoded string representing the image you wish to modify. Can contain alpha mask if desired.
         /// </param>
@@ -80,6 +83,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> FillV1FluxPro10FillPostAsync(
             string image,
+            string? user = default,
             string? mask = default,
             string? prompt = default,
             int? steps = default,

@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsGenerateFlux11UltraV1FluxPro11UltraPostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string?> Prompt { get; } = new(
         name: @"--prompt")
     {
@@ -109,6 +115,7 @@ internal static partial class ModelsGenerateFlux11UltraV1FluxPro11UltraPostComma
     {
         var command = new Command(@"generate-flux11-ultra-v1-flux-pro11-ultra-post", @"Generate an image with FLUX1.1 [pro] ultra mode
 Submits an image generation task with FLUX1.1 [pro] with ultra mode and optional raw mode.");
+                        command.Options.Add(User);
                         command.Options.Add(Prompt);
                         command.Options.Add(PromptUpsampling);
                         command.Options.Add(Seed);
@@ -145,6 +152,7 @@ Submits an image generation task with FLUX1.1 [pro] with ultra mode and optional
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var prompt = CliRuntime.WasSpecified(parseResult, Prompt) ? parseResult.GetValue(Prompt) : (__requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default);
                         var promptUpsampling = CliRuntime.WasSpecified(parseResult, PromptUpsampling) ? parseResult.GetValue(PromptUpsampling) : (__requestBase is { } __PromptUpsamplingBaseValue ? __PromptUpsamplingBaseValue.PromptUpsampling : default);
                         var seed = CliRuntime.WasSpecified(parseResult, Seed) ? parseResult.GetValue(Seed) : (__requestBase is { } __SeedBaseValue ? __SeedBaseValue.Seed : default);
@@ -160,6 +168,7 @@ Submits an image generation task with FLUX1.1 [pro] with ultra mode and optional
 
 
                                 var response = await client.Models.GenerateFlux11UltraV1FluxPro11UltraPostAsync(
+                                    user: user,
                                     prompt: prompt,
                                     promptUpsampling: promptUpsampling,
                                     seed: seed,

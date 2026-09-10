@@ -474,6 +474,9 @@ namespace BlackForestLabs
         /// Edit or create an image with FLUX.1 Kontext [pro]<br/>
         /// Submits an image creation task with FLUX.1 Kontext [pro]. For image editing, prefer FLUX.2 [pro] (/flux-2-pro) or FLUX.2 [flex] (/flux-2-flex) which are the recommended default models for editing workflows.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
@@ -521,6 +524,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxKontextProV1FluxKontextProPostAsync(
             string prompt,
+            string? user = default,
             string? inputImage = default,
             string? inputImage2 = default,
             string? inputImage3 = default,
@@ -537,6 +541,7 @@ namespace BlackForestLabs
         {
             var __request = new global::BlackForestLabs.FluxKontextProInputs
             {
+                User = user,
                 Prompt = prompt,
                 InputImage = inputImage,
                 InputImage2 = inputImage2,

@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsGenerateFlux2FlexV1Flux2FlexPostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string> Prompt { get; } = new(
         name: @"--prompt")
     {
@@ -166,6 +172,7 @@ internal static partial class ModelsGenerateFlux2FlexV1Flux2FlexPostCommandApiCo
     {
         var command = new Command(@"generate-flux2-flex-v1-flux2-flex-post", @"Generate or edit an image with FLUX.2 [flex]
 Submits an image generation or editing task with FLUX.2 [flex]. Specialized for typography and text rendering, and for preserving small details. Supports text-to-image and image-to-image editing workflows.");
+                        command.Options.Add(User);
                         command.Options.Add(Prompt);
                         command.Options.Add(PromptUpsampling);
                         command.Options.Add(InputImage);
@@ -211,6 +218,7 @@ Submits an image generation or editing task with FLUX.2 [flex]. Specialized for 
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var prompt = parseResult.GetRequiredValue(Prompt);
                         var promptUpsampling = CliRuntime.WasSpecified(parseResult, PromptUpsampling) ? parseResult.GetValue(PromptUpsampling) : (__requestBase is { } __PromptUpsamplingBaseValue ? __PromptUpsamplingBaseValue.PromptUpsampling : default);
                         var inputImage = CliRuntime.WasSpecified(parseResult, InputImage) ? parseResult.GetValue(InputImage) : (__requestBase is { } __InputImageBaseValue ? __InputImageBaseValue.InputImage : default);
@@ -235,6 +243,7 @@ Submits an image generation or editing task with FLUX.2 [flex]. Specialized for 
 
 
                                 var response = await client.Models.GenerateFlux2FlexV1Flux2FlexPostAsync(
+                                    user: user,
                                     prompt: prompt,
                                     promptUpsampling: promptUpsampling,
                                     inputImage: inputImage,

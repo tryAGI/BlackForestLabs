@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class Flux3VideoT2VInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Free-form prompt describing the video.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
@@ -86,6 +92,9 @@ namespace BlackForestLabs
         /// <param name="prompt">
         /// Free-form prompt describing the video.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="aspectRatio">
         /// Output aspect ratio. `auto` lets the harness choose from the prompt and any references.<br/>
         /// Default Value: auto
@@ -120,6 +129,7 @@ namespace BlackForestLabs
 #endif
         public Flux3VideoT2VInputs(
             string prompt,
+            string? user,
             global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoT2VInputsAspectRatio?, string>? aspectRatio,
             global::BlackForestLabs.AnyOf<int?, string>? duration,
             global::BlackForestLabs.Flux3VideoT2VInputsResolution? resolution,
@@ -129,6 +139,7 @@ namespace BlackForestLabs
             bool? draft,
             string mode = "t2v")
         {
+            this.User = user;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.AspectRatio = aspectRatio;
             this.Duration = duration;

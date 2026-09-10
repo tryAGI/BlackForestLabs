@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class Flux2EraseInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Base64-encoded input image or HTTP(S) image URL.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
@@ -79,6 +85,9 @@ namespace BlackForestLabs
         /// <param name="mask">
         /// Base64-encoded black/white mask or HTTP(S) image URL. White pixels indicate the object to remove; black pixels are preserved. Must have the same dimensions as the input image.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="dilatePixels">
         /// Number of pixels to dilate the mask by before removal. Dilation helps cover object edges. Maximum is 25 pixels.<br/>
         /// Default Value: 10
@@ -107,6 +116,7 @@ namespace BlackForestLabs
         public Flux2EraseInputs(
             string image,
             string mask,
+            string? user,
             int? dilatePixels,
             int? seed,
             int? safetyTolerance,
@@ -114,6 +124,7 @@ namespace BlackForestLabs
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Mask = mask ?? throw new global::System.ArgumentNullException(nameof(mask));
             this.DilatePixels = dilatePixels;

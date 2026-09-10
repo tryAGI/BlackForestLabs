@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class Flux3VideoUpscaleInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// The clip to upscale: base64-encoded mp4 (max 50MB) or an http(s) URL. The upscale covers the first 20 seconds; a clip slightly over that is upscaled up to the 20 second mark, and one well over is rejected. At most 2560x1440 (3.7 megapixels) per frame: this endpoint upscales toward 4K, so downscale a larger source before submitting it.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_video")]
@@ -66,6 +72,9 @@ namespace BlackForestLabs
         /// <param name="inputVideo">
         /// The clip to upscale: base64-encoded mp4 (max 50MB) or an http(s) URL. The upscale covers the first 20 seconds; a clip slightly over that is upscaled up to the 20 second mark, and one well over is rejected. At most 2560x1440 (3.7 megapixels) per frame: this endpoint upscales toward 4K, so downscale a larger source before submitting it.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Optional description of the clip's content, steering the enhanced detail. Leave empty for a neutral upscale.
         /// </param>
@@ -92,6 +101,7 @@ namespace BlackForestLabs
 #endif
         public Flux3VideoUpscaleInputs(
             string inputVideo,
+            string? user,
             string? prompt,
             int? creativity,
             double? upscaleFactor,
@@ -99,6 +109,7 @@ namespace BlackForestLabs
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.InputVideo = inputVideo ?? throw new global::System.ArgumentNullException(nameof(inputVideo));
             this.Prompt = prompt;
             this.Creativity = creativity;

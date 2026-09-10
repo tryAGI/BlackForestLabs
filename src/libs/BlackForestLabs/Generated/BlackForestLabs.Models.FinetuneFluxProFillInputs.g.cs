@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class FinetuneFluxProFillInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Name of the LoRA to use. For LoRAs from other organizations (public or shared), use the format 'org-id/lora-name'.<br/>
         /// Example: my-finetune
         /// </summary>
@@ -118,6 +124,9 @@ namespace BlackForestLabs
         /// <param name="image">
         /// A Base64-encoded string representing the image you wish to modify. Can contain alpha mask if desired.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="finetuneStrength">
         /// Strength of the fine-tuned model. 0.0 means no influence, 1.0 means full influence. Allowed values up to 2.0<br/>
         /// Default Value: 1.1F
@@ -166,6 +175,7 @@ namespace BlackForestLabs
         public FinetuneFluxProFillInputs(
             string finetuneId,
             string image,
+            string? user,
             double? finetuneStrength,
             string? mask,
             string? prompt,
@@ -178,6 +188,7 @@ namespace BlackForestLabs
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.FinetuneId = finetuneId ?? throw new global::System.ArgumentNullException(nameof(finetuneId));
             this.FinetuneStrength = finetuneStrength;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));

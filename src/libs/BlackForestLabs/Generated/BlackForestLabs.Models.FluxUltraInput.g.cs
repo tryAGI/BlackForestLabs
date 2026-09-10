@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class FluxUltraInput
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// The prompt to use for image generation.<br/>
         /// Example: A beautiful landscape with mountains and a lake
         /// </summary>
@@ -97,6 +103,9 @@ namespace BlackForestLabs
         /// <summary>
         /// Initializes a new instance of the <see cref="FluxUltraInput" /> class.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// The prompt to use for image generation.<br/>
         /// Example: A beautiful landscape with mountains and a lake
@@ -144,6 +153,7 @@ namespace BlackForestLabs
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FluxUltraInput(
+            string? user,
             string? prompt,
             bool? promptUpsampling,
             int? seed,
@@ -156,6 +166,7 @@ namespace BlackForestLabs
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.Prompt = prompt;
             this.PromptUpsampling = promptUpsampling;
             this.Seed = seed;

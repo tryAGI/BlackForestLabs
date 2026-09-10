@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class FluxPro11Inputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
         /// </summary>
@@ -88,6 +94,9 @@ namespace BlackForestLabs
         /// <summary>
         /// Initializes a new instance of the <see cref="FluxPro11Inputs" /> class.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
@@ -130,6 +139,7 @@ namespace BlackForestLabs
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FluxPro11Inputs(
+            string? user,
             string? prompt,
             string? imagePrompt,
             int? width,
@@ -141,6 +151,7 @@ namespace BlackForestLabs
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.Prompt = prompt;
             this.ImagePrompt = imagePrompt;
             this.Width = width;

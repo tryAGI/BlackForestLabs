@@ -10,6 +10,12 @@ namespace BlackForestLabs
     public sealed partial class Flux2KleinTryonInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Text prompt for VTO generation.<br/>
         /// Example: TRY-ON: The person of image 1 wearing the garments of image 2.
         /// </summary>
@@ -84,6 +90,9 @@ namespace BlackForestLabs
         /// <param name="garment">
         /// Image of one more garments (maps internally to input_image_2).
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="seed">
         /// Optional seed for reproducibility.<br/>
         /// Example: 42
@@ -108,12 +117,14 @@ namespace BlackForestLabs
             string prompt,
             string person,
             string garment,
+            string? user,
             int? seed,
             int? safetyTolerance,
             global::BlackForestLabs.OutputFormat? outputFormat,
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Person = person ?? throw new global::System.ArgumentNullException(nameof(person));
             this.Garment = garment ?? throw new global::System.ArgumentNullException(nameof(garment));

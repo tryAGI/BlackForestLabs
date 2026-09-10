@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class FluxProExpandInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// A Base64-encoded string representing the image you wish to expand.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
@@ -120,6 +126,9 @@ namespace BlackForestLabs
         /// <param name="image">
         /// A Base64-encoded string representing the image you wish to expand.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="top">
         /// Number of pixels to expand at the top of the image<br/>
         /// Default Value: 0
@@ -176,6 +185,7 @@ namespace BlackForestLabs
 #endif
         public FluxProExpandInputs(
             string image,
+            string? user,
             int? top,
             int? bottom,
             int? left,
@@ -190,6 +200,7 @@ namespace BlackForestLabs
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Top = top;
             this.Bottom = bottom;

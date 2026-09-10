@@ -474,6 +474,9 @@ namespace BlackForestLabs
         /// Generate or edit an image with FLUX.2 [flex]<br/>
         /// Submits an image generation or editing task with FLUX.2 [flex]. Specialized for typography and text rendering, and for preserving small details. Supports text-to-image and image-to-image editing workflows.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
@@ -549,6 +552,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFlux2FlexV1Flux2FlexPostAsync(
             string prompt,
+            string? user = default,
             bool? promptUpsampling = default,
             string? inputImage = default,
             string? inputImage2 = default,
@@ -573,6 +577,7 @@ namespace BlackForestLabs
         {
             var __request = new global::BlackForestLabs.Flux2FlexInputs
             {
+                User = user,
                 Prompt = prompt,
                 PromptUpsampling = promptUpsampling,
                 InputImage = inputImage,

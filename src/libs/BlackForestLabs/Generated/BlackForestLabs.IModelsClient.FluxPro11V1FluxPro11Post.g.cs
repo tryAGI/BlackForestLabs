@@ -34,6 +34,9 @@ namespace BlackForestLabs
         /// Generate an image with FLUX1.1 [pro]<br/>
         /// Submits an image generation task with FLUX1.1 [pro].
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
@@ -76,6 +79,7 @@ namespace BlackForestLabs
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> FluxPro11V1FluxPro11PostAsync(
+            string? user = default,
             string? prompt = default,
             string? imagePrompt = default,
             int? width = default,
