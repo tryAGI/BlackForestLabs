@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class FluxProFillInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// A Base64-encoded string representing the image you wish to modify. Can contain alpha mask if desired.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
@@ -98,6 +104,9 @@ namespace BlackForestLabs
         /// <param name="image">
         /// A Base64-encoded string representing the image you wish to modify. Can contain alpha mask if desired.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="mask">
         /// A Base64-encoded string representing a mask for the areas you want to modify in the image. The mask should be the same dimensions as the image and in black and white. Black areas (0%) indicate no modification, while white areas (100%) specify areas for inpainting. Optional if you provide an alpha mask in the original image. Validation: The endpoint verifies that the dimensions of the mask match the original image.
         /// </param>
@@ -141,6 +150,7 @@ namespace BlackForestLabs
 #endif
         public FluxProFillInputs(
             string image,
+            string? user,
             string? mask,
             string? prompt,
             int? steps,
@@ -152,6 +162,7 @@ namespace BlackForestLabs
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Mask = mask;
             this.Prompt = prompt;

@@ -34,6 +34,9 @@ namespace BlackForestLabs
         /// Generate an image with FLUX1.1 [pro] ultra mode<br/>
         /// Submits an image generation task with FLUX1.1 [pro] with ultra mode and optional raw mode.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// The prompt to use for image generation.<br/>
         /// Example: A beautiful landscape with mountains and a lake
@@ -81,6 +84,7 @@ namespace BlackForestLabs
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFlux11UltraV1FluxPro11UltraPostAsync(
+            string? user = default,
             string? prompt = default,
             bool? promptUpsampling = default,
             int? seed = default,

@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsFluxPro10FillFinetunedV1FluxPro10FillFinetunedPostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string> FinetuneId { get; } = new(
         name: @"--finetune-id")
     {
@@ -125,6 +131,7 @@ internal static partial class ModelsFluxPro10FillFinetunedV1FluxPro10FillFinetun
     {
         var command = new Command(@"flux-pro10-fill-finetuned-v1-flux-pro10-fill-finetuned-post", @"Generate an image with FLUX.1 Fill [pro] finetune using an input image and mask.
 Submits an image generation task with the FLUX.1 Fill [pro] finetune model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.");
+                        command.Options.Add(User);
                         command.Options.Add(FinetuneId);
                         command.Options.Add(FinetuneStrength);
                         command.Options.Add(Image);
@@ -163,6 +170,7 @@ Submits an image generation task with the FLUX.1 Fill [pro] finetune model using
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var finetuneId = parseResult.GetRequiredValue(FinetuneId);
                         var finetuneStrength = CliRuntime.WasSpecified(parseResult, FinetuneStrength) ? parseResult.GetValue(FinetuneStrength) : (__requestBase is { } __FinetuneStrengthBaseValue ? __FinetuneStrengthBaseValue.FinetuneStrength : default);
                         var image = parseResult.GetRequiredValue(Image);
@@ -180,6 +188,7 @@ Submits an image generation task with the FLUX.1 Fill [pro] finetune model using
 
 
                                 var response = await client.Models.FluxPro10FillFinetunedV1FluxPro10FillFinetunedPostAsync(
+                                    user: user,
                                     finetuneId: finetuneId,
                                     finetuneStrength: finetuneStrength,
                                     image: image,

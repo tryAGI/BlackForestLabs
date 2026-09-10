@@ -54,7 +54,8 @@ internal static partial class ModelsGenerateFluxKontextMaxV1FluxKontextMaxPostCo
     {
         var command = new Command(@"generate-flux-kontext-max-v1-flux-kontext-max-post", @"Edit or create an image with FLUX.1 Kontext [max]
 Submits an image creation task with FLUX.1 Kontext [max]. For image editing, prefer FLUX.2 [pro] (/flux-2-pro) or FLUX.2 [flex] (/flux-2-flex) which are the recommended default models for editing workflows.");
-                        command.Options.Add(OutputFormat);                        command.Options.Add(FluxKontextProInputsOptionSetOptions.Prompt);
+                        command.Options.Add(OutputFormat);                        command.Options.Add(FluxKontextProInputsOptionSetOptions.User);
+                        command.Options.Add(FluxKontextProInputsOptionSetOptions.Prompt);
                         command.Options.Add(FluxKontextProInputsOptionSetOptions.InputImage);
                         command.Options.Add(FluxKontextProInputsOptionSetOptions.InputImage2);
                         command.Options.Add(FluxKontextProInputsOptionSetOptions.InputImage3);
@@ -90,7 +91,8 @@ Submits an image creation task with FLUX.1 Kontext [max]. For image editing, pre
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var outputFormat = CliRuntime.WasSpecified(parseResult, OutputFormat) ? parseResult.GetValue(OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);                        var prompt = parseResult.GetRequiredValue(FluxKontextProInputsOptionSetOptions.Prompt);
+                        var outputFormat = CliRuntime.WasSpecified(parseResult, OutputFormat) ? parseResult.GetValue(OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);                        var user = CliRuntime.WasSpecified(parseResult, FluxKontextProInputsOptionSetOptions.User) ? parseResult.GetValue(FluxKontextProInputsOptionSetOptions.User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
+                        var prompt = parseResult.GetRequiredValue(FluxKontextProInputsOptionSetOptions.Prompt);
                         var inputImage = CliRuntime.WasSpecified(parseResult, FluxKontextProInputsOptionSetOptions.InputImage) ? parseResult.GetValue(FluxKontextProInputsOptionSetOptions.InputImage) : (__requestBase is { } __InputImageBaseValue ? __InputImageBaseValue.InputImage : default);
                         var inputImage2 = CliRuntime.WasSpecified(parseResult, FluxKontextProInputsOptionSetOptions.InputImage2) ? parseResult.GetValue(FluxKontextProInputsOptionSetOptions.InputImage2) : (__requestBase is { } __InputImage2BaseValue ? __InputImage2BaseValue.InputImage2 : default);
                         var inputImage3 = CliRuntime.WasSpecified(parseResult, FluxKontextProInputsOptionSetOptions.InputImage3) ? parseResult.GetValue(FluxKontextProInputsOptionSetOptions.InputImage3) : (__requestBase is { } __InputImage3BaseValue ? __InputImage3BaseValue.InputImage3 : default);
@@ -106,6 +108,7 @@ Submits an image creation task with FLUX.1 Kontext [max]. For image editing, pre
 
                                 var response = await client.Models.GenerateFluxKontextMaxV1FluxKontextMaxPostAsync(
                                     outputFormat: outputFormat,
+                                    user: user,
                                     prompt: prompt,
                                     inputImage: inputImage,
                                     inputImage2: inputImage2,

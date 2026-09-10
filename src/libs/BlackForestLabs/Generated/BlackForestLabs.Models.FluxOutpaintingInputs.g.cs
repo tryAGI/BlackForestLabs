@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class FluxOutpaintingInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Base64-encoded input (reference) image or HTTP(S) image URL.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_image")]
@@ -100,6 +106,9 @@ namespace BlackForestLabs
         /// <param name="height">
         /// Target output height.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="autoCrop">
         /// If True, crop the input image to the canvas bounds when it extends beyond the edges. If False, an error is raised instead.<br/>
         /// Default Value: false
@@ -135,6 +144,7 @@ namespace BlackForestLabs
             string inputImage,
             int width,
             int height,
+            string? user,
             bool? autoCrop,
             int? safetyTolerance,
             global::BlackForestLabs.OutputFormat? outputFormat,
@@ -144,6 +154,7 @@ namespace BlackForestLabs
             global::BlackForestLabs.FluxOutpaintingInputsMode? mode,
             bool? disablePup)
         {
+            this.User = user;
             this.InputImage = inputImage ?? throw new global::System.ArgumentNullException(nameof(inputImage));
             this.Width = width;
             this.Height = height;

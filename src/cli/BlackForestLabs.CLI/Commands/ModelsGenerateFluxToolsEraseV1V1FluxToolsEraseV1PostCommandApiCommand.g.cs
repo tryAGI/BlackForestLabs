@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsGenerateFluxToolsEraseV1V1FluxToolsEraseV1PostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string> Image { get; } = new(
         name: @"--image")
     {
@@ -97,6 +103,7 @@ internal static partial class ModelsGenerateFluxToolsEraseV1V1FluxToolsEraseV1Po
     {
         var command = new Command(@"generate-flux-tools-erase-v1-v1-flux-tools-erase-v1-post", @"Erase an object from an image
 Submits an erase task using an input image and a mask identifying the object or region to remove.");
+                        command.Options.Add(User);
                         command.Options.Add(Image);
                         command.Options.Add(Mask);
                         command.Options.Add(DilatePixels);
@@ -130,6 +137,7 @@ Submits an erase task using an input image and a mask identifying the object or 
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var image = parseResult.GetRequiredValue(Image);
                         var mask = parseResult.GetRequiredValue(Mask);
                         var dilatePixels = CliRuntime.WasSpecified(parseResult, DilatePixels) ? parseResult.GetValue(DilatePixels) : (__requestBase is { } __DilatePixelsBaseValue ? __DilatePixelsBaseValue.DilatePixels : default);
@@ -142,6 +150,7 @@ Submits an erase task using an input image and a mask identifying the object or 
 
 
                                 var response = await client.Models.GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync(
+                                    user: user,
                                     image: image,
                                     mask: mask,
                                     dilatePixels: dilatePixels,

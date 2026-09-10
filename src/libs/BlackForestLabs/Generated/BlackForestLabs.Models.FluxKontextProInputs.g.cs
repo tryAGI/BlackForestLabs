@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class FluxKontextProInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
         /// </summary>
@@ -103,6 +109,9 @@ namespace BlackForestLabs
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="inputImage">
         /// Base64 encoded image or URL to use with Kontext.
         /// </param>
@@ -146,6 +155,7 @@ namespace BlackForestLabs
 #endif
         public FluxKontextProInputs(
             string prompt,
+            string? user,
             string? inputImage,
             string? inputImage2,
             string? inputImage3,
@@ -158,6 +168,7 @@ namespace BlackForestLabs
             bool? promptUpsampling,
             int? safetyTolerance)
         {
+            this.User = user;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.InputImage = inputImage;
             this.InputImage2 = inputImage2;

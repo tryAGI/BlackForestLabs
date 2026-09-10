@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsExpandV1FluxPro10ExpandPostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string> Image { get; } = new(
         name: @"--image")
     {
@@ -130,6 +136,7 @@ internal static partial class ModelsExpandV1FluxPro10ExpandPostCommandApiCommand
     {
         var command = new Command(@"expand-v1-flux-pro10-expand-post", @"Expand an image with FLUX.1 Expand [pro] by adding pixels on any side
 Submits an image expansion task that adds the specified number of pixels to any combination of sides (top, bottom, left, right) while maintaining context.");
+                        command.Options.Add(User);
                         command.Options.Add(Image);
                         command.Options.Add(Top);
                         command.Options.Add(Bottom);
@@ -169,6 +176,7 @@ Submits an image expansion task that adds the specified number of pixels to any 
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var image = parseResult.GetRequiredValue(Image);
                         var top = CliRuntime.WasSpecified(parseResult, Top) ? parseResult.GetValue(Top) : (__requestBase is { } __TopBaseValue ? __TopBaseValue.Top : default);
                         var bottom = CliRuntime.WasSpecified(parseResult, Bottom) ? parseResult.GetValue(Bottom) : (__requestBase is { } __BottomBaseValue ? __BottomBaseValue.Bottom : default);
@@ -187,6 +195,7 @@ Submits an image expansion task that adds the specified number of pixels to any 
 
 
                                 var response = await client.Models.ExpandV1FluxPro10ExpandPostAsync(
+                                    user: user,
                                     image: image,
                                     top: top,
                                     bottom: bottom,

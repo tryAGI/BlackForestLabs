@@ -474,6 +474,9 @@ namespace BlackForestLabs
         /// Erase an object from an image<br/>
         /// Submits an erase task using an input image and a mask identifying the object or region to remove.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="image">
         /// Base64-encoded input image or HTTP(S) image URL.
         /// </param>
@@ -508,6 +511,7 @@ namespace BlackForestLabs
         public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxToolsEraseV1V1FluxToolsEraseV1PostAsync(
             string image,
             string mask,
+            string? user = default,
             int? dilatePixels = default,
             int? seed = default,
             int? safetyTolerance = default,
@@ -519,6 +523,7 @@ namespace BlackForestLabs
         {
             var __request = new global::BlackForestLabs.Flux2EraseInputs
             {
+                User = user,
                 Image = image,
                 Mask = mask,
                 DilatePixels = dilatePixels,

@@ -34,6 +34,9 @@ namespace BlackForestLabs
         /// Generate an image with FLUX.1 Fill [pro] finetune using an input image and mask.<br/>
         /// Submits an image generation task with the FLUX.1 Fill [pro] finetune model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="finetuneId">
         /// Name of the LoRA to use. For LoRAs from other organizations (public or shared), use the format 'org-id/lora-name'.<br/>
         /// Example: my-finetune
@@ -89,6 +92,7 @@ namespace BlackForestLabs
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> FluxPro10FillFinetunedV1FluxPro10FillFinetunedPostAsync(
             string finetuneId,
             string image,
+            string? user = default,
             double? finetuneStrength = default,
             string? mask = default,
             string? prompt = default,

@@ -474,6 +474,9 @@ namespace BlackForestLabs
         /// Virtual try-on (v2)<br/>
         /// Submits a virtual try-on task against the v2 model. Identical request shape to /vto-v1, with reference and output resolution supported up to 4MP. Person and garment images are mapped to the underlying input image slots. An edit instruction is generated from the person and garment images, with the supplied prompt used as a fallback.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Text prompt for VTO generation.<br/>
         /// Example: TRY-ON: The person of image 1 wearing the garments of image 2.
@@ -508,6 +511,7 @@ namespace BlackForestLabs
             string prompt,
             string person,
             string garment,
+            string? user = default,
             int? seed = default,
             int? safetyTolerance = default,
             global::BlackForestLabs.OutputFormat? outputFormat = default,
@@ -518,6 +522,7 @@ namespace BlackForestLabs
         {
             var __request = new global::BlackForestLabs.Flux2KleinTryonInputs
             {
+                User = user,
                 Prompt = prompt,
                 Person = person,
                 Garment = garment,

@@ -474,6 +474,9 @@ namespace BlackForestLabs
         /// Generate or edit an image with FLUX.2 [klein] 9B<br/>
         /// Submits an image generation or editing task with FLUX.2 [klein] 9B. Sub-second inference with open weights, balancing quality and speed.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
@@ -520,6 +523,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFlux2Klein9bV1Flux2Klein9bPostAsync(
             string prompt,
+            string? user = default,
             string? inputImage = default,
             string? inputImage2 = default,
             string? inputImage3 = default,
@@ -536,6 +540,7 @@ namespace BlackForestLabs
         {
             var __request = new global::BlackForestLabs.Flux2KleinInputs
             {
+                User = user,
                 Prompt = prompt,
                 InputImage = inputImage,
                 InputImage2 = inputImage2,

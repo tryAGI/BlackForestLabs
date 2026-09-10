@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsFillV1FluxPro10FillPostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string> Image { get; } = new(
         name: @"--image")
     {
@@ -112,6 +118,7 @@ internal static partial class ModelsFillV1FluxPro10FillPostCommandApiCommand
     {
         var command = new Command(@"fill-v1-flux-pro10-fill-post", @"Inpaint an image with FLUX.1 Fill [pro] using an input image and mask
 Submits an image generation task with the FLUX.1 Fill [pro] model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.");
+                        command.Options.Add(User);
                         command.Options.Add(Image);
                         command.Options.Add(Mask);
                         command.Options.Add(Prompt);
@@ -148,6 +155,7 @@ Submits an image generation task with the FLUX.1 Fill [pro] model using an input
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var image = parseResult.GetRequiredValue(Image);
                         var mask = CliRuntime.WasSpecified(parseResult, Mask) ? parseResult.GetValue(Mask) : (__requestBase is { } __MaskBaseValue ? __MaskBaseValue.Mask : default);
                         var prompt = CliRuntime.WasSpecified(parseResult, Prompt) ? parseResult.GetValue(Prompt) : (__requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default);
@@ -163,6 +171,7 @@ Submits an image generation task with the FLUX.1 Fill [pro] model using an input
 
 
                                 var response = await client.Models.FillV1FluxPro10FillPostAsync(
+                                    user: user,
                                     image: image,
                                     mask: mask,
                                     prompt: prompt,

@@ -11,6 +11,12 @@ namespace BlackForestLabs
     public sealed partial class Flux3VideoDraftEnhanceInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         /// <default>"draft_enhance"</default>
@@ -51,6 +57,9 @@ namespace BlackForestLabs
         /// <param name="draftCache">
         /// Encrypted draft-cache bundle from a prior `draft` generation. Primary form: the base64-encoded `.bin` file downloaded from the prior result's `draft_cache` URL. An http(s) URL is also accepted for replays within the download URL's expiry window. The harness is skipped and the original FLUX call is reproduced at full quality; the original inputs are embedded in the bundle.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="resolution">
         /// Video resolution class of the enhanced result: `fhd` (default) finishes the reproduced generation with the video upsampler, `hd` returns it without that pass. The reproduced generation is identical either way; only the finishing pass differs.<br/>
         /// Default Value: fhd
@@ -65,10 +74,12 @@ namespace BlackForestLabs
 #endif
         public Flux3VideoDraftEnhanceInputs(
             string draftCache,
+            string? user,
             global::BlackForestLabs.Flux3VideoDraftEnhanceInputsResolution? resolution,
             int? safetyTolerance,
             string mode = "draft_enhance")
         {
+            this.User = user;
             this.Mode = mode;
             this.DraftCache = draftCache ?? throw new global::System.ArgumentNullException(nameof(draftCache));
             this.Resolution = resolution;

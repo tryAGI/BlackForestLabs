@@ -54,7 +54,8 @@ internal static partial class ModelsGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostCo
     {
         var command = new Command(@"generate-flux-tools-vto-v1-v1-flux-tools-vto-v1-post", @"Virtual try-on
 Submits a virtual try-on task. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.");
-                        command.Options.Add(OutputFormat);                        command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Prompt);
+                        command.Options.Add(OutputFormat);                        command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.User);
+                        command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Prompt);
                         command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Person);
                         command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Garment);
                         command.Options.Add(Flux2KleinTryonInputsOptionSetOptions.Seed);
@@ -86,7 +87,8 @@ Submits a virtual try-on task. Person and garment images are mapped to the under
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var outputFormat = CliRuntime.WasSpecified(parseResult, OutputFormat) ? parseResult.GetValue(OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);                        var prompt = parseResult.GetRequiredValue(Flux2KleinTryonInputsOptionSetOptions.Prompt);
+                        var outputFormat = CliRuntime.WasSpecified(parseResult, OutputFormat) ? parseResult.GetValue(OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);                        var user = CliRuntime.WasSpecified(parseResult, Flux2KleinTryonInputsOptionSetOptions.User) ? parseResult.GetValue(Flux2KleinTryonInputsOptionSetOptions.User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
+                        var prompt = parseResult.GetRequiredValue(Flux2KleinTryonInputsOptionSetOptions.Prompt);
                         var person = parseResult.GetRequiredValue(Flux2KleinTryonInputsOptionSetOptions.Person);
                         var garment = parseResult.GetRequiredValue(Flux2KleinTryonInputsOptionSetOptions.Garment);
                         var seed = CliRuntime.WasSpecified(parseResult, Flux2KleinTryonInputsOptionSetOptions.Seed) ? parseResult.GetValue(Flux2KleinTryonInputsOptionSetOptions.Seed) : (__requestBase is { } __SeedBaseValue ? __SeedBaseValue.Seed : default);
@@ -98,6 +100,7 @@ Submits a virtual try-on task. Person and garment images are mapped to the under
 
                                 var response = await client.Models.GenerateFluxToolsVtoV1V1FluxToolsVtoV1PostAsync(
                                     outputFormat: outputFormat,
+                                    user: user,
                                     prompt: prompt,
                                     person: person,
                                     garment: garment,

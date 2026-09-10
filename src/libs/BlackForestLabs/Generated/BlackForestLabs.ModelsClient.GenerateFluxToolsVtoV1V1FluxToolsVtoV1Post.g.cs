@@ -474,6 +474,9 @@ namespace BlackForestLabs
         /// Virtual try-on<br/>
         /// Submits a virtual try-on task. Person and garment images are mapped to the underlying input image slots; prompts steer attribute transfer.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Text prompt for VTO generation.<br/>
         /// Example: TRY-ON: The person of image 1 wearing the garments of image 2.
@@ -508,6 +511,7 @@ namespace BlackForestLabs
             string prompt,
             string person,
             string garment,
+            string? user = default,
             int? seed = default,
             int? safetyTolerance = default,
             global::BlackForestLabs.OutputFormat? outputFormat = default,
@@ -518,6 +522,7 @@ namespace BlackForestLabs
         {
             var __request = new global::BlackForestLabs.Flux2KleinTryonInputs
             {
+                User = user,
                 Prompt = prompt,
                 Person = person,
                 Garment = garment,

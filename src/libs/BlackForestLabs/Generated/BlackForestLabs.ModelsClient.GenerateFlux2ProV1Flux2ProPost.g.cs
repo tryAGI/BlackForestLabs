@@ -474,6 +474,9 @@ namespace BlackForestLabs
         /// Generate or edit an image with FLUX.2 [pro]<br/>
         /// Submits an image generation or editing task with FLUX.2 [pro]. This is the recommended default model for image editing and generation. Supports text-to-image and image-to-image editing workflows.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Text prompt for image generation.<br/>
         /// Example: ein fantastisches bild
@@ -536,6 +539,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFlux2ProV1Flux2ProPostAsync(
             string prompt,
+            string? user = default,
             bool? disablePup = default,
             string? inputImage = default,
             string? inputImage2 = default,
@@ -557,6 +561,7 @@ namespace BlackForestLabs
         {
             var __request = new global::BlackForestLabs.Flux2Inputs
             {
+                User = user,
                 Prompt = prompt,
                 DisablePup = disablePup,
                 InputImage = inputImage,

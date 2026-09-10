@@ -5,7 +5,8 @@ using System.CommandLine;
 namespace BlackForestLabs.CLI.Commands;
 
 internal sealed record Flux2KleinTryonInputsOptionSet(
-    Option<string> Prompt,
+    Option<string?> User,
+                     Option<string> Prompt,
                      Option<string> Person,
                      Option<string> Garment,
                      Option<int?> Seed,
@@ -19,7 +20,11 @@ internal sealed record Flux2KleinTryonInputsOptionSet(
             ? string.Empty
             : prefix.Trim().Trim('-') + "-";
         return new Flux2KleinTryonInputsOptionSet(
-                        Prompt: new Option<string>($"--{normalizedPrefix}prompt")
+                        User: new Option<string?>($"--{normalizedPrefix}user")
+                {
+                    Description = @"Opaque identifier for the end user supplied by the calling platform.",
+                },
+                Prompt: new Option<string>($"--{normalizedPrefix}prompt")
                 {
                     Description = @"Text prompt for VTO generation.",
                     Required = true,

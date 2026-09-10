@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsGenerateFluxToolsVideoUpscaleV1V1FluxToolsVideoUpscaleV1PostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string> InputVideo { get; } = new(
         name: @"--input-video")
     {
@@ -90,6 +96,7 @@ internal static partial class ModelsGenerateFluxToolsVideoUpscaleV1V1FluxToolsVi
     {
         var command = new Command(@"generate-flux-tools-video-upscale-v1-v1-flux-tools-video-upscale-v1-post", @"Upscale a video with FLUX 3.
 Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (up to 2560x1440 in, 13.75 MP output frames). The upscale covers the first 20 seconds of the source; clips well past that are rejected. `creativity` selects precise source-faithful upscaling (0) or creative detail enhancement (1).");
+                        command.Options.Add(User);
                         command.Options.Add(InputVideo);
                         command.Options.Add(Prompt);
                         command.Options.Add(Creativity);
@@ -122,6 +129,7 @@ Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (up 
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var inputVideo = parseResult.GetRequiredValue(InputVideo);
                         var prompt = CliRuntime.WasSpecified(parseResult, Prompt) ? parseResult.GetValue(Prompt) : (__requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default);
                         var creativity = CliRuntime.WasSpecified(parseResult, Creativity) ? parseResult.GetValue(Creativity) : (__requestBase is { } __CreativityBaseValue ? __CreativityBaseValue.Creativity : default);
@@ -133,6 +141,7 @@ Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (up 
 
 
                                 var response = await client.Models.GenerateFluxToolsVideoUpscaleV1V1FluxToolsVideoUpscaleV1PostAsync(
+                                    user: user,
                                     inputVideo: inputVideo,
                                     prompt: prompt,
                                     creativity: creativity,

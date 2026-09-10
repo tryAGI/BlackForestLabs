@@ -54,7 +54,8 @@ internal static partial class ModelsGenerateFlux2Klein9bV1Flux2Klein9bPostComman
     {
         var command = new Command(@"generate-flux2-klein9b-v1-flux2-klein9b-post", @"Generate or edit an image with FLUX.2 [klein] 9B
 Submits an image generation or editing task with FLUX.2 [klein] 9B. Sub-second inference with open weights, balancing quality and speed.");
-                        command.Options.Add(OutputFormat);                        command.Options.Add(Flux2KleinInputsOptionSetOptions.Prompt);
+                        command.Options.Add(OutputFormat);                        command.Options.Add(Flux2KleinInputsOptionSetOptions.User);
+                        command.Options.Add(Flux2KleinInputsOptionSetOptions.Prompt);
                         command.Options.Add(Flux2KleinInputsOptionSetOptions.InputImage);
                         command.Options.Add(Flux2KleinInputsOptionSetOptions.InputImage2);
                         command.Options.Add(Flux2KleinInputsOptionSetOptions.InputImage3);
@@ -90,7 +91,8 @@ Submits an image generation or editing task with FLUX.2 [klein] 9B. Sub-second i
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var outputFormat = CliRuntime.WasSpecified(parseResult, OutputFormat) ? parseResult.GetValue(OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);                        var prompt = parseResult.GetRequiredValue(Flux2KleinInputsOptionSetOptions.Prompt);
+                        var outputFormat = CliRuntime.WasSpecified(parseResult, OutputFormat) ? parseResult.GetValue(OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);                        var user = CliRuntime.WasSpecified(parseResult, Flux2KleinInputsOptionSetOptions.User) ? parseResult.GetValue(Flux2KleinInputsOptionSetOptions.User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
+                        var prompt = parseResult.GetRequiredValue(Flux2KleinInputsOptionSetOptions.Prompt);
                         var inputImage = CliRuntime.WasSpecified(parseResult, Flux2KleinInputsOptionSetOptions.InputImage) ? parseResult.GetValue(Flux2KleinInputsOptionSetOptions.InputImage) : (__requestBase is { } __InputImageBaseValue ? __InputImageBaseValue.InputImage : default);
                         var inputImage2 = CliRuntime.WasSpecified(parseResult, Flux2KleinInputsOptionSetOptions.InputImage2) ? parseResult.GetValue(Flux2KleinInputsOptionSetOptions.InputImage2) : (__requestBase is { } __InputImage2BaseValue ? __InputImage2BaseValue.InputImage2 : default);
                         var inputImage3 = CliRuntime.WasSpecified(parseResult, Flux2KleinInputsOptionSetOptions.InputImage3) ? parseResult.GetValue(Flux2KleinInputsOptionSetOptions.InputImage3) : (__requestBase is { } __InputImage3BaseValue ? __InputImage3BaseValue.InputImage3 : default);
@@ -106,6 +108,7 @@ Submits an image generation or editing task with FLUX.2 [klein] 9B. Sub-second i
 
                                 var response = await client.Models.GenerateFlux2Klein9bV1Flux2Klein9bPostAsync(
                                     outputFormat: outputFormat,
+                                    user: user,
                                     prompt: prompt,
                                     inputImage: inputImage,
                                     inputImage2: inputImage2,

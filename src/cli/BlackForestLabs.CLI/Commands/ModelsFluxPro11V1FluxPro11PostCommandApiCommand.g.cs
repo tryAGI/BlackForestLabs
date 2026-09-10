@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsFluxPro11V1FluxPro11PostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string?> Prompt { get; } = new(
         name: @"--prompt")
     {
@@ -105,6 +111,7 @@ internal static partial class ModelsFluxPro11V1FluxPro11PostCommandApiCommand
     {
         var command = new Command(@"flux-pro11-v1-flux-pro11-post", @"Generate an image with FLUX1.1 [pro]
 Submits an image generation task with FLUX1.1 [pro].");
+                        command.Options.Add(User);
                         command.Options.Add(Prompt);
                         command.Options.Add(ImagePrompt);
                         command.Options.Add(Width);
@@ -140,6 +147,7 @@ Submits an image generation task with FLUX1.1 [pro].");
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var prompt = CliRuntime.WasSpecified(parseResult, Prompt) ? parseResult.GetValue(Prompt) : (__requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default);
                         var imagePrompt = CliRuntime.WasSpecified(parseResult, ImagePrompt) ? parseResult.GetValue(ImagePrompt) : (__requestBase is { } __ImagePromptBaseValue ? __ImagePromptBaseValue.ImagePrompt : default);
                         var width = CliRuntime.WasSpecified(parseResult, Width) ? parseResult.GetValue(Width) : (__requestBase is { } __WidthBaseValue ? __WidthBaseValue.Width : default);
@@ -154,6 +162,7 @@ Submits an image generation task with FLUX1.1 [pro].");
 
 
                                 var response = await client.Models.FluxPro11V1FluxPro11PostAsync(
+                                    user: user,
                                     prompt: prompt,
                                     imagePrompt: imagePrompt,
                                     width: width,

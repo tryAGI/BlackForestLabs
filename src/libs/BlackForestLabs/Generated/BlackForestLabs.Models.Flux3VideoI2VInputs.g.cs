@@ -13,6 +13,12 @@ namespace BlackForestLabs
     public sealed partial class Flux3VideoI2VInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Free-form prompt describing the video.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
@@ -101,6 +107,9 @@ namespace BlackForestLabs
         /// <param name="keyframes">
         /// Your images become frames of the video; each is an http(s) URL or base64, one to ten total. Plain images: one starts the video, two start and end it, with more the first starts it, the last ends it, and the rest fall evenly in between (3 or more need a set `duration`). To control the timing yourself, send `[seconds, image]` pairs in time order, e.g. `[[0, "..."], [3.5, "..."]]`: each image becomes the frame at that second, and with `duration: "auto"` the video runs to the last pair's second, rounded up (20s max).
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="aspectRatio">
         /// Output aspect ratio. `auto` lets the harness choose from the prompt and any references.<br/>
         /// Default Value: auto
@@ -136,6 +145,7 @@ namespace BlackForestLabs
         public Flux3VideoI2VInputs(
             string prompt,
             global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>>> keyframes,
+            string? user,
             global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoI2VInputsAspectRatio?, string>? aspectRatio,
             global::BlackForestLabs.AnyOf<int?, string>? duration,
             global::BlackForestLabs.Flux3VideoI2VInputsResolution? resolution,
@@ -145,6 +155,7 @@ namespace BlackForestLabs
             bool? draft,
             string mode = "i2v")
         {
+            this.User = user;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.AspectRatio = aspectRatio;
             this.Duration = duration;
