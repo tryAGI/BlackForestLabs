@@ -4,19 +4,27 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// Video resolution class: `hd`, or `fhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.<br/>
+    /// Video resolution class: `hd`, or `fhd`/`qhd`/`uhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.<br/>
     /// Default Value: hd
     /// </summary>
     public enum Flux3VideoT2VInputsResolution
     {
         /// <summary>
-        /// `hd`, or `fhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.
+        /// `hd`, or `fhd`/`qhd`/`uhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.
         /// </summary>
         Fhd,
         /// <summary>
-        /// `hd`, or `fhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.
+        /// `hd`, or `fhd`/`qhd`/`uhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.
         /// </summary>
         Hd,
+        /// <summary>
+        /// `hd`, or `fhd`/`qhd`/`uhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.
+        /// </summary>
+        Qhd,
+        /// <summary>
+        /// `hd`, or `fhd`/`qhd`/`uhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.
+        /// </summary>
+        Uhd,
     }
 
     /// <summary>
@@ -33,6 +41,8 @@ namespace BlackForestLabs
             {
                 Flux3VideoT2VInputsResolution.Fhd => "fhd",
                 Flux3VideoT2VInputsResolution.Hd => "hd",
+                Flux3VideoT2VInputsResolution.Qhd => "qhd",
+                Flux3VideoT2VInputsResolution.Uhd => "uhd",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,6 +55,8 @@ namespace BlackForestLabs
             {
                 "fhd" => Flux3VideoT2VInputsResolution.Fhd,
                 "hd" => Flux3VideoT2VInputsResolution.Hd,
+                "qhd" => Flux3VideoT2VInputsResolution.Qhd,
+                "uhd" => Flux3VideoT2VInputsResolution.Uhd,
                 _ => null,
             };
         }
