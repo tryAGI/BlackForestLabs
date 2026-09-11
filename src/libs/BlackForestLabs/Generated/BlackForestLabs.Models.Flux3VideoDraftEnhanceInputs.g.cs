@@ -31,7 +31,7 @@ namespace BlackForestLabs
         public required string DraftCache { get; set; }
 
         /// <summary>
-        /// Video resolution class of the enhanced result: `fhd` (default) finishes the reproduced generation with the video upsampler, `hd` returns it without that pass. The reproduced generation is identical either way; only the finishing pass differs.<br/>
+        /// Video resolution class of the enhanced result: `fhd` (default), `qhd`, and `uhd` finish the reproduced generation with the video upsampler at that canvas, `hd` returns it without that pass. The reproduced generation is identical whichever is chosen; only the finishing pass differs.<br/>
         /// Default Value: fhd
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
@@ -61,7 +61,7 @@ namespace BlackForestLabs
         /// Opaque identifier for the end user supplied by the calling platform.
         /// </param>
         /// <param name="resolution">
-        /// Video resolution class of the enhanced result: `fhd` (default) finishes the reproduced generation with the video upsampler, `hd` returns it without that pass. The reproduced generation is identical either way; only the finishing pass differs.<br/>
+        /// Video resolution class of the enhanced result: `fhd` (default), `qhd`, and `uhd` finish the reproduced generation with the video upsampler at that canvas, `hd` returns it without that pass. The reproduced generation is identical whichever is chosen; only the finishing pass differs.<br/>
         /// Default Value: fhd
         /// </param>
         /// <param name="safetyTolerance">

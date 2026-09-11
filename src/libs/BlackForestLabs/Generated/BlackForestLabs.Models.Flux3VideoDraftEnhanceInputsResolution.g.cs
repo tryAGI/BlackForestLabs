@@ -4,19 +4,27 @@
 namespace BlackForestLabs
 {
     /// <summary>
-    /// Video resolution class of the enhanced result: `fhd` (default) finishes the reproduced generation with the video upsampler, `hd` returns it without that pass. The reproduced generation is identical either way; only the finishing pass differs.<br/>
+    /// Video resolution class of the enhanced result: `fhd` (default), `qhd`, and `uhd` finish the reproduced generation with the video upsampler at that canvas, `hd` returns it without that pass. The reproduced generation is identical whichever is chosen; only the finishing pass differs.<br/>
     /// Default Value: fhd
     /// </summary>
     public enum Flux3VideoDraftEnhanceInputsResolution
     {
         /// <summary>
-        /// `fhd` (default) finishes the reproduced generation with the video upsampler, `hd` returns it without that pass. The reproduced generation is identical either way; only the finishing pass differs.
+        /// `fhd` (default), `qhd`, and `uhd` finish the reproduced generation with the video upsampler at that canvas, `hd` returns it without that pass. The reproduced generation is identical whichever is chosen; only the finishing pass differs.
         /// </summary>
         Fhd,
         /// <summary>
-        /// `fhd` (default) finishes the reproduced generation with the video upsampler, `hd` returns it without that pass. The reproduced generation is identical either way; only the finishing pass differs.
+        /// `fhd` (default), `qhd`, and `uhd` finish the reproduced generation with the video upsampler at that canvas, `hd` returns it without that pass. The reproduced generation is identical whichever is chosen; only the finishing pass differs.
         /// </summary>
         Hd,
+        /// <summary>
+        /// `fhd` (default), `qhd`, and `uhd` finish the reproduced generation with the video upsampler at that canvas, `hd` returns it without that pass. The reproduced generation is identical whichever is chosen; only the finishing pass differs.
+        /// </summary>
+        Qhd,
+        /// <summary>
+        /// `fhd` (default), `qhd`, and `uhd` finish the reproduced generation with the video upsampler at that canvas, `hd` returns it without that pass. The reproduced generation is identical whichever is chosen; only the finishing pass differs.
+        /// </summary>
+        Uhd,
     }
 
     /// <summary>
@@ -33,6 +41,8 @@ namespace BlackForestLabs
             {
                 Flux3VideoDraftEnhanceInputsResolution.Fhd => "fhd",
                 Flux3VideoDraftEnhanceInputsResolution.Hd => "hd",
+                Flux3VideoDraftEnhanceInputsResolution.Qhd => "qhd",
+                Flux3VideoDraftEnhanceInputsResolution.Uhd => "uhd",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,6 +55,8 @@ namespace BlackForestLabs
             {
                 "fhd" => Flux3VideoDraftEnhanceInputsResolution.Fhd,
                 "hd" => Flux3VideoDraftEnhanceInputsResolution.Hd,
+                "qhd" => Flux3VideoDraftEnhanceInputsResolution.Qhd,
+                "uhd" => Flux3VideoDraftEnhanceInputsResolution.Uhd,
                 _ => null,
             };
         }

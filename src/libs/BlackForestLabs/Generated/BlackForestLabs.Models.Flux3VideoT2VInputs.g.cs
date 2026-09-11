@@ -38,7 +38,7 @@ namespace BlackForestLabs
         public global::BlackForestLabs.AnyOf<int?, string>? Duration { get; set; }
 
         /// <summary>
-        /// Video resolution class: `hd`, or `fhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.<br/>
+        /// Video resolution class: `hd`, or `fhd`/`qhd`/`uhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.<br/>
         /// Default Value: hd
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
@@ -104,7 +104,7 @@ namespace BlackForestLabs
         /// Default Value: auto
         /// </param>
         /// <param name="resolution">
-        /// Video resolution class: `hd`, or `fhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.<br/>
+        /// Video resolution class: `hd`, or `fhd`/`qhd`/`uhd` for a higher-resolution result finished by the video upsampler. Exact dimensions vary with the aspect ratio.<br/>
         /// Default Value: hd
         /// </param>
         /// <param name="version">
