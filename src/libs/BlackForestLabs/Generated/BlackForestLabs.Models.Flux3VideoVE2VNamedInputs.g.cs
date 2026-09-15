@@ -13,6 +13,12 @@ namespace BlackForestLabs
     public sealed partial class Flux3VideoVE2VNamedInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// The video to edit, an http(s) URL or base64-encoded mp4.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("video")]
@@ -48,6 +54,9 @@ namespace BlackForestLabs
         /// <param name="prompt">
         /// Edit instruction, stripped of surrounding whitespace.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="safetyTolerance">
         /// Tolerance level for input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance.<br/>
         /// Default Value: 2
@@ -58,8 +67,10 @@ namespace BlackForestLabs
         public Flux3VideoVE2VNamedInputs(
             string video,
             string prompt,
+            string? user,
             int? safetyTolerance)
         {
+            this.User = user;
             this.Video = video ?? throw new global::System.ArgumentNullException(nameof(video));
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.SafetyTolerance = safetyTolerance;
