@@ -474,6 +474,9 @@ namespace BlackForestLabs
         /// Edit a video with FLUX 3.<br/>
         /// Submits a video edit task: the supplied clip is transformed according to the edit instruction. Duration, resolution, aspect ratio, and audio follow the source clip; inference controls are pinned server-side.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="video">
         /// The video to edit, an http(s) URL or base64-encoded mp4.
         /// </param>
@@ -490,12 +493,14 @@ namespace BlackForestLabs
         public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>> GenerateFluxToolsVideoEditV1V1FluxToolsVideoEditV1PostAsync(
             string video,
             string prompt,
+            string? user = default,
             int? safetyTolerance = default,
             global::BlackForestLabs.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::BlackForestLabs.Flux3VideoVE2VNamedInputs
             {
+                User = user,
                 Video = video,
                 Prompt = prompt,
                 SafetyTolerance = safetyTolerance,

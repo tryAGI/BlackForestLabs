@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsGenerateFluxToolsVideoEditV1V1FluxToolsVideoEditV1PostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string> Video { get; } = new(
         name: @"--video")
     {
@@ -67,6 +73,7 @@ internal static partial class ModelsGenerateFluxToolsVideoEditV1V1FluxToolsVideo
     {
         var command = new Command(@"generate-flux-tools-video-edit-v1-v1-flux-tools-video-edit-v1-post", @"Edit a video with FLUX 3.
 Submits a video edit task: the supplied clip is transformed according to the edit instruction. Duration, resolution, aspect ratio, and audio follow the source clip; inference controls are pinned server-side.");
+                        command.Options.Add(User);
                         command.Options.Add(Video);
                         command.Options.Add(Prompt);
                         command.Options.Add(SafetyTolerance);
@@ -95,6 +102,7 @@ Submits a video edit task: the supplied clip is transformed according to the edi
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var video = parseResult.GetRequiredValue(Video);
                         var prompt = parseResult.GetRequiredValue(Prompt);
                         var safetyTolerance = CliRuntime.WasSpecified(parseResult, SafetyTolerance) ? parseResult.GetValue(SafetyTolerance) : (__requestBase is { } __SafetyToleranceBaseValue ? __SafetyToleranceBaseValue.SafetyTolerance : default);
@@ -102,6 +110,7 @@ Submits a video edit task: the supplied clip is transformed according to the edi
 
 
                                 var response = await client.Models.GenerateFluxToolsVideoEditV1V1FluxToolsVideoEditV1PostAsync(
+                                    user: user,
                                     video: video,
                                     prompt: prompt,
                                     safetyTolerance: safetyTolerance,
