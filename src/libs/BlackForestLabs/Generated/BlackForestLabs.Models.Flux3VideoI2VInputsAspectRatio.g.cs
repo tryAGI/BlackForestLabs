@@ -36,6 +36,10 @@ namespace BlackForestLabs
         ///
         /// </summary>
         x9_16,
+        /// <summary>
+        ///
+        /// </summary>
+        x9_21,
     }
 
     /// <summary>
@@ -57,6 +61,7 @@ namespace BlackForestLabs
                 Flux3VideoI2VInputsAspectRatio.x3_4 => "3:4",
                 Flux3VideoI2VInputsAspectRatio.x4_3 => "4:3",
                 Flux3VideoI2VInputsAspectRatio.x9_16 => "9:16",
+                Flux3VideoI2VInputsAspectRatio.x9_21 => "9:21",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,6 +79,7 @@ namespace BlackForestLabs
                 "3:4" => Flux3VideoI2VInputsAspectRatio.x3_4,
                 "4:3" => Flux3VideoI2VInputsAspectRatio.x4_3,
                 "9:16" => Flux3VideoI2VInputsAspectRatio.x9_16,
+                "9:21" => Flux3VideoI2VInputsAspectRatio.x9_21,
                 _ => null,
             };
         }
