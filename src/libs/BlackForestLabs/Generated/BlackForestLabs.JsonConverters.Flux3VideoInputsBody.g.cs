@@ -77,25 +77,25 @@ namespace BlackForestLabs.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::BlackForestLabs.Flux3VideoT2VInputs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::BlackForestLabs.Flux3VideoT2VInputs?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::BlackForestLabs.Flux3VideoT2VInputs).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.T2v!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickT2v(), typeInfo);
             }
             else if (value.IsI2v)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::BlackForestLabs.Flux3VideoI2VInputs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::BlackForestLabs.Flux3VideoI2VInputs?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::BlackForestLabs.Flux3VideoI2VInputs).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.I2v!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickI2v(), typeInfo);
             }
             else if (value.IsV2v)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::BlackForestLabs.Flux3VideoV2VInputs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::BlackForestLabs.Flux3VideoV2VInputs?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::BlackForestLabs.Flux3VideoV2VInputs).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.V2v!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickV2v(), typeInfo);
             }
             else if (value.IsDraftEnhance)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::BlackForestLabs.Flux3VideoDraftEnhanceInputs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::BlackForestLabs.Flux3VideoDraftEnhanceInputs?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::BlackForestLabs.Flux3VideoDraftEnhanceInputs).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DraftEnhance!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDraftEnhance(), typeInfo);
             }
         }
     }
