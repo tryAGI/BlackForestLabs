@@ -34,6 +34,8 @@ internal static partial class UtilityFinetuneDetailsV1FinetuneDetailsGetCommandA
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"finetune-details-v1-finetune-details-get", @"Finetune Details
@@ -60,6 +62,7 @@ Get details about the training parameters and other metadata connected to a spec
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

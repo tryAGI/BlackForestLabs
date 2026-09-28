@@ -92,6 +92,8 @@ internal static partial class ModelsGenerateFluxToolsVideoUpscaleV1V1FluxToolsVi
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux-tools-video-upscale-v1-v1-flux-tools-video-upscale-v1-post", @"Upscale a video with FLUX 3.
@@ -159,6 +161,7 @@ Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (up 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -50,6 +50,8 @@ internal static partial class ModelsGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostCo
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux-tools-vto-v1-v1-flux-tools-vto-v1-post", @"Virtual try-on
@@ -118,6 +120,7 @@ Submits a virtual try-on task. Person and garment images are mapped to the under
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

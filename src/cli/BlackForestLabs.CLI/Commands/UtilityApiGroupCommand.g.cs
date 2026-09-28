@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace BlackForestLabs.CLI.Commands;
 
-internal static class UtilityApiGroupCommand
+internal static partial class UtilityApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"utility", @"Utility endpoint commands.");
@@ -13,6 +15,7 @@ internal static class UtilityApiGroupCommand
                          command.Subcommands.Add(UtilityFinetuneDetailsV1FinetuneDetailsGetCommandApiCommand.Create());
                          command.Subcommands.Add(UtilityGetResultV1GetResultGetCommandApiCommand.Create());
                          command.Subcommands.Add(UtilityMyFinetunesV1MyFinetunesGetCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

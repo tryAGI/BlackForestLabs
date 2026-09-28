@@ -99,6 +99,8 @@ internal static partial class ModelsGenerateFluxToolsEraseV1V1FluxToolsEraseV1Po
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux-tools-erase-v1-v1-flux-tools-erase-v1-post", @"Erase an object from an image
@@ -169,6 +171,7 @@ Submits an erase task using an input image and a mask identifying the object or 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

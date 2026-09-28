@@ -34,6 +34,8 @@ internal static partial class UtilityDeleteFinetuneV1DeleteFinetunePostCommandAp
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-finetune-v1-delete-finetune-post", @"Delete Finetune
@@ -60,6 +62,7 @@ Delete a finetune_id that was created by the user");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -50,6 +50,8 @@ internal static partial class ModelsGenerateFluxKontextProV1FluxKontextProPostCo
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux-kontext-pro-v1-flux-kontext-pro-post", @"Edit or create an image with FLUX.1 Kontext [pro]
@@ -130,6 +132,7 @@ Submits an image creation task with FLUX.1 Kontext [pro]. For image editing, pre
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

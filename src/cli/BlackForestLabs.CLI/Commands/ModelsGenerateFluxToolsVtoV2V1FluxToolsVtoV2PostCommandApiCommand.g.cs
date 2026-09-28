@@ -50,6 +50,8 @@ internal static partial class ModelsGenerateFluxToolsVtoV2V1FluxToolsVtoV2PostCo
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux-tools-vto-v2-v1-flux-tools-vto-v2-post", @"Virtual try-on (v2)
@@ -118,6 +120,7 @@ Submits a virtual try-on task against the v2 model. Identical request shape to /
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

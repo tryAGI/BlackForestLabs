@@ -29,6 +29,8 @@ internal static partial class UtilityMyFinetunesV1MyFinetunesGetCommandApiComman
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"my-finetunes-v1-my-finetunes-get", @"My Finetunes
@@ -63,6 +65,7 @@ List all finetune_ids created by the user");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

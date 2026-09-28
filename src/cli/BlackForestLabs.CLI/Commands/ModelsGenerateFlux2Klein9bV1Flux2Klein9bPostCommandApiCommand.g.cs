@@ -50,6 +50,8 @@ internal static partial class ModelsGenerateFlux2Klein9bV1Flux2Klein9bPostComman
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux2-klein9b-v1-flux2-klein9b-post", @"Generate or edit an image with FLUX.2 [klein] 9B
@@ -130,6 +132,7 @@ Submits an image generation or editing task with FLUX.2 [klein] 9B. Sub-second i
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

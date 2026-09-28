@@ -50,6 +50,8 @@ internal static partial class ModelsGenerateFlux2MaxV1Flux2MaxPostCommandApiComm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux2-max-v1-flux2-max-post", @"Generate or edit an image with FLUX.2 [max]
@@ -145,6 +147,7 @@ Submits an image generation or editing task with FLUX.2 [max]. Highest quality F
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

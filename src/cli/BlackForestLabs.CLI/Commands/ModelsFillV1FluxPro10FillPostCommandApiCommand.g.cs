@@ -114,6 +114,8 @@ internal static partial class ModelsFillV1FluxPro10FillPostCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"fill-v1-flux-pro10-fill-post", @"Inpaint an image with FLUX.1 Fill [pro] using an input image and mask
@@ -193,6 +195,7 @@ Submits an image generation task with the FLUX.1 Fill [pro] model using an input
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }
