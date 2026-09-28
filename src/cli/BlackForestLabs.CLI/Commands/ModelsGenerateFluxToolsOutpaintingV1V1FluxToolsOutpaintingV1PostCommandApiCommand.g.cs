@@ -114,6 +114,8 @@ internal static partial class ModelsGenerateFluxToolsOutpaintingV1V1FluxToolsOut
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux-tools-outpainting-v1-v1-flux-tools-outpainting-v1-post", @"Outpaint or extend an image
@@ -193,6 +195,7 @@ Submits an outpainting task. The input image is placed on a (width, height) canv
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

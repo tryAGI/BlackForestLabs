@@ -114,6 +114,8 @@ internal static partial class ModelsGenerateBigblueFinetunedV1FluxPro11UltraFine
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-bigblue-finetuned-v1-flux-pro11-ultra-finetuned-post", @"Generate an image with FLUX 1.1 [pro] finetune with ultra mode.
@@ -193,6 +195,7 @@ Submits an image generation task with FLUX 1.1 [pro] finetune with ultra mode.")
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

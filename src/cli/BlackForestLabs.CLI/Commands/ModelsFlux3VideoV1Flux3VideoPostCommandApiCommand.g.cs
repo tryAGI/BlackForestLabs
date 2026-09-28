@@ -45,6 +45,8 @@ internal static partial class ModelsFlux3VideoV1Flux3VideoPostCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"flux3-video-v1-flux3-video-post", @"Generate a video with FLUX 3.
@@ -92,6 +94,7 @@ Submits a video generation task to FLUX 3 via the harness. The mode is explicit:
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

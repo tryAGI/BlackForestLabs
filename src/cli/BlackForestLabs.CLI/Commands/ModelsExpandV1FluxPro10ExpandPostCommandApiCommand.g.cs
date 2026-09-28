@@ -132,6 +132,8 @@ internal static partial class ModelsExpandV1FluxPro10ExpandPostCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"expand-v1-flux-pro10-expand-post", @"Expand an image with FLUX.1 Expand [pro] by adding pixels on any side
@@ -220,6 +222,7 @@ Submits an image expansion task that adds the specified number of pixels to any 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

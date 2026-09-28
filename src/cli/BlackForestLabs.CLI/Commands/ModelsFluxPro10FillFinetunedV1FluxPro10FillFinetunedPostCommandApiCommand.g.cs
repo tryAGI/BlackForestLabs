@@ -127,6 +127,8 @@ internal static partial class ModelsFluxPro10FillFinetunedV1FluxPro10FillFinetun
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"flux-pro10-fill-finetuned-v1-flux-pro10-fill-finetuned-post", @"Generate an image with FLUX.1 Fill [pro] finetune using an input image and mask.
@@ -212,6 +214,7 @@ Submits an image generation task with the FLUX.1 Fill [pro] finetune model using
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

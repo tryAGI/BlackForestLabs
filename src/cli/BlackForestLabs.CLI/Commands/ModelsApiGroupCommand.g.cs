@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace BlackForestLabs.CLI.Commands;
 
-internal static class ModelsApiGroupCommand
+internal static partial class ModelsApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"models", @"Models endpoint commands.");
@@ -33,6 +35,7 @@ internal static class ModelsApiGroupCommand
                          command.Subcommands.Add(ModelsGenerateFluxToolsVideoUpscaleV1V1FluxToolsVideoUpscaleV1PostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsGenerateFluxToolsVtoV1V1FluxToolsVtoV1PostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsGenerateFluxToolsVtoV2V1FluxToolsVtoV2PostCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

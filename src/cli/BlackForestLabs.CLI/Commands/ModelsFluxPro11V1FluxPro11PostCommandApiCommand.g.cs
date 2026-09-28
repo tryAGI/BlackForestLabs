@@ -107,6 +107,8 @@ internal static partial class ModelsFluxPro11V1FluxPro11PostCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"flux-pro11-v1-flux-pro11-post", @"Generate an image with FLUX1.1 [pro]
@@ -183,6 +185,7 @@ Submits an image generation task with FLUX1.1 [pro].");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

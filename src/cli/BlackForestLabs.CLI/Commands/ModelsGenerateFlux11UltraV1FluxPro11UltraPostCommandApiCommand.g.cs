@@ -111,6 +111,8 @@ internal static partial class ModelsGenerateFlux11UltraV1FluxPro11UltraPostComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux11-ultra-v1-flux-pro11-ultra-post", @"Generate an image with FLUX1.1 [pro] ultra mode
@@ -190,6 +192,7 @@ Submits an image generation task with FLUX1.1 [pro] with ultra mode and optional
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

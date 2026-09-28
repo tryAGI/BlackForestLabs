@@ -69,6 +69,8 @@ internal static partial class ModelsGenerateFluxToolsVideoEditV1V1FluxToolsVideo
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux-tools-video-edit-v1-v1-flux-tools-video-edit-v1-post", @"Edit a video with FLUX 3.
@@ -124,6 +126,7 @@ Submits a video edit task: the supplied clip is transformed according to the edi
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

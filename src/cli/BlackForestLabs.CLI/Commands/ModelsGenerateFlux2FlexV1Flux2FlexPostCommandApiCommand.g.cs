@@ -168,6 +168,8 @@ internal static partial class ModelsGenerateFlux2FlexV1Flux2FlexPostCommandApiCo
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"generate-flux2-flex-v1-flux2-flex-post", @"Generate or edit an image with FLUX.2 [flex]
@@ -274,6 +276,7 @@ Submits an image generation or editing task with FLUX.2 [flex]. Specialized for 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

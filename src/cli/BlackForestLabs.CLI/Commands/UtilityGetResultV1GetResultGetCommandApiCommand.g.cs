@@ -34,6 +34,8 @@ internal static partial class UtilityGetResultV1GetResultGetCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-result-v1-get-result-get", @"Get Result
@@ -60,6 +62,7 @@ An endpoint for getting generation task result.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }
