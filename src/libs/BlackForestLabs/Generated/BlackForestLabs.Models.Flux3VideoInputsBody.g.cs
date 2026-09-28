@@ -50,8 +50,8 @@ namespace BlackForestLabs
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoT2VInputs PickT2v() => IsT2v
-            ? T2v!
+        public global::BlackForestLabs.Flux3VideoT2VInputs PickT2v() => T2v is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'T2v' but the value was {ToString()}.");
 
         /// <summary>
@@ -91,8 +91,8 @@ namespace BlackForestLabs
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoI2VInputs PickI2v() => IsI2v
-            ? I2v!
+        public global::BlackForestLabs.Flux3VideoI2VInputs PickI2v() => I2v is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'I2v' but the value was {ToString()}.");
 
         /// <summary>
@@ -129,8 +129,8 @@ namespace BlackForestLabs
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoV2VInputs PickV2v() => IsV2v
-            ? V2v!
+        public global::BlackForestLabs.Flux3VideoV2VInputs PickV2v() => V2v is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'V2v' but the value was {ToString()}.");
 
         /// <summary>
@@ -168,8 +168,8 @@ namespace BlackForestLabs
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoDraftEnhanceInputs PickDraftEnhance() => IsDraftEnhance
-            ? DraftEnhance!
+        public global::BlackForestLabs.Flux3VideoDraftEnhanceInputs PickDraftEnhance() => DraftEnhance is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DraftEnhance' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -325,21 +325,21 @@ namespace BlackForestLabs
                 Validate();
             }
 
-            if (IsT2v && t2v != null)
+            if (T2v is { } __value0 && t2v != null)
             {
-                return t2v(T2v!);
+                return t2v(__value0);
             }
-            else if (IsI2v && i2v != null)
+            else if (I2v is { } __value1 && i2v != null)
             {
-                return i2v(I2v!);
+                return i2v(__value1);
             }
-            else if (IsV2v && v2v != null)
+            else if (V2v is { } __value2 && v2v != null)
             {
-                return v2v(V2v!);
+                return v2v(__value2);
             }
-            else if (IsDraftEnhance && draftEnhance != null)
+            else if (DraftEnhance is { } __value3 && draftEnhance != null)
             {
-                return draftEnhance(DraftEnhance!);
+                return draftEnhance(__value3);
             }
 
             return default(TResult);
@@ -363,21 +363,21 @@ namespace BlackForestLabs
                 Validate();
             }
 
-            if (IsT2v)
+            if (T2v is { } __value0)
             {
-                t2v?.Invoke(T2v!);
+                t2v?.Invoke(__value0);
             }
-            else if (IsI2v)
+            else if (I2v is { } __value1)
             {
-                i2v?.Invoke(I2v!);
+                i2v?.Invoke(__value1);
             }
-            else if (IsV2v)
+            else if (V2v is { } __value2)
             {
-                v2v?.Invoke(V2v!);
+                v2v?.Invoke(__value2);
             }
-            else if (IsDraftEnhance)
+            else if (DraftEnhance is { } __value3)
             {
-                draftEnhance?.Invoke(DraftEnhance!);
+                draftEnhance?.Invoke(__value3);
             }
         }
 
@@ -396,21 +396,21 @@ namespace BlackForestLabs
                 Validate();
             }
 
-            if (IsT2v)
+            if (T2v is { } __value0)
             {
-                t2v?.Invoke(T2v!);
+                t2v?.Invoke(__value0);
             }
-            else if (IsI2v)
+            else if (I2v is { } __value1)
             {
-                i2v?.Invoke(I2v!);
+                i2v?.Invoke(__value1);
             }
-            else if (IsV2v)
+            else if (V2v is { } __value2)
             {
-                v2v?.Invoke(V2v!);
+                v2v?.Invoke(__value2);
             }
-            else if (IsDraftEnhance)
+            else if (DraftEnhance is { } __value3)
             {
-                draftEnhance?.Invoke(DraftEnhance!);
+                draftEnhance?.Invoke(__value3);
             }
         }
 
