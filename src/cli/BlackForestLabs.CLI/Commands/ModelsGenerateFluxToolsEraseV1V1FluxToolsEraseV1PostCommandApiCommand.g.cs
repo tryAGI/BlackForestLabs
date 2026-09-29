@@ -101,9 +101,9 @@ internal static partial class ModelsGenerateFluxToolsEraseV1V1FluxToolsEraseV1Po
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"generate-flux-tools-erase-v1-v1-flux-tools-erase-v1-post", @"Erase an object from an image
+        var command = new Command(commandName ?? @"generate-flux-tools-erase-v1-v1-flux-tools-erase-v1-post", @"Erase an object from an image
 Submits an erase task using an input image and a mask identifying the object or region to remove.");
                         command.Options.Add(User);
                         command.Options.Add(Image);

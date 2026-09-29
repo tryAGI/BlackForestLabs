@@ -113,9 +113,9 @@ internal static partial class ModelsGenerateFlux11UltraV1FluxPro11UltraPostComma
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"generate-flux11-ultra-v1-flux-pro11-ultra-post", @"Generate an image with FLUX1.1 [pro] ultra mode
+        var command = new Command(commandName ?? @"generate-flux11-ultra-v1-flux-pro11-ultra-post", @"Generate an image with FLUX1.1 [pro] ultra mode
 Submits an image generation task with FLUX1.1 [pro] with ultra mode and optional raw mode.");
                         command.Options.Add(User);
                         command.Options.Add(Prompt);

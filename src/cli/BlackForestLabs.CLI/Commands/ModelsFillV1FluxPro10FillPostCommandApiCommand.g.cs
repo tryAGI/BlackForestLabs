@@ -116,9 +116,9 @@ internal static partial class ModelsFillV1FluxPro10FillPostCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"fill-v1-flux-pro10-fill-post", @"Inpaint an image with FLUX.1 Fill [pro] using an input image and mask
+        var command = new Command(commandName ?? @"fill-v1-flux-pro10-fill-post", @"Inpaint an image with FLUX.1 Fill [pro] using an input image and mask
 Submits an image generation task with the FLUX.1 Fill [pro] model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.");
                         command.Options.Add(User);
                         command.Options.Add(Image);

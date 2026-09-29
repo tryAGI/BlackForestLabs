@@ -71,9 +71,9 @@ internal static partial class ModelsGenerateFluxToolsVideoEditV1V1FluxToolsVideo
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"generate-flux-tools-video-edit-v1-v1-flux-tools-video-edit-v1-post", @"Edit a video with FLUX 3.
+        var command = new Command(commandName ?? @"generate-flux-tools-video-edit-v1-v1-flux-tools-video-edit-v1-post", @"Edit a video with FLUX 3.
 Submits a video edit task: the supplied clip is transformed according to the edit instruction. Duration, resolution, aspect ratio, and audio follow the source clip; inference controls are pinned server-side.");
                         command.Options.Add(User);
                         command.Options.Add(Video);

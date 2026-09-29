@@ -109,9 +109,9 @@ internal static partial class ModelsFluxPro11V1FluxPro11PostCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"flux-pro11-v1-flux-pro11-post", @"Generate an image with FLUX1.1 [pro]
+        var command = new Command(commandName ?? @"flux-pro11-v1-flux-pro11-post", @"Generate an image with FLUX1.1 [pro]
 Submits an image generation task with FLUX1.1 [pro].");
                         command.Options.Add(User);
                         command.Options.Add(Prompt);

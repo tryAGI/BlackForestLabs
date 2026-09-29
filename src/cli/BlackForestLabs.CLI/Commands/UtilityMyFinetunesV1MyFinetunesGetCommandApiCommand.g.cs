@@ -31,9 +31,9 @@ internal static partial class UtilityMyFinetunesV1MyFinetunesGetCommandApiComman
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"my-finetunes-v1-my-finetunes-get", @"My Finetunes
+        var command = new Command(commandName ?? @"my-finetunes-v1-my-finetunes-get", @"My Finetunes
 List all finetune_ids created by the user");
 
 

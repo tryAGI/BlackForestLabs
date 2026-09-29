@@ -129,9 +129,9 @@ internal static partial class ModelsFluxPro10FillFinetunedV1FluxPro10FillFinetun
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"flux-pro10-fill-finetuned-v1-flux-pro10-fill-finetuned-post", @"Generate an image with FLUX.1 Fill [pro] finetune using an input image and mask.
+        var command = new Command(commandName ?? @"flux-pro10-fill-finetuned-v1-flux-pro10-fill-finetuned-post", @"Generate an image with FLUX.1 Fill [pro] finetune using an input image and mask.
 Submits an image generation task with the FLUX.1 Fill [pro] finetune model using an input image and mask. Mask can be applied to alpha channel or submitted as a separate image.");
                         command.Options.Add(User);
                         command.Options.Add(FinetuneId);

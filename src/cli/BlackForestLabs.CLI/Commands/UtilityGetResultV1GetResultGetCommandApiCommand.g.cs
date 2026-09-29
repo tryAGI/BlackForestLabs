@@ -36,9 +36,9 @@ internal static partial class UtilityGetResultV1GetResultGetCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-result-v1-get-result-get", @"Get Result
+        var command = new Command(commandName ?? @"get-result-v1-get-result-get", @"Get Result
 An endpoint for getting generation task result.");
                         command.Options.Add(Id);
 
