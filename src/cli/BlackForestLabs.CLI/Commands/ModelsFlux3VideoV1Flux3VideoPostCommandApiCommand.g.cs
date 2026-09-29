@@ -47,9 +47,9 @@ internal static partial class ModelsFlux3VideoV1Flux3VideoPostCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"flux3-video-v1-flux3-video-post", @"Generate a video with FLUX 3.
+        var command = new Command(commandName ?? @"flux3-video-v1-flux3-video-post", @"Generate a video with FLUX 3.
 Submits a video generation task to FLUX 3 via the harness. The mode is explicit: t2v (`text-to-video`), i2v (`image-continuation`, keyframes), v2v (`video-continuation`, start_video), or draft_enhance (`draft-enhance`, full-quality render of a prior draft's `draft_cache`); the spelled-out aliases are accepted anywhere the short key is.");
 
           command.Options.Add(Input);

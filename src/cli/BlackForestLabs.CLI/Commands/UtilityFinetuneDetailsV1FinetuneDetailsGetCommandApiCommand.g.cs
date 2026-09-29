@@ -36,9 +36,9 @@ internal static partial class UtilityFinetuneDetailsV1FinetuneDetailsGetCommandA
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"finetune-details-v1-finetune-details-get", @"Finetune Details
+        var command = new Command(commandName ?? @"finetune-details-v1-finetune-details-get", @"Finetune Details
 Get details about the training parameters and other metadata connected to a specific finetune_id that was created by the user.");
                         command.Options.Add(FinetuneId);
 

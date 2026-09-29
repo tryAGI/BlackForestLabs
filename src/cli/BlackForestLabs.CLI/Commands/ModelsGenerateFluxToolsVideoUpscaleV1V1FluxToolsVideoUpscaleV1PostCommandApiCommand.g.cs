@@ -94,9 +94,9 @@ internal static partial class ModelsGenerateFluxToolsVideoUpscaleV1V1FluxToolsVi
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"generate-flux-tools-video-upscale-v1-v1-flux-tools-video-upscale-v1-post", @"Upscale a video with FLUX 3.
+        var command = new Command(commandName ?? @"generate-flux-tools-video-upscale-v1-v1-flux-tools-video-upscale-v1-post", @"Upscale a video with FLUX 3.
 Submits a video upscaling task: 1.5x-3x super-resolution of the source clip (up to 2560x1440 in, 13.75 MP output frames). The upscale covers the first 20 seconds of the source; clips well past that are rejected. `creativity` selects precise source-faithful upscaling (0) or creative detail enhancement (1).");
                         command.Options.Add(User);
                         command.Options.Add(InputVideo);

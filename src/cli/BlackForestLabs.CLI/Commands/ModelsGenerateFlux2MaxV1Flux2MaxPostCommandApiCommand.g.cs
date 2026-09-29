@@ -52,9 +52,9 @@ internal static partial class ModelsGenerateFlux2MaxV1Flux2MaxPostCommandApiComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"generate-flux2-max-v1-flux2-max-post", @"Generate or edit an image with FLUX.2 [max]
+        var command = new Command(commandName ?? @"generate-flux2-max-v1-flux2-max-post", @"Generate or edit an image with FLUX.2 [max]
 Submits an image generation or editing task with FLUX.2 [max]. Highest quality FLUX.2 model for image generation and editing, with the strongest editing consistency and prompt following.");
                         command.Options.Add(OutputFormat);                        command.Options.Add(Flux2InputsOptionSetOptions.User);
                         command.Options.Add(Flux2InputsOptionSetOptions.Prompt);

@@ -36,9 +36,9 @@ internal static partial class UtilityDeleteFinetuneV1DeleteFinetunePostCommandAp
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-finetune-v1-delete-finetune-post", @"Delete Finetune
+        var command = new Command(commandName ?? @"delete-finetune-v1-delete-finetune-post", @"Delete Finetune
 Delete a finetune_id that was created by the user");
                         command.Options.Add(FinetuneId);
 

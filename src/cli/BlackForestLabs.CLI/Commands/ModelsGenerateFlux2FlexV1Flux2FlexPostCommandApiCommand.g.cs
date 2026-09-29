@@ -170,9 +170,9 @@ internal static partial class ModelsGenerateFlux2FlexV1Flux2FlexPostCommandApiCo
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"generate-flux2-flex-v1-flux2-flex-post", @"Generate or edit an image with FLUX.2 [flex]
+        var command = new Command(commandName ?? @"generate-flux2-flex-v1-flux2-flex-post", @"Generate or edit an image with FLUX.2 [flex]
 Submits an image generation or editing task with FLUX.2 [flex]. Specialized for typography and text rendering, and for preserving small details. Supports text-to-image and image-to-image editing workflows.");
                         command.Options.Add(User);
                         command.Options.Add(Prompt);
