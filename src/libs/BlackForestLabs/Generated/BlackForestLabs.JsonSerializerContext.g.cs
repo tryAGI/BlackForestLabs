@@ -11,6 +11,14 @@ namespace BlackForestLabs
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
+            typeof(global::BlackForestLabs.JsonConverters.Flux3ImageInputsAspectRatioJsonConverter),
+
+            typeof(global::BlackForestLabs.JsonConverters.Flux3ImageInputsAspectRatioNullableJsonConverter),
+
+            typeof(global::BlackForestLabs.JsonConverters.Flux3ImageInputsResolutionJsonConverter),
+
+            typeof(global::BlackForestLabs.JsonConverters.Flux3ImageInputsResolutionNullableJsonConverter),
+
             typeof(global::BlackForestLabs.JsonConverters.Flux3VideoDraftEnhanceInputsResolutionJsonConverter),
 
             typeof(global::BlackForestLabs.JsonConverters.Flux3VideoDraftEnhanceInputsResolutionNullableJsonConverter),
@@ -56,6 +64,10 @@ namespace BlackForestLabs
             typeof(global::BlackForestLabs.JsonConverters.StatusResponseNullableJsonConverter),
 
             typeof(global::BlackForestLabs.JsonConverters.Flux3VideoInputsBodyJsonConverter),
+
+            typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
+
+            typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.Flux3ImageInputsAspectRatio?, string>),
 
             typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.Flux3VideoI2VInputsAspectRatio?, string>),
 
@@ -152,6 +164,12 @@ namespace BlackForestLabs
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux2Inputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux2KleinInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux2KleinTryonInputs))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3ImageInputs))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>, object>), TypeInfoPropertyName = "AnyOfStringIListStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3ImageInputsAspectRatio?, string>), TypeInfoPropertyName = "AnyOfFlux3ImageInputsAspectRatioString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3ImageInputsAspectRatio), TypeInfoPropertyName = "Flux3ImageInputsAspectRatio2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3ImageInputsResolution), TypeInfoPropertyName = "Flux3ImageInputsResolution2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoDraftEnhanceInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoDraftEnhanceInputsResolution), TypeInfoPropertyName = "Flux3VideoDraftEnhanceInputsResolution2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoI2VInputs))]
@@ -162,7 +180,6 @@ namespace BlackForestLabs
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>>>), TypeInfoPropertyName = "AnyOfStringIListAnyOfDoubleStringIListStringIListIListAnyOfDoubleString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<double?, string>), TypeInfoPropertyName = "AnyOfDoubleString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoInputsBody), TypeInfoPropertyName = "Flux3VideoInputsBody2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoT2VInputs))]
@@ -197,9 +214,10 @@ namespace BlackForestLabs
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<string, int?>), TypeInfoPropertyName = "AnyOfStringInt322")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>), TypeInfoPropertyName = "AnyOfAsyncResponseAsyncWebhookResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>), TypeInfoPropertyName = "AnyOfSettledCostResultResponseResultResponse2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.List<string>, object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.List<global::BlackForestLabs.AnyOf<double?, string>>, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::BlackForestLabs.AnyOf<double?, string>>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::BlackForestLabs.AnyOf<double?, string>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::BlackForestLabs.AnyOf<double?, string>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::BlackForestLabs.ValidationError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::BlackForestLabs.AnyOf<string, int?>>))]
