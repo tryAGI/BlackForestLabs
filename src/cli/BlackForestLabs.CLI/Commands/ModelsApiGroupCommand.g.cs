@@ -16,7 +16,6 @@ internal static partial class ModelsApiGroupCommand
                          command.Subcommands.Add(ModelsFlux3ImageV1Flux3ImagePostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsFlux3VideoV1Flux3VideoPostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsFluxDevV1FluxDevPostCommandApiCommand.Create());
-                         command.Subcommands.Add(ModelsFluxPro10FillFinetunedV1FluxPro10FillFinetunedPostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsFluxPro11V1FluxPro11PostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsGenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostCommandApiCommand.Create());
                          command.Subcommands.Add(ModelsGenerateFlux11UltraV1FluxPro11UltraPostCommandApiCommand.Create());

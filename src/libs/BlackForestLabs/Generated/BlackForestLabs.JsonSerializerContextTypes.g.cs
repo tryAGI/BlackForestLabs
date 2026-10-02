@@ -69,7 +69,7 @@ namespace BlackForestLabs
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.FinetuneFluxProFillInputs? Type9 { get; set; }
+        public global::BlackForestLabs.FinetuneFluxUltraInput? Type9 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -77,239 +77,235 @@ namespace BlackForestLabs
         /// <summary>
         ///
         /// </summary>
-        public bool? Type11 { get; set; }
+        public global::BlackForestLabs.OutputFormat? Type11 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.OutputFormat? Type12 { get; set; }
+        public bool? Type12 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.FinetuneFluxUltraInput? Type13 { get; set; }
+        public global::BlackForestLabs.Flux2DeblurInputs? Type13 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux2DeblurInputs? Type14 { get; set; }
+        public global::BlackForestLabs.Flux2EraseInputs? Type14 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux2EraseInputs? Type15 { get; set; }
+        public global::BlackForestLabs.Flux2FlexInputs? Type15 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux2FlexInputs? Type16 { get; set; }
+        public global::BlackForestLabs.Flux2Inputs? Type16 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux2Inputs? Type17 { get; set; }
+        public global::BlackForestLabs.Flux2KleinInputs? Type17 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux2KleinInputs? Type18 { get; set; }
+        public global::BlackForestLabs.Flux2KleinTryonInputs? Type18 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux2KleinTryonInputs? Type19 { get; set; }
+        public global::BlackForestLabs.Flux3ImageInputs? Type19 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3ImageInputs? Type20 { get; set; }
+        public global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type20 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type21 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type21 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type22 { get; set; }
+        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3ImageInputsAspectRatio?, string>? Type22 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3ImageInputsAspectRatio?, string>? Type23 { get; set; }
+        public global::BlackForestLabs.Flux3ImageInputsAspectRatio? Type23 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3ImageInputsAspectRatio? Type24 { get; set; }
+        public global::BlackForestLabs.Flux3ImageInputsResolution? Type24 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3ImageInputsResolution? Type25 { get; set; }
+        public global::BlackForestLabs.Flux3VideoDraftEnhanceInputs? Type25 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoDraftEnhanceInputs? Type26 { get; set; }
+        public global::BlackForestLabs.Flux3VideoDraftEnhanceInputsResolution? Type26 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoDraftEnhanceInputsResolution? Type27 { get; set; }
+        public global::BlackForestLabs.Flux3VideoI2VInputs? Type27 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoI2VInputs? Type28 { get; set; }
+        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoI2VInputsAspectRatio?, string>? Type28 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoI2VInputsAspectRatio?, string>? Type29 { get; set; }
+        public global::BlackForestLabs.Flux3VideoI2VInputsAspectRatio? Type29 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoI2VInputsAspectRatio? Type30 { get; set; }
+        public global::BlackForestLabs.AnyOf<int?, string>? Type30 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<int?, string>? Type31 { get; set; }
+        public global::BlackForestLabs.Flux3VideoI2VInputsResolution? Type31 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoI2VInputsResolution? Type32 { get; set; }
+        public global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>>>? Type32 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>>>? Type33 { get; set; }
+        public global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>? Type33 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>? Type34 { get; set; }
+        public global::BlackForestLabs.AnyOf<double?, string>? Type34 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<double?, string>? Type35 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>>? Type35 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<double?, string>>>? Type36 { get; set; }
+        public global::BlackForestLabs.Flux3VideoInputsBody? Type36 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoInputsBody? Type37 { get; set; }
+        public global::BlackForestLabs.Flux3VideoT2VInputs? Type37 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoT2VInputs? Type38 { get; set; }
+        public global::BlackForestLabs.Flux3VideoV2VInputs? Type38 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoV2VInputs? Type39 { get; set; }
+        public global::BlackForestLabs.Flux3VideoInputsBodyDiscriminator? Type39 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoInputsBodyDiscriminator? Type40 { get; set; }
+        public global::BlackForestLabs.Flux3VideoInputsBodyDiscriminatorMode? Type40 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoInputsBodyDiscriminatorMode? Type41 { get; set; }
+        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoT2VInputsAspectRatio?, string>? Type41 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoT2VInputsAspectRatio?, string>? Type42 { get; set; }
+        public global::BlackForestLabs.Flux3VideoT2VInputsAspectRatio? Type42 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoT2VInputsAspectRatio? Type43 { get; set; }
+        public global::BlackForestLabs.Flux3VideoT2VInputsResolution? Type43 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoT2VInputsResolution? Type44 { get; set; }
+        public global::BlackForestLabs.Flux3VideoUpscaleInputs? Type44 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoUpscaleInputs? Type45 { get; set; }
+        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoV2VInputsAspectRatio?, string>? Type45 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3VideoV2VInputsAspectRatio?, string>? Type46 { get; set; }
+        public global::BlackForestLabs.Flux3VideoV2VInputsAspectRatio? Type46 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoV2VInputsAspectRatio? Type47 { get; set; }
+        public global::BlackForestLabs.Flux3VideoV2VInputsResolution? Type47 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoV2VInputsResolution? Type48 { get; set; }
+        public global::BlackForestLabs.Flux3VideoVE2VNamedInputs? Type48 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.Flux3VideoVE2VNamedInputs? Type49 { get; set; }
+        public global::BlackForestLabs.FluxDevInputs? Type49 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.FluxDevInputs? Type50 { get; set; }
+        public global::BlackForestLabs.FluxKontextProInputs? Type50 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.FluxKontextProInputs? Type51 { get; set; }
+        public global::BlackForestLabs.FluxOutpaintingInputs? Type51 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.FluxOutpaintingInputs? Type52 { get; set; }
+        public global::BlackForestLabs.FluxOutpaintingInputsMode? Type52 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.FluxOutpaintingInputsMode? Type53 { get; set; }
+        public global::BlackForestLabs.FluxPro11Inputs? Type53 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.FluxPro11Inputs? Type54 { get; set; }
+        public global::BlackForestLabs.FluxProExpandInputs? Type54 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.FluxProExpandInputs? Type55 { get; set; }
+        public global::BlackForestLabs.FluxProFillInputs? Type55 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.FluxProFillInputs? Type56 { get; set; }
+        public global::BlackForestLabs.FluxUltraInput? Type56 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.FluxUltraInput? Type57 { get; set; }
+        public global::BlackForestLabs.HTTPValidationError? Type57 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.HTTPValidationError? Type58 { get; set; }
+        public global::System.Collections.Generic.IList<global::BlackForestLabs.ValidationError>? Type58 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::BlackForestLabs.ValidationError>? Type59 { get; set; }
+        public global::BlackForestLabs.ValidationError? Type59 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.ValidationError? Type60 { get; set; }
+        public global::BlackForestLabs.MyFinetunesResponse? Type60 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.MyFinetunesResponse? Type61 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type61 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type62 { get; set; }
+        public global::BlackForestLabs.ResultResponse? Type62 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.ResultResponse? Type63 { get; set; }
+        public global::BlackForestLabs.StatusResponse? Type63 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.StatusResponse? Type64 { get; set; }
+        public global::BlackForestLabs.SettledCostResultResponse? Type64 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.SettledCostResultResponse? Type65 { get; set; }
+        public global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<string, int?>>? Type65 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::BlackForestLabs.AnyOf<string, int?>>? Type66 { get; set; }
+        public global::BlackForestLabs.AnyOf<string, int?>? Type66 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<string, int?>? Type67 { get; set; }
+        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>? Type67 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.AsyncResponse, global::BlackForestLabs.AsyncWebhookResponse>? Type68 { get; set; }
-        /// <summary>
-        ///
-        /// </summary>
-        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>? Type69 { get; set; }
+        public global::BlackForestLabs.AnyOf<global::BlackForestLabs.SettledCostResultResponse, global::BlackForestLabs.ResultResponse>? Type68 { get; set; }
 
         /// <summary>
         ///
