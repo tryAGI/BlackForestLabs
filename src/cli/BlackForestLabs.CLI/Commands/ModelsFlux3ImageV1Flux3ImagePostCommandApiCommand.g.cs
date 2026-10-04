@@ -14,7 +14,7 @@ internal static partial class ModelsFlux3ImageV1Flux3ImagePostCommandApiCommand
         Required = true,
     };
 
-    private static Option<global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>, object>?> Images { get; } = new(
+    private static Option<global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>>?> Images { get; } = new(
         name: @"--images")
     {
         Description = @"Optional reference image(s) the prompt edits or draws from; each is an http(s) URL or base64, one to 10 total.",

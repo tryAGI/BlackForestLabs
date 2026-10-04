@@ -505,7 +505,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AsyncResponse> Flux3ImageV1Flux3ImagePostAsync(
             string prompt,
-            global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? images = default,
+            global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>>? images = default,
             global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3ImageInputsAspectRatio?, string>? aspectRatio = default,
             global::BlackForestLabs.Flux3ImageInputsResolution? resolution = default,
             int? safetyTolerance = default,

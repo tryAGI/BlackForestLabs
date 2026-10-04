@@ -19,8 +19,8 @@ namespace BlackForestLabs
         /// Optional reference image(s) the prompt edits or draws from; each is an http(s) URL or base64, one to 10 total.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("images")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
-        public global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Images { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>>? Images { get; set; }
 
         /// <summary>
         /// Output aspect ratio. Under `auto` a ratio the prompt asks for wins, otherwise the output keeps the first reference image's framing; without references the prompt decides, else 1:1.<br/>
@@ -99,7 +99,7 @@ namespace BlackForestLabs
 #endif
         public Flux3ImageInputs(
             string prompt,
-            global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? images,
+            global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>>? images,
             global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3ImageInputsAspectRatio?, string>? aspectRatio,
             global::BlackForestLabs.Flux3ImageInputsResolution? resolution,
             int? safetyTolerance,

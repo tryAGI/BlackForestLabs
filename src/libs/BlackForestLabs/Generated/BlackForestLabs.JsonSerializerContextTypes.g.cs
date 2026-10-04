@@ -113,7 +113,7 @@ namespace BlackForestLabs
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type20 { get; set; }
+        public global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type20 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -310,7 +310,7 @@ namespace BlackForestLabs
         /// <summary>
         ///
         /// </summary>
-        public global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.List<string>, object>? ListType0 { get; set; }
+        public global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.List<string>>? ListType0 { get; set; }
         /// <summary>
         ///
         /// </summary>
