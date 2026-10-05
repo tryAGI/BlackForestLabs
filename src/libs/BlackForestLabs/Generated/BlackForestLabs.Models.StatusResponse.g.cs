@@ -23,6 +23,10 @@ namespace BlackForestLabs
         /// <summary>
         ///
         /// </summary>
+        NoCardGenerated,
+        /// <summary>
+        ///
+        /// </summary>
         Pending,
         /// <summary>
         ///
@@ -57,6 +61,7 @@ namespace BlackForestLabs
                 StatusResponse.ContentModerated => "Content Moderated",
                 StatusResponse.Error => "Error",
                 StatusResponse.Generating => "Generating",
+                StatusResponse.NoCardGenerated => "No Card Generated",
                 StatusResponse.Pending => "Pending",
                 StatusResponse.Ready => "Ready",
                 StatusResponse.Reasoning => "Reasoning",
@@ -75,6 +80,7 @@ namespace BlackForestLabs
                 "Content Moderated" => StatusResponse.ContentModerated,
                 "Error" => StatusResponse.Error,
                 "Generating" => StatusResponse.Generating,
+                "No Card Generated" => StatusResponse.NoCardGenerated,
                 "Pending" => StatusResponse.Pending,
                 "Ready" => StatusResponse.Ready,
                 "Reasoning" => StatusResponse.Reasoning,
