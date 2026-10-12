@@ -35,7 +35,7 @@ internal static partial class ModelsFlux3ImageV1Flux3ImagePostCommandApiCommand
     private static Option<int?> SafetyTolerance { get; } = new(
         name: @"--safety-tolerance")
     {
-        Description = @"Tolerance level for input and output harm moderation. Between 0 and 4, with 0 the strictest.",
+        Description = @"Harm moderation tolerance from 0 to 7, with 0 the strictest. The route and organization determine the approved maximum and per-category ceilings. Unapproved levels return 422 with approved levels.",
     };
 
     private static Option<bool?> Grounding { get; } = CliRuntime.CreateNullableBoolOption(

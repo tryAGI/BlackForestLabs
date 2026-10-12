@@ -484,7 +484,7 @@ namespace BlackForestLabs
         /// Edit instruction, stripped of surrounding whitespace.
         /// </param>
         /// <param name="safetyTolerance">
-        /// Tolerance level for input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance.<br/>
+        /// Harm moderation tolerance from 0 to 7, with 0 the strictest. The route and organization determine the approved maximum and per-category ceilings. Unapproved levels return 422 with approved levels.<br/>
         /// Default Value: 2
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

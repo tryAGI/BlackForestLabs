@@ -42,7 +42,7 @@ namespace BlackForestLabs
         public double? UpscaleFactor { get; set; }
 
         /// <summary>
-        /// Tolerance level for harm moderation, between 0 and 4 with 0 the strictest. It bounds every harm class on the prompt, which is screened before any generation, and on the delivered frames, which are withheld when their sexual-content level exceeds what the tolerance allows. Sexual is capped at level 3 and hate at level 2 regardless of the requested tolerance.<br/>
+        /// Harm moderation tolerance from 0 to 7, with 0 the strictest. The route and organization determine the approved maximum and per-category ceilings. Unapproved levels return 422 with approved levels.<br/>
         /// Default Value: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("safety_tolerance")]
@@ -87,7 +87,7 @@ namespace BlackForestLabs
         /// Default Value: 2F
         /// </param>
         /// <param name="safetyTolerance">
-        /// Tolerance level for harm moderation, between 0 and 4 with 0 the strictest. It bounds every harm class on the prompt, which is screened before any generation, and on the delivered frames, which are withheld when their sexual-content level exceeds what the tolerance allows. Sexual is capped at level 3 and hate at level 2 regardless of the requested tolerance.<br/>
+        /// Harm moderation tolerance from 0 to 7, with 0 the strictest. The route and organization determine the approved maximum and per-category ceilings. Unapproved levels return 422 with approved levels.<br/>
         /// Default Value: 2
         /// </param>
         /// <param name="webhookUrl">

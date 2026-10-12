@@ -47,7 +47,7 @@ namespace BlackForestLabs
         public int? Seed { get; set; }
 
         /// <summary>
-        /// Tolerance level for input and output moderation. Between 0 and 5 for public use.<br/>
+        /// Harm moderation tolerance from 0 to 7, with 0 the strictest. The route and organization determine the approved maximum and per-category ceilings. Unapproved levels return 422 with approved levels.<br/>
         /// Default Value: 2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("safety_tolerance")]
@@ -98,7 +98,7 @@ namespace BlackForestLabs
         /// Example: 42
         /// </param>
         /// <param name="safetyTolerance">
-        /// Tolerance level for input and output moderation. Between 0 and 5 for public use.<br/>
+        /// Harm moderation tolerance from 0 to 7, with 0 the strictest. The route and organization determine the approved maximum and per-category ceilings. Unapproved levels return 422 with approved levels.<br/>
         /// Default Value: 2
         /// </param>
         /// <param name="outputFormat">

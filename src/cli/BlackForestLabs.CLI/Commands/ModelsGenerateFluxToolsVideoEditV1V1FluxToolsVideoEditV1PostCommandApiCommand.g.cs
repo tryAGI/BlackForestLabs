@@ -30,7 +30,7 @@ internal static partial class ModelsGenerateFluxToolsVideoEditV1V1FluxToolsVideo
     private static Option<int?> SafetyTolerance { get; } = new(
         name: @"--safety-tolerance")
     {
-        Description = @"Tolerance level for input and output harm moderation. Between 0 and 4, with 0 the strictest. Sexual content is limited to level 3 and hate content to level 2 regardless of the requested tolerance.",
+        Description = @"Harm moderation tolerance from 0 to 7, with 0 the strictest. The route and organization determine the approved maximum and per-category ceilings. Unapproved levels return 422 with approved levels.",
     };
       private static Option<string?> Input { get; } = new(@"--input")
       {
