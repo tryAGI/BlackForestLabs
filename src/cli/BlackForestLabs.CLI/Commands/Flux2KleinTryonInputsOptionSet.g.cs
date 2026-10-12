@@ -45,7 +45,7 @@ internal sealed record Flux2KleinTryonInputsOptionSet(
                 },
                 SafetyTolerance: new Option<int?>($"--{normalizedPrefix}safety-tolerance")
                 {
-                    Description = @"Tolerance level for input and output moderation. Between 0 and 5 for public use.",
+                    Description = @"Harm moderation tolerance from 0 to 7, with 0 the strictest. The route and organization determine the approved maximum and per-category ceilings. Unapproved levels return 422 with approved levels.",
                 },
                 WebhookUrl: new Option<string?>($"--{normalizedPrefix}webhook-url")
                 {

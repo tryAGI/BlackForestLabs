@@ -82,7 +82,7 @@ namespace BlackForestLabs
         /// Default Value: 0
         /// </param>
         /// <param name="safetyTolerance">
-        /// Tolerance level for input and output moderation. Between 0 and 5, 0 being most strict, 5 being least strict. If you wish to increase the safety_tolerance beyond these levels please reach out to the team.<br/>
+        /// Harm moderation tolerance from 0 to 7, with 0 the strictest. The route and organization determine the approved maximum and per-category ceilings. Unapproved levels return 422 with approved levels.<br/>
         /// Default Value: 2
         /// </param>
         /// <param name="outputFormat">

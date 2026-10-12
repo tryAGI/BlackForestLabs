@@ -29,7 +29,7 @@ internal static partial class ModelsGenerateFluxToolsDeblurV1V1FluxToolsDeblurV1
     private static Option<int?> SafetyTolerance { get; } = new(
         name: @"--safety-tolerance")
     {
-        Description = @"Tolerance level for input and output moderation. Between 0 and 5, 0 being most strict, 5 being least strict.",
+        Description = @"Harm moderation tolerance from 0 to 7, with 0 the strictest. The route and organization determine the approved maximum and per-category ceilings. Unapproved levels return 422 with approved levels.",
     };
 
     private static Option<global::BlackForestLabs.OutputFormat?> OutputFormat { get; } = new(
