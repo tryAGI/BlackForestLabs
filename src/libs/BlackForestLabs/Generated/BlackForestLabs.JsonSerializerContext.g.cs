@@ -19,6 +19,18 @@ namespace BlackForestLabs
 
             typeof(global::BlackForestLabs.JsonConverters.Flux3ImageInputsResolutionNullableJsonConverter),
 
+            typeof(global::BlackForestLabs.JsonConverters.Flux3ImageKleinInputsAspectRatioJsonConverter),
+
+            typeof(global::BlackForestLabs.JsonConverters.Flux3ImageKleinInputsAspectRatioNullableJsonConverter),
+
+            typeof(global::BlackForestLabs.JsonConverters.Flux3ImageKleinInputsResolutionJsonConverter),
+
+            typeof(global::BlackForestLabs.JsonConverters.Flux3ImageKleinInputsResolutionNullableJsonConverter),
+
+            typeof(global::BlackForestLabs.JsonConverters.Flux3ImageKleinInputsOutputFormatJsonConverter),
+
+            typeof(global::BlackForestLabs.JsonConverters.Flux3ImageKleinInputsOutputFormatNullableJsonConverter),
+
             typeof(global::BlackForestLabs.JsonConverters.Flux3VideoDraftEnhanceInputsResolutionJsonConverter),
 
             typeof(global::BlackForestLabs.JsonConverters.Flux3VideoDraftEnhanceInputsResolutionNullableJsonConverter),
@@ -68,6 +80,10 @@ namespace BlackForestLabs
             typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
 
             typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.Flux3ImageInputsAspectRatio?, string>),
+
+            typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
+            typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.Flux3ImageKleinInputsAspectRatio?, string>),
 
             typeof(global::BlackForestLabs.JsonConverters.AnyOfJsonConverter<global::BlackForestLabs.Flux3VideoI2VInputsAspectRatio?, string>),
 
@@ -167,6 +183,11 @@ namespace BlackForestLabs
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3ImageInputsAspectRatio?, string>), TypeInfoPropertyName = "AnyOfFlux3ImageInputsAspectRatioString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3ImageInputsAspectRatio), TypeInfoPropertyName = "Flux3ImageInputsAspectRatio2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3ImageInputsResolution), TypeInfoPropertyName = "Flux3ImageInputsResolution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3ImageKleinInputs))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3ImageKleinInputsAspectRatio?, string>), TypeInfoPropertyName = "AnyOfFlux3ImageKleinInputsAspectRatioString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3ImageKleinInputsAspectRatio), TypeInfoPropertyName = "Flux3ImageKleinInputsAspectRatio2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3ImageKleinInputsResolution), TypeInfoPropertyName = "Flux3ImageKleinInputsResolution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3ImageKleinInputsOutputFormat), TypeInfoPropertyName = "Flux3ImageKleinInputsOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoDraftEnhanceInputs))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoDraftEnhanceInputsResolution), TypeInfoPropertyName = "Flux3VideoDraftEnhanceInputsResolution2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::BlackForestLabs.Flux3VideoI2VInputs))]
