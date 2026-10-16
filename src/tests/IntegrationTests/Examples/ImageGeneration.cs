@@ -21,16 +21,14 @@ public partial class Tests
             width: 1024,
             height: 768);
 
-        Assert.IsNotNull(response);
-
         //// The API returns a task ID. Poll for the result using GetResult.
         var asyncResponse = response.Value1;
-        if (asyncResponse is not null)
-        {
-            var result = await client.Utility.GetResultV1GetResultGetAsync(
-                id: asyncResponse.Id);
+        Assert.IsNotNull(asyncResponse, "A request without a webhook should return a pollable task.");
+        Assert.IsFalse(string.IsNullOrWhiteSpace(asyncResponse.Id));
 
-            Assert.IsNotNull(result);
-        }
+        var result = await client.Utility.GetResultV1GetResultGetAsync(
+            id: asyncResponse.Id);
+
+        Assert.AreEqual(asyncResponse.Id, result.Match(value1: value => value.Id, value2: value => value.Id));
     }
 }
