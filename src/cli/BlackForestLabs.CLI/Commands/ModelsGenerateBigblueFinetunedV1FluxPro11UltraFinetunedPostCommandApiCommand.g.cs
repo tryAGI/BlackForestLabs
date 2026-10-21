@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsGenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string> FinetuneId { get; } = new(
         name: @"--finetune-id")
     {
@@ -120,6 +126,7 @@ internal static partial class ModelsGenerateBigblueFinetunedV1FluxPro11UltraFine
     {
         var command = new Command(commandName ?? @"generate-bigblue-finetuned-v1-flux-pro11-ultra-finetuned-post", @"Generate an image with FLUX 1.1 [pro] finetune with ultra mode.
 Submits an image generation task with FLUX 1.1 [pro] finetune with ultra mode.");
+                        command.Options.Add(User);
                         command.Options.Add(FinetuneId);
                         command.Options.Add(FinetuneStrength);
                         command.Options.Add(Prompt);
@@ -157,6 +164,7 @@ Submits an image generation task with FLUX 1.1 [pro] finetune with ultra mode.")
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var finetuneId = parseResult.GetRequiredValue(FinetuneId);
                         var finetuneStrength = CliRuntime.WasSpecified(parseResult, FinetuneStrength) ? parseResult.GetValue(FinetuneStrength) : (__requestBase is { } __FinetuneStrengthBaseValue ? __FinetuneStrengthBaseValue.FinetuneStrength : default);
                         var prompt = CliRuntime.WasSpecified(parseResult, Prompt) ? parseResult.GetValue(Prompt) : (__requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default);
@@ -173,6 +181,7 @@ Submits an image generation task with FLUX 1.1 [pro] finetune with ultra mode.")
 
 
                                 var response = await client.Models.GenerateBigblueFinetunedV1FluxPro11UltraFinetunedPostAsync(
+                                    user: user,
                                     finetuneId: finetuneId,
                                     finetuneStrength: finetuneStrength,
                                     prompt: prompt,

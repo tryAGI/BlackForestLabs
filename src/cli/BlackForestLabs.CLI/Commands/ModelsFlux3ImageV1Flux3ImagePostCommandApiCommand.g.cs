@@ -7,6 +7,12 @@ namespace BlackForestLabs.CLI.Commands;
 
 internal static partial class ModelsFlux3ImageV1Flux3ImagePostCommandApiCommand
 {
+    private static Option<string?> User { get; } = new(
+        name: @"--user")
+    {
+        Description = @"Opaque identifier for the end user supplied by the calling platform.",
+    };
+
     private static Option<string> Prompt { get; } = new(
         name: @"--prompt")
     {
@@ -90,6 +96,7 @@ internal static partial class ModelsFlux3ImageV1Flux3ImagePostCommandApiCommand
     {
         var command = new Command(commandName ?? @"flux3-image-v1-flux3-image-post", @"Generate an image with FLUX 3.
 Submits an image generation task with FLUX 3.");
+                        command.Options.Add(User);
                         command.Options.Add(Prompt);
                         command.Options.Add(Images);
                         command.Options.Add(AspectRatio);
@@ -122,6 +129,7 @@ Submits an image generation task with FLUX 3.");
                             RequestFile,
                             global::BlackForestLabs.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var prompt = parseResult.GetRequiredValue(Prompt);
                         var images = CliRuntime.WasSpecified(parseResult, Images) ? parseResult.GetValue(Images) : (__requestBase is { } __ImagesBaseValue ? __ImagesBaseValue.Images : default);
                         var aspectRatio = CliRuntime.WasSpecified(parseResult, AspectRatio) ? parseResult.GetValue(AspectRatio) : (__requestBase is { } __AspectRatioBaseValue ? __AspectRatioBaseValue.AspectRatio : default);
@@ -133,6 +141,7 @@ Submits an image generation task with FLUX 3.");
 
 
                                 var response = await client.Models.Flux3ImageV1Flux3ImagePostAsync(
+                                    user: user,
                                     prompt: prompt,
                                     images: images,
                                     aspectRatio: aspectRatio,

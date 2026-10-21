@@ -34,6 +34,9 @@ namespace BlackForestLabs
         /// Generate an image with FLUX 3.<br/>
         /// Submits an image generation task with FLUX 3.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Free-form prompt describing the image.
         /// </param>
@@ -65,6 +68,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::BlackForestLabs.AsyncResponse> Flux3ImageV1Flux3ImagePostAsync(
             string prompt,
+            string? user = default,
             global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>>? images = default,
             global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3ImageInputsAspectRatio?, string>? aspectRatio = default,
             global::BlackForestLabs.Flux3ImageInputsResolution? resolution = default,
