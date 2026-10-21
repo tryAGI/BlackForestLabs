@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class Flux3ImageKleinInputs
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Free-form prompt describing the image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
@@ -87,6 +93,9 @@ namespace BlackForestLabs
         /// <param name="prompt">
         /// Free-form prompt describing the image.
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="images">
         /// Optional reference image(s), each an http(s) URL or base64, one to 10 total. The first is the image being edited and sets the default output size.
         /// </param>
@@ -122,6 +131,7 @@ namespace BlackForestLabs
 #endif
         public Flux3ImageKleinInputs(
             string prompt,
+            string? user,
             global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>>? images,
             global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3ImageKleinInputsAspectRatio?, string>? aspectRatio,
             global::BlackForestLabs.Flux3ImageKleinInputsResolution? resolution,
@@ -132,6 +142,7 @@ namespace BlackForestLabs
             global::BlackForestLabs.Flux3ImageKleinInputsOutputFormat? outputFormat,
             int? steps)
         {
+            this.User = user;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Images = images;
             this.AspectRatio = aspectRatio;

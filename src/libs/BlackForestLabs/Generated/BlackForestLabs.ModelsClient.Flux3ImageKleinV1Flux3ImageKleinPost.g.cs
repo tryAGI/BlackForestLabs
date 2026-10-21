@@ -474,6 +474,9 @@ namespace BlackForestLabs
         /// Generate an image with FLUX 3 Image Klein.<br/>
         /// Submits a text-to-image or image editing task with FLUX 3 Image Klein.
         /// </summary>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="prompt">
         /// Free-form prompt describing the image.
         /// </param>
@@ -512,6 +515,7 @@ namespace BlackForestLabs
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::BlackForestLabs.AsyncResponse> Flux3ImageKleinV1Flux3ImageKleinPostAsync(
             string prompt,
+            string? user = default,
             global::BlackForestLabs.AnyOf<string, global::System.Collections.Generic.IList<string>>? images = default,
             global::BlackForestLabs.AnyOf<global::BlackForestLabs.Flux3ImageKleinInputsAspectRatio?, string>? aspectRatio = default,
             global::BlackForestLabs.Flux3ImageKleinInputsResolution? resolution = default,
@@ -526,6 +530,7 @@ namespace BlackForestLabs
         {
             var __request = new global::BlackForestLabs.Flux3ImageKleinInputs
             {
+                User = user,
                 Prompt = prompt,
                 Images = images,
                 AspectRatio = aspectRatio,

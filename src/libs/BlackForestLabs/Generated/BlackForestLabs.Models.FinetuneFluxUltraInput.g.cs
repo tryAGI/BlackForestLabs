@@ -9,6 +9,12 @@ namespace BlackForestLabs
     public sealed partial class FinetuneFluxUltraInput
     {
         /// <summary>
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
         /// Name of the LoRA to use. For LoRAs from other organizations (public or shared), use the format 'org-id/lora-name'.<br/>
         /// Example: my-finetune
         /// </summary>
@@ -108,6 +114,9 @@ namespace BlackForestLabs
         /// Name of the LoRA to use. For LoRAs from other organizations (public or shared), use the format 'org-id/lora-name'.<br/>
         /// Example: my-finetune
         /// </param>
+        /// <param name="user">
+        /// Opaque identifier for the end user supplied by the calling platform.
+        /// </param>
         /// <param name="finetuneStrength">
         /// Strength of the fine-tuned model. 0.0 means no influence, 1.0 means full influence. Allowed values up to 2.0<br/>
         /// Default Value: 1.2F
@@ -155,6 +164,7 @@ namespace BlackForestLabs
 #endif
         public FinetuneFluxUltraInput(
             string finetuneId,
+            string? user,
             double? finetuneStrength,
             string? prompt,
             int? seed,
@@ -167,6 +177,7 @@ namespace BlackForestLabs
             string? webhookUrl,
             string? webhookSecret)
         {
+            this.User = user;
             this.FinetuneId = finetuneId ?? throw new global::System.ArgumentNullException(nameof(finetuneId));
             this.FinetuneStrength = finetuneStrength;
             this.Prompt = prompt;
