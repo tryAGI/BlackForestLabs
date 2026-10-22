@@ -35,7 +35,19 @@ internal static partial class ModelsFlux3ImageV1Flux3ImagePostCommandApiCommand
     private static Option<global::BlackForestLabs.Flux3ImageInputsResolution?> Resolution { get; } = new(
         name: @"--resolution")
     {
-        Description = @"Image resolution class, an equal-pixel-area tier: `768sq`, `1k`, `1.5k`, `2k`, or `4k`. Exact dimensions vary with the aspect ratio.",
+        Description = @"Image resolution class, an equal-pixel-area tier: `768sq`, `1k` (default), `1.5k`, `2k`, or `4k`. Exact dimensions vary with the aspect ratio. `match_input` (edits only): the output keeps the first reference's own size (shrunk to 4 MP when larger), or its nearest tier when aspect_ratio is set. Ignored when width and height are set.",
+    };
+
+    private static Option<int?> Width { get; } = new(
+        name: @"--width")
+    {
+        Description = @"Exact output width in pixels, [256, 6256]; set together with height. Overrides resolution and aspect_ratio.",
+    };
+
+    private static Option<int?> Height { get; } = new(
+        name: @"--height")
+    {
+        Description = @"Exact output height in pixels, [256, 6256]; width x height at most 16822272 pixels, and at most 4194304 with reference images.",
     };
 
     private static Option<int?> SafetyTolerance { get; } = new(
@@ -101,6 +113,8 @@ Submits an image generation task with FLUX 3.");
                         command.Options.Add(Images);
                         command.Options.Add(AspectRatio);
                         command.Options.Add(Resolution);
+                        command.Options.Add(Width);
+                        command.Options.Add(Height);
                         command.Options.Add(SafetyTolerance);
                         command.Options.Add(Grounding);
                         command.Options.Add(Version);
@@ -134,6 +148,8 @@ Submits an image generation task with FLUX 3.");
                         var images = CliRuntime.WasSpecified(parseResult, Images) ? parseResult.GetValue(Images) : (__requestBase is { } __ImagesBaseValue ? __ImagesBaseValue.Images : default);
                         var aspectRatio = CliRuntime.WasSpecified(parseResult, AspectRatio) ? parseResult.GetValue(AspectRatio) : (__requestBase is { } __AspectRatioBaseValue ? __AspectRatioBaseValue.AspectRatio : default);
                         var resolution = CliRuntime.WasSpecified(parseResult, Resolution) ? parseResult.GetValue(Resolution) : (__requestBase is { } __ResolutionBaseValue ? __ResolutionBaseValue.Resolution : default);
+                        var width = CliRuntime.WasSpecified(parseResult, Width) ? parseResult.GetValue(Width) : (__requestBase is { } __WidthBaseValue ? __WidthBaseValue.Width : default);
+                        var height = CliRuntime.WasSpecified(parseResult, Height) ? parseResult.GetValue(Height) : (__requestBase is { } __HeightBaseValue ? __HeightBaseValue.Height : default);
                         var safetyTolerance = CliRuntime.WasSpecified(parseResult, SafetyTolerance) ? parseResult.GetValue(SafetyTolerance) : (__requestBase is { } __SafetyToleranceBaseValue ? __SafetyToleranceBaseValue.SafetyTolerance : default);
                         var grounding = CliRuntime.WasSpecified(parseResult, Grounding) ? parseResult.GetValue(Grounding) : (__requestBase is { } __GroundingBaseValue ? __GroundingBaseValue.Grounding : default);
                         var version = CliRuntime.WasSpecified(parseResult, Version) ? parseResult.GetValue(Version) : (__requestBase is { } __VersionBaseValue ? __VersionBaseValue.Version : default);
@@ -146,6 +162,8 @@ Submits an image generation task with FLUX 3.");
                                     images: images,
                                     aspectRatio: aspectRatio,
                                     resolution: resolution,
+                                    width: width,
+                                    height: height,
                                     safetyTolerance: safetyTolerance,
                                     grounding: grounding,
                                     version: version,
