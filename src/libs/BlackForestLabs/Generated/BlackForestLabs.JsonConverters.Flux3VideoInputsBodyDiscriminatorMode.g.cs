@@ -18,7 +18,7 @@ namespace BlackForestLabs.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::BlackForestLabs.Flux3VideoInputsBodyDiscriminatorModeExtensions.ToEnum(stringValue) ?? default;
+                        return global::BlackForestLabs.Flux3VideoInputsBodyDiscriminatorModeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::BlackForestLabs.Flux3VideoInputsBodyDiscriminatorMode.");
                     }
 
                     break;
